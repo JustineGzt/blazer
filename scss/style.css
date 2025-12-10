@@ -1,3 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.irish-grover-regular {
+  font-family: "Irish Grover", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -6,10 +20,10 @@ body {
 
 nav {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  padding: 20px 40px;
+  padding: 0px 40px;
   background: black;
+  justify-content: space-around;
 }
 nav .logo {
   font-size: 24px;
@@ -44,4 +58,147 @@ nav ul li a::after {
 }
 nav ul li a:hover::after {
   width: 100%;
+}
+
+header {
+  position: relative;
+  height: 90vh;
+  width: 100%;
+  overflow: visible;
+  background-size: cover;
+  background-position: center;
+  background-color: #9DC1CC;
+}
+header .divHeader {
+  height: 100%;
+}
+header .divHeader .rond {
+  position: relative;
+  bottom: -9.5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vh;
+  height: 90vh;
+  background: #ffffff;
+  border-radius: 50%;
+}
+header .divHeader h1 {
+  font-family: "Irish Grover", system-ui;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 4vh;
+  text-align: center;
+}
+
+.banniere {
+  background-color: #000000;
+  position: absolute;
+  width: 100%;
+  height: 7vh;
+  align-content: center;
+}
+.banniere p {
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-family: "Montserrat Alternates";
+}
+
+.sectiongenre {
+  background-color: #0d0d0d;
+  display: flex;
+  margin-top: 18vh;
+  margin-bottom: 5vh;
+}
+.sectiongenre .sectionFemme {
+  display: flex;
+  gap: 2vh;
+  margin: 5vh;
+}
+.sectiongenre .sectionFemme .artFemme {
+  background-color: #D9D9D9;
+  width: 18rem;
+  height: 31rem;
+  border-radius: 5vh;
+}
+.sectiongenre .sectionHomme {
+  display: flex;
+  gap: 2vh;
+  flex-direction: column;
+  margin-top: 5vh;
+}
+.sectiongenre .sectionHomme .artHomme {
+  background-color: #D9D9D9;
+  width: 23rem;
+  height: 15rem;
+  border-radius: 5vh;
+}
+
+.collection {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 5vh 8vh;
+}
+.collection h2 {
+  font-size: -webkit-xxx-large;
+  font-family: "Irish Grover", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.collection .btnP {
+  display: flex;
+  align-items: center;
+}
+.collection .btnP button {
+  border: 0.5vh solid black;
+  width: 20rem;
+  height: 3rem;
+  margin-right: 2vh;
+}
+.collection .btnP .button:active {
+  transform: scale(0.9) rotate(2deg);
+  background: #000000;
+  color: #ffffff;
+}
+.collection .btnP p {
+  font-size: smaller;
+}
+.collection .imgCollection {
+  display: flex;
+}
+.collection .imgCollection article {
+  background-color: #D9D9D9;
+  width: 12rem;
+  height: 15rem;
+  margin: 5vh 2vh;
+}
+
+.vetement {
+  background-color: black;
+  display: flex;
+  padding-top: 10vh;
+  padding-bottom: 5vh;
+  align-items: center;
+}
+.vetement video {
+  height: 33rem;
+  width: 85rem;
+}
+.vetement .videoTextVetement {
+  display: flex;
+  color: #ffffff;
+  flex-direction: column;
+}
+.vetement .videoTextVetement h2 {
+  font-size: xxx-large;
+  width: 51vh;
+  font-family: "Irish Grover", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.vetement .videoTextVetement p {
+  font-family: "Montserrat Alternates";
 }/*# sourceMappingURL=style.css.map */
