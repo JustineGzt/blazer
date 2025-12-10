@@ -1,7 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #0d0d0d;
+  background: #e6e0e0;
 }
 
 nav {
@@ -9,7 +17,7 @@ nav {
   justify-content: flex-start;
   align-items: center;
   padding: 20px 40px;
-  background: black;
+  background: rgb(20, 18, 18);
 }
 nav .logo {
   font-size: 24px;
