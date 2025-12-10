@@ -1,47 +1,90 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Irish+Grover&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0d0d0d;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
 }
 
-nav {
+.marge {
+  padding: 5vh 5vw;
+}
+
+h2 {
+  font-family: "Irish Grover";
+  font-size: 6vh;
+}
+
+body {
+  background-color: #ededed;
+  font-family: "Montserrat Alternates";
+}
+
+header nav {
+  background-color: black;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 20px 40px;
-  background: black;
+  height: 20vh;
+  padding: 4vh 8vh;
+  overflow: hidden;
 }
-nav .logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #fff;
-  letter-spacing: 2px;
-}
-nav .logo img {
-  width: 10vh;
-}
-nav ul {
+header nav ul {
+  background-color: aqua;
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 4vh;
 }
-nav ul li a {
+header nav ul li a {
   color: #fff;
   text-decoration: none;
   font-size: 16px;
   position: relative;
   padding-bottom: 5px;
 }
-nav ul li a::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  height: 2px;
-  width: 0;
-  bottom: 0;
-  transition: width 0.3s ease;
-  margin: auto;
+header nav .logo img {
+  height: 35vh;
+  align-self: center;
 }
-nav ul li a:hover::after {
-  width: 100%;
+header .headerImg {
+  background-image: url(../img/header.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 80vh;
+}
+
+.tendances {
+  background-color: #ededed;
+  height: 100vh;
+  text-align: center;
+}
+.tendances .Container {
+  background-color: aquamarine;
+  padding: 4vh;
+}
+.tendances .Container h2 {
+  padding-bottom: 20vh;
+}
+.tendances .Container .tendancesHomme {
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+  width: 50%;
+  padding: 3vh;
+}
+.tendances .Container .tendancesHomme p {
+  font-size: 5vh;
+  padding-bottom: 3vh;
+}
+.tendances .Container .tendancesHomme .tendancesCategories {
+  display: flex;
+  height: 50vh;
+}
+.tendances .Container .tendancesHomme .tendancesCategories img {
+  width: 90%;
+  height: 90%;
+}
+.tendances .Container .tendancesHomme .tendancesCategories p {
+  font-size: 3.5vh;
 }/*# sourceMappingURL=style.css.map */
