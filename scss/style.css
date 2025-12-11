@@ -701,25 +701,74 @@ header .divHeader img {
     font-size: 0.95rem;
     line-height: 1.4rem;
   }
-  footer {
+  .footer {
+    background-color: #000;
+    color: #ededed;
+    height: auto;
+    padding: 5vh 3vh;
+  }
+  .footer .footerTitre {
+    font-family: "Irish Grover";
+    font-size: 4vh;
+    text-align: center;
+    margin-bottom: 1vh;
+  }
+  .footer .footerPart1Container {
     display: flex;
-    justify-content: space-between;
-    height: 60%;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
   }
-  footer .footerPart1Logos img {
-    width: 93%;
-    height: 25%;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-  footer .footerPart1Logos img .footerRS {
+  .footer .footerPart1Container .footerPart1Logos {
     width: 80%;
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
+    align-items: center;
+    gap: 1vh;
   }
-  footer .footerPart1Container .footerPart1Contact {
-    width: 30%;
+  .footer .footerPart1Container .footerPart1Logos img {
+    width: 60%;
+    height: auto;
+  }
+  .footer .footerPart1Container .footerPart1Logos .footerRS {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin-top: 1vh;
+  }
+  .footer .footerPart1Container .footerPart1Logos .footerRS i {
+    font-size: 3vh;
+  }
+  .footer .footerPart1Container .footerPart1Contact,
+  .footer .footerPart1Container .footerPart1Newsletter {
+    width: 90%;
+    text-align: center;
     font-size: 1.5vh;
+    margin-top: 1vh;
+  }
+  .footer .footerPart1Container .footerPart1Contact p,
+  .footer .footerPart1Container .footerPart1Newsletter p {
+    padding: 1vh 0;
+  }
+  .footer .footerPart1Container .footerPart1Contact .newsletterEmail,
+  .footer .footerPart1Container .footerPart1Newsletter .newsletterEmail {
+    width: 100%;
+    height: 4.5vh;
+    padding: 0.5vh;
+    border-radius: 0.3rem;
+    border: 1px solid #ccc;
+  }
+  .footer .ligne {
+    background-color: rgba(237, 237, 237, 0.3);
+    height: 0.2vh;
+    width: 90%;
+    margin: 3vh 0;
+  }
+  .footer .footerPart2Container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 2vh;
   }
 }/*# sourceMappingURL=style.css.map */
