@@ -193,7 +193,7 @@ header .headerImg {
 }
 
 .footer {
-  background-color: rgb(94, 94, 94);
+  background-color: #000;
   color: #ededed;
   height: 60vh;
 }
@@ -202,14 +202,12 @@ header .headerImg {
   font-size: 5vh;
 }
 .footer .footerPart1Container {
-  background-color: aqua;
   display: flex;
   justify-content: space-between;
   height: 85%;
 }
 .footer .footerPart1Container .footerPart1Logos {
   width: 30%;
-  background-color: brown;
 }
 .footer .footerPart1Container .footerPart1Logos img {
   width: 80%;
@@ -227,9 +225,28 @@ header .headerImg {
      object-fit: cover;
 }
 .footer .footerPart1Container .footerPart1Contact {
-  background-color: burlywood;
   width: 30%;
 }
 .footer .footerPart1Container .footerPart1Contact p {
   padding: 2vh 0;
+}
+.footer .footerPart1Container .footerPart1Newsletter {
+  width: 30%;
+}
+.footer .footerPart1Container .footerPart1Newsletter p {
+  padding: 2vh 0;
+}
+.footer .footerPart1Container .footerPart1Newsletter .newsletterEmail {
+  height: 5vh;
+  width: 80%;
+}
+.footer .ligne {
+  background-color: rgba(237, 237, 237, 0.3);
+  height: 0.2vh;
+  width: 100%;
+  margin: 3vh 0;
+}
+.footer .footerPart2Container {
+  display: flex;
+  justify-content: end;
 }/*# sourceMappingURL=style.css.map */

@@ -217,7 +217,7 @@ header{
 
 // SECTION FOOTER
 .footer{
-  background-color: rgb(94, 94, 94);
+  background-color: #000;
   color: #ededed;
   height: 60vh;
   .footerTitre{
@@ -225,13 +225,11 @@ header{
     font-size: 5vh;
   }
   .footerPart1Container{
-    background-color: aqua;
     display: flex;
     justify-content: space-between;
     height: 85%;
     .footerPart1Logos{
       width: 30%;
-      background-color: brown;
       img{
         width:80%;
         height: 80%;
@@ -248,14 +246,30 @@ header{
       }
     }
     .footerPart1Contact{
-      background-color: burlywood;
       width: 30%;
       p{
         padding: 2vh 0;
       }
     }
     .footerPart1Newsletter{
-      
+      width: 30%;
+      p{
+        padding: 2vh 0;
+      }
+      .newsletterEmail{
+        height: 5vh;
+        width: 80%;
+      }
     }
+  }
+  .ligne{
+    background-color: rgba(#ededed, 0.3);
+    height: .2vh;
+    width:100%;
+    margin: 3vh 0;
+  }
+  .footerPart2Container{
+    display: flex;
+    justify-content: end;
   }
 }
