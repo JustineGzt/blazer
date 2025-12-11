@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
     <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./scss/style.css">
@@ -13,21 +15,34 @@
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#">Nouveautés</a></li>
-            <li><a href="#">Homme</a></li>
-            <li><a href="#">Femme</a></li>
-        </ul>
-        <div class="logo"><img src="img/Blazer_2.png" alt="Logo du site"></div>
-        <ul>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">recherche <i class="fa-solid fa-magnifying-glass"></i></a></li>
-            <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
-            <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-        </ul>
-    </nav>
+    <nav class="main-nav">
+    <ul class="nav-left">
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">Nouveautés</a></li>
+        <li><a href="#">Homme</a></li>
+        <li><a href="#">Femme</a></li>
+    </ul>
+
+    <div class="logo">
+        <img src="img/Blazer_2.png" alt="Logo du site">
+    </div>
+
+    <ul class="nav-right">
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">recherche <i class="fa-solid fa-magnifying-glass"></i></a></li>
+        <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+        <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+    </ul>
+
+    <!-- Burger seulement pour mobile -->
+    <button class="burger" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</nav>
+
+
     <header>
         <div class="divHeader">
             <div class="rond"></div>
@@ -82,6 +97,35 @@
             des matières de qualité et des coupes qui valorisent chaque silhouette. Une collection premium qui allie finesse, caractère et élégance intemporelle.</p>
         </div>
     </section>
+    <footer>
+        <section class="footer marge">
+                    <div class="footerPart1Container">
+                        <div class="footerPart1Logos">
+                            <img src="img/Blazer_2.png" alt="">
+                            <div class="footerRS">
+                                <i class="fa-brands fa-facebook"></i>
+                                <i class="fa-solid fa-phone"></i>
+                                <i class="fa-brands fa-instagram"></i>
+                        </div>
+                    </div>
+                    <div class="footerPart1Contact">
+                        <p class="footerTitre">Contact</p>
+                        <p>hello@gmail.com</p>                            
+                        <p>24 avenue de Lille, 62400 Béthune</p>
+                        <p>+336 00 00 00 00</p>
+                    </div>
+                    <div class="footerPart1Newsletter">
+                        <p class="footerTitre">Newsletter</p>
+                        <p>Entrez votre email pour être informé de nos nouveautés</p>
+                        <input type="email" class="newsletterEmail" placeholder="saisissez votre adresse mail"/>
+                    </div>
+                </div>
+                <div class="ligne"></div>
+                <div class="footerPart2Container">
+                    <p>&copy; 2025 Dreamy Inc. - All rights reserved</p>
+                </div>
+        </section>
+    </footer>
 
     <script src="./js/script.js"></script>
 </html>

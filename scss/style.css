@@ -6,6 +6,10 @@
   text-decoration: none;
 }
 
+.marge {
+  padding: 0vh 5vh;
+}
+
 .irish-grover-regular {
   font-family: "Irish Grover", system-ui;
   font-weight: 400;
@@ -42,6 +46,9 @@ nav ul li a {
 nav .logo img {
   height: 26vh;
   align-self: center;
+}
+nav .burger {
+  display: none;
 }
 
 header {
@@ -274,11 +281,70 @@ header .divHeader img {
   font-family: "Montserrat Alternates";
 }
 
+.footer {
+  background-color: #000;
+  color: #ededed;
+  height: 60vh;
+}
+.footer .footerTitre {
+  font-family: "Irish Grover";
+  font-size: 5vh;
+}
+.footer .footerPart1Container {
+  display: flex;
+  justify-content: space-between;
+  height: 85%;
+}
+.footer .footerPart1Container .footerPart1Logos {
+  width: 30%;
+}
+.footer .footerPart1Container .footerPart1Logos img {
+  width: 80%;
+  height: 80%;
+}
+.footer .footerPart1Container .footerPart1Logos .footerRS {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.footer .footerPart1Container .footerPart1Logos .footerRS i {
+  font-size: 5vh;
+  padding: 2vh 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.footer .footerPart1Container .footerPart1Contact {
+  width: 30%;
+}
+.footer .footerPart1Container .footerPart1Contact p {
+  padding: 2vh 0;
+}
+.footer .footerPart1Container .footerPart1Newsletter {
+  width: 30%;
+}
+.footer .footerPart1Container .footerPart1Newsletter p {
+  padding: 2vh 0;
+}
+.footer .footerPart1Container .footerPart1Newsletter .newsletterEmail {
+  height: 5vh;
+  width: 80%;
+}
+.footer .ligne {
+  background-color: rgba(237, 237, 237, 0.3);
+  height: 0.2vh;
+  width: 100%;
+  margin: 3vh 0;
+}
+.footer .footerPart2Container {
+  display: flex;
+  justify-content: end;
+}
+
 @media screen and (max-width: 1024px) and (min-width: 768px) {
   nav {
-    flex-direction: column;
     height: auto;
     padding: 2vh 4vh;
+    display: flex;
   }
   nav ul {
     flex-wrap: wrap;
@@ -377,5 +443,283 @@ header .divHeader img {
   .vetement .videoTextVetement p {
     font-size: 1rem;
     text-align: center;
+  }
+  .footer {
+    background-color: #000;
+    color: #ededed;
+    height: auto;
+    padding: 5vh 5vw;
+  }
+  .footer .footerTitre {
+    font-family: "Irish Grover";
+    font-size: 4.5vh;
+    text-align: center;
+    margin-bottom: 1vh;
+  }
+  .footer .footerPart1Container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2vw;
+  }
+  .footer .footerPart1Container .footerPart1Logos {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vh;
+  }
+  .footer .footerPart1Container .footerPart1Logos img {
+    width: 80%;
+    height: auto;
+  }
+  .footer .footerPart1Container .footerPart1Logos .footerRS {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1vh;
+  }
+  .footer .footerPart1Container .footerPart1Logos .footerRS i {
+    font-size: 4vh;
+  }
+  .footer .footerPart1Container .footerPart1Contact,
+  .footer .footerPart1Container .footerPart1Newsletter {
+    width: 35%;
+    text-align: left;
+    font-size: 2vh;
+  }
+  .footer .footerPart1Container .footerPart1Contact p,
+  .footer .footerPart1Container .footerPart1Newsletter p {
+    padding: 1vh 0;
+  }
+  .footer .footerPart1Container .footerPart1Contact .newsletterEmail,
+  .footer .footerPart1Container .footerPart1Newsletter .newsletterEmail {
+    width: 100%;
+    height: 5vh;
+    padding: 0.5vh;
+    border-radius: 0.3rem;
+    border: 1px solid #ccc;
+  }
+  .footer .ligne {
+    background-color: rgba(237, 237, 237, 0.3);
+    height: 0.2vh;
+    width: 100%;
+    margin: 3vh 0;
+  }
+  .footer .footerPart2Container {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    font-size: 1rem;
+    margin-bottom: 2vh;
+  }
+}
+@media screen and (max-width: 426px) {
+  /* NAVIGATION */
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2vh 3vh;
+    height: auto;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    width: 100%;
+    text-align: center;
+    padding: 1vh 0;
+    background: black;
+  }
+  nav .logo {
+    margin: 2vh 0;
+  }
+  nav .logo img {
+    height: 10vh;
+  }
+  nav li a {
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+  }
+  /* HEADER */
+  header {
+    height: 55vh;
+  }
+  header .divHeader .rond {
+    width: 45vh;
+    height: 45vh;
+    bottom: -15vh;
+  }
+  header .divHeader h1 {
+    font-size: 6vh;
+    top: 18%;
+    width: 100%;
+    text-align: center;
+  }
+  header .divHeader img {
+    width: 70%;
+    top: 45%;
+  }
+  /* BANNIERE */
+  .banniere {
+    height: 40px;
+    font-size: 1rem;
+    overflow: hidden;
+  }
+  .banniere p {
+    white-space: nowrap;
+    left: 0;
+    position: relative;
+  }
+  .sectiongenre {
+    flex-direction: column;
+  }
+  .sectionFemme .artFemme {
+    width: 21rem !important;
+    height: 12rem !important;
+    border-radius: 3vh !important;
+    background-color: #D9D9D9 !important;
+    position: relative;
+    /* image 1 */
+    /* image 2 */
+  }
+  .sectionFemme .artFemme:nth-child(1) img {
+    width: auto;
+    height: 128%;
+    top: -27px;
+    left: 0;
+    -o-object-fit: cover;
+       object-fit: cover;
+    position: relative;
+  }
+  .sectionFemme .artFemme:nth-child(2) img {
+    width: auto;
+    height: 110%;
+    top: -10px;
+    left: 0;
+    -o-object-fit: cover;
+       object-fit: cover;
+    position: relative;
+  }
+  /* SECTION HOMME */
+  .sectionHomme .artHomme {
+    width: 20rem !important;
+    height: 10rem !important;
+    border-radius: 3vh !important;
+    background-color: #D9D9D9 !important;
+    position: relative;
+    align-self: center;
+    /* image 1 */
+    /* image 2 */
+  }
+  .sectionHomme .artHomme:nth-child(1) img {
+    width: auto;
+    height: 120%;
+    top: -16px;
+    left: -72px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    position: relative;
+  }
+  .sectionHomme .artHomme:nth-child(2) img {
+    width: auto;
+    width: auto;
+    height: 126%;
+    top: 10px;
+    left: 70px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    position: relative;
+  }
+  /* COLLECTION */
+  .collection {
+    padding: 3vh 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .collection h2 {
+    font-size: 4.5vh;
+    text-align: center;
+  }
+  .collection .btnP {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1vh;
+  }
+  .collection .btnP button {
+    width: 100%;
+    height: 3rem;
+    margin-bottom: 1vh;
+  }
+  .collection .btnP p {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 1vh;
+  }
+  .collection .imgCollection {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+  }
+  .collection .imgCollection article {
+    width: 100%;
+    height: 13rem;
+  }
+  .collection .imgCollection article img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  /* VETEMENTS */
+  .vetement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4vh 2vh;
+  }
+  .vetement video {
+    width: 100%;
+    height: auto;
+    border-radius: 1vh;
+  }
+  .vetement .videoTextVetement {
+    width: 100%;
+    margin-top: 3vh;
+    text-align: center;
+  }
+  .vetement .videoTextVetement h2 {
+    font-size: 4vh;
+  }
+  .vetement .videoTextVetement p {
+    font-size: 0.95rem;
+    line-height: 1.4rem;
+  }
+  footer {
+    display: flex;
+    justify-content: space-between;
+    height: 60%;
+  }
+  footer .footerPart1Logos img {
+    width: 93%;
+    height: 25%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  footer .footerPart1Logos img .footerRS {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  footer .footerPart1Container .footerPart1Contact {
+    width: 30%;
+    font-size: 1.5vh;
   }
 }/*# sourceMappingURL=style.css.map */

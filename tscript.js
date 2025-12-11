@@ -14,3 +14,14 @@ window.addEventListener('scroll', () => {
 
   lastScroll = currentScroll;
 });
+
+
+// telephone nav
+
+  const nav = document.querySelector('.main-nav');
+  const burger = document.querySelector('.burger');
+
+  burger.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('active'); // ajoute/enlève la classe active
+    burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false'); // accessibilité
+  });
