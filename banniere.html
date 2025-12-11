@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bannière Scroll Horizontal</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* -------- HEADER -------- */
+    header {
+      height: 120px;
+      background: #222;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    /* -------- BANNIÈRE -------- */
+    .banniere {
+      height: 60px;
+      background: black;
+      color: white;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: 1.4rem;
+      position: sticky;
+      top: 120px; /* juste sous le header */
+      z-index: 9;
+    }
+
+    .banniere p {
+      display: inline-block;
+      margin: 0;
+      position: relative; /* texte positionné par JS */
+      left: 0;
+    }
+
+    /* -------- CONTENU POUR SCROLL -------- */
+    section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: white;
+    }
+
+    section:nth-child(odd) {
+      background: #3498db;
+    }
+
+    section:nth-child(even) {
+      background: #e74c3c;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    Mon Header
+  </header>
+
+  <!-- BANNIÈRE SOUS HEADER -->
+  <div class="banniere">
+    <p>☆ Élégance ☆ Qualité ☆ Attitude ☆ Élégance ☆ Qualité ☆ Attitude ☆ Élégance ☆ Qualité ☆ Attitude ☆Élégance ☆ Qualité ☆ Attitude ☆ Élégance ☆ Qualité ☆ Attitude ☆ Élégance ☆ Qualité ☆ Attitude ☆Élégance ☆ Qualité ☆ Attitude ☆ Élégance ☆ Qualité ☆ Attitude ☆ Élégance ☆ Qualité ☆ Attitude ☆ Élégance ☆ Qualité ☆ Attitude ☆ Élégance ☆ Qualité ☆ Attitude ☆ Élégance ☆ Qualité ☆ Attitude ☆</p>
+  </div>
+
+  <!-- CONTENU POUR SCROLL -->
+  <main>
+    <section>Section 1</section>
+    <section>Section 2</section>
+    <section>Section 3</section>
+    <section>Section 4</section>
+    <section>Section 5</section>
+    <section>Section 1</section>
+    <section>Section 2</section>
+    <section>Section 3</section>
+    <section>Section 4</section>
+    <section>Section 5</section>
+    <section>Section 1</section>
+    <section>Section 2</section>
+    <section>Section 3</section>
+    <section>Section 4</section>
+    <section>Section 5</section>
+  </main>
+
+  <script>
+    const p = document.querySelector('.banniere p');
+    let lastScroll = window.scrollY;
+    let pos = 0;
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+
+      if(currentScroll > lastScroll){
+        pos += 3; // vers la droite
+      } else {
+        pos -= 3; // vers la gauche
+      }
+
+      // Boucle infinie simple
+      const textWidth = p.offsetWidth;
+      const parentWidth = p.parentElement.offsetWidth;
+
+      if(pos > parentWidth) pos = -textWidth;
+      if(pos < -textWidth) pos = parentWidth;
+
+      p.style.left = pos + 'px';
+
+      lastScroll = currentScroll;
+    });
+  </script>
+
+</body>
+</html>

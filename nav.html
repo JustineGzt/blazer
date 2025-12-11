@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Bannière Scroll</title>
+  <style>
+    /* -----------------------
+       STYLE DE LA BANNIÈRE
+    ----------------------- */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 60px;
+      background: #1a1a1a;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      transition: transform 0.3s ease, background 0.3s ease;
+      z-index: 1000;
+    }
+
+    .header.hide {
+      transform: translateY(-100%);
+    }
+
+    /* -----------------------
+       CONTENU DE TEST
+    ----------------------- */
+    main {
+      padding-top: 80px; /* pour laisser la place à la bannière */
+    }
+
+    section {
+      height: 100vh; /* chaque section = hauteur écran */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: white;
+    }
+
+    section:nth-child(odd) {
+      background: #3498db;
+    }
+
+    section:nth-child(even) {
+      background: #e74c3c;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BANNIÈRE FIXE -->
+  <header class="header">
+    Ma bannière qui disparaît/revient
+  </header>
+
+  <!-- CONTENU DE TEST POUR SCROLL -->
+  <main>
+    <section>Section 1</section>
+    <section>Section 2</section>
+    <section>Section 3</section>
+    <section>Section 4</section>
+    <section>Section 5</section>
+  </main>
+
+  <script>
+    // -----------------------
+    // JS POUR BANNIÈRE SCROLL
+    // -----------------------
+    let lastScroll = 0;
+    const header = document.querySelector('.header');
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+
+      if (currentScroll > lastScroll) {
+        // On descend → cacher la bannière
+        header.classList.add('hide');
+      } else {
+        // On remonte → montrer la bannière
+        header.classList.remove('hide');
+      }
+
+      lastScroll = currentScroll;
+    });
+  </script>
+
+</body>
+</html>

@@ -94,16 +94,21 @@ header .divHeader h1 {
 }
 
 .banniere {
-  background-color: #000000;
-  position: absolute;
-  width: 100%;
-  height: 7vh;
-  align-content: center;
+  height: 60px;
+  background: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 1.4rem;
+  position: relative;
 }
 .banniere p {
-  font-size: 1.5rem;
-  color: #ffffff;
-  font-family: "Montserrat Alternates";
+  display: inline-block;
+  position: relative;
+  left: 0;
+  margin: 0;
 }
 
 .sectiongenre {
@@ -147,6 +152,7 @@ header .divHeader h1 {
   font-family: "Irish Grover", system-ui;
   font-weight: 400;
   font-style: normal;
+  padding-bottom: 3vh;
 }
 .collection .btnP {
   display: flex;
@@ -182,6 +188,7 @@ header .divHeader h1 {
   padding-top: 10vh;
   padding-bottom: 5vh;
   align-items: center;
+  padding: 0vh 8vh;
 }
 .vetement video {
   height: 33rem;
