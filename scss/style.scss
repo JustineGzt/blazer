@@ -181,16 +181,60 @@ header{
   font-family: 'Irish Grover';
   font-size: 6vh;
   text-align: center;
+  margin-bottom: 5vh;
   }
   .actualitesBody{
     background-color: burlywood;
-    height: 90%;
-    .acutualitesCasesLigne{
+    height: 85%;
+    .actualitesCasesLigne{
+      background-color: brown;
       height: 50%;
       display: flex;
+      justify-content: space-between;
       .actualitesCase{
+        background-color: blueviolet;
+        overflow: hidden;
         img{
-          height: 50%;
+          position:relative;
+          width: 100%;
+          padding: 2vh;
+          height: auto;
+          z-index: 1;
+        }
+        .actualitesTitreDateContainer{
+          position: absolute;
+          z-index: 2;
+          background-color: brown;
+
+        }
+        
+      }
+    }
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// SECTION FOOTER
+.footer{
+  background-color: aqua;
+  .footerPart1Container{
+    display: flex;
+    justify-content: space-between;
+    .footerPart1Logos{
+      img{
+        width:50%;
+        height: 50%;
+        object-fit: cover;
+      }
+      .footerRS{
+        width: 60%;
+display: flex;
+justify-content: space-between;
+        i{
+          font-size: 5vh;
+          color: #ededed;
+          padding: 2vh 0;
         }
       }
     }

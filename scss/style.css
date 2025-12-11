@@ -163,15 +163,55 @@ header .headerImg {
   font-family: "Irish Grover";
   font-size: 6vh;
   text-align: center;
+  margin-bottom: 5vh;
 }
 .actualites .actualitesBody {
   background-color: burlywood;
-  height: 90%;
+  height: 85%;
 }
-.actualites .actualitesBody .acutualitesCasesLigne {
+.actualites .actualitesBody .actualitesCasesLigne {
+  background-color: brown;
   height: 50%;
   display: flex;
+  justify-content: space-between;
 }
-.actualites .actualitesBody .acutualitesCasesLigne .actualitesCase img {
+.actualites .actualitesBody .actualitesCasesLigne .actualitesCase {
+  background-color: blueviolet;
+  overflow: hidden;
+}
+.actualites .actualitesBody .actualitesCasesLigne .actualitesCase img {
+  position: relative;
+  width: 100%;
+  padding: 2vh;
+  height: auto;
+  z-index: 1;
+}
+.actualites .actualitesBody .actualitesCasesLigne .actualitesCase .actualitesTitreDateContainer {
+  position: absolute;
+  z-index: 2;
+  background-color: brown;
+}
+
+.footer {
+  background-color: aqua;
+}
+.footer .footerPart1Container {
+  display: flex;
+  justify-content: space-between;
+}
+.footer .footerPart1Container .footerPart1Logos img {
+  width: 50%;
   height: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.footer .footerPart1Container .footerPart1Logos .footerRS {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+.footer .footerPart1Container .footerPart1Logos .footerRS i {
+  font-size: 5vh;
+  color: #ededed;
+  padding: 2vh 0;
 }/*# sourceMappingURL=style.css.map */
