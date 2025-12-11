@@ -16,7 +16,8 @@
 
 h2{
   font-family: 'Irish Grover';
-    font-size: 6vh;
+  font-size: 6vh;
+  text-align: center;
 }
 
 body {
@@ -68,7 +69,6 @@ header{
 .tendances{
   background-color: #ededed;
   height: 100vh;
-  text-align: center;
   .container{
     display: flex;
     flex-direction: column;
@@ -90,6 +90,7 @@ header{
         p{
           font-size: 5vh;
           padding-bottom: 3vh;
+          text-align: center;
         }
         .tendancesCategories{
           display: flex;
@@ -110,4 +111,32 @@ header{
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-// SECTION TENDANCES
+// SECTION QSN
+.qsn{
+  background-color: #ededed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  .qsnHeader{
+  }
+  .qsnBody{
+    display: flex;
+    align-items: center;
+    height: 75%;
+    img{
+      height: 90%;
+      width: 50%;
+      object-fit: cover;
+      object-position: 0% 20%;
+    }
+    .qsnTextContainer{
+      height: 90%;
+      padding: 5vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 50%;
+    }
+  }
+}
