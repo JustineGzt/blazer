@@ -175,7 +175,6 @@ header{
 // SECTION ACTUALITES
 
 .actualites{
-  background-color: aquamarine;
   height: 100vh;
   .actualitesHeader{
   font-family: 'Irish Grover';
@@ -184,30 +183,46 @@ header{
   margin-bottom: 5vh;
   }
   .actualitesBody{
-    background-color: burlywood;
     height: 85%;
     .actualitesCasesLigne{
-      background-color: brown;
       height: 50%;
       display: flex;
       justify-content: space-between;
+      .case1{
+        background-image: url(../img/collecFutur.png);
+      }
+      .case2{
+        background-image: url(../img/collecCowboy.png);
+      }
+      .case3{
+        background-image: url(../img/colis.png);
+      }
+      .case4{
+        background-image: url(../img/collecClown.png);
+      }
+      .case5{
+        background-image: url(../img/collecMedieval.png);
+      }
+      .case6{
+        background-image: url(../img/collecPrehistoire.png);
+      }
       .actualitesCase{
-        background-color: blueviolet;
-        overflow: hidden;
-        img{
-          position:relative;
-          width: 100%;
-          padding: 2vh;
-          height: auto;
-          z-index: 1;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 33%;
+        margin: 1vh;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        p{
+          font-size: 2.2vh;
+          color: #ffffff;
+          -webkit-text-stroke:  .5px #000;
+          font-weight:600;
         }
-        .actualitesTitreDateContainer{
-          position: absolute;
-          z-index: 2;
-          background-color: brown;
-
+        .actualitesTitre{
+          align-self: flex-end;
         }
-        
       }
     }
   }

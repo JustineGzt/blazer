@@ -156,7 +156,6 @@ header .headerImg {
 }
 
 .actualites {
-  background-color: aquamarine;
   height: 100vh;
 }
 .actualites .actualitesHeader {
@@ -166,30 +165,48 @@ header .headerImg {
   margin-bottom: 5vh;
 }
 .actualites .actualitesBody {
-  background-color: burlywood;
   height: 85%;
 }
 .actualites .actualitesBody .actualitesCasesLigne {
-  background-color: brown;
   height: 50%;
   display: flex;
   justify-content: space-between;
 }
+.actualites .actualitesBody .actualitesCasesLigne .case1 {
+  background-image: url(../img/collecFutur.png);
+}
+.actualites .actualitesBody .actualitesCasesLigne .case2 {
+  background-image: url(../img/collecCowboy.png);
+}
+.actualites .actualitesBody .actualitesCasesLigne .case3 {
+  background-image: url(../img/colis.png);
+}
+.actualites .actualitesBody .actualitesCasesLigne .case4 {
+  background-image: url(../img/collecClown.png);
+}
+.actualites .actualitesBody .actualitesCasesLigne .case5 {
+  background-image: url(../img/collecMedieval.png);
+}
+.actualites .actualitesBody .actualitesCasesLigne .case6 {
+  background-image: url(../img/collecPrehistoire.png);
+}
 .actualites .actualitesBody .actualitesCasesLigne .actualitesCase {
-  background-color: blueviolet;
-  overflow: hidden;
-}
-.actualites .actualitesBody .actualitesCasesLigne .actualitesCase img {
-  position: relative;
-  width: 100%;
-  padding: 2vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 33%;
+  margin: 1vh;
   height: auto;
-  z-index: 1;
+  display: flex;
+  justify-content: space-between;
 }
-.actualites .actualitesBody .actualitesCasesLigne .actualitesCase .actualitesTitreDateContainer {
-  position: absolute;
-  z-index: 2;
-  background-color: brown;
+.actualites .actualitesBody .actualitesCasesLigne .actualitesCase p {
+  font-size: 2.2vh;
+  color: #ffffff;
+  -webkit-text-stroke: 0.5px #000;
+  font-weight: 600;
+}
+.actualites .actualitesBody .actualitesCasesLigne .actualitesCase .actualitesTitre {
+  align-self: flex-end;
 }
 
 .footer {
