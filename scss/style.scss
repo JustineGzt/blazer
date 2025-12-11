@@ -169,3 +169,30 @@ header{
     }
   }
 }
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// SECTION ACTUALITES
+
+.actualites{
+  background-color: aquamarine;
+  height: 100vh;
+  .actualitesHeader{
+  font-family: 'Irish Grover';
+  font-size: 6vh;
+  text-align: center;
+  }
+  .actualitesBody{
+    background-color: burlywood;
+    height: 90%;
+    .acutualitesCasesLigne{
+      height: 50%;
+      display: flex;
+      .actualitesCase{
+        img{
+          height: 50%;
+        }
+      }
+    }
+  }
+}

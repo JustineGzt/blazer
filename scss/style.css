@@ -153,4 +153,25 @@ header .headerImg {
   background-color: rgba(237, 237, 237, 0.5);
   padding: 1.5vh 3vw;
   border-radius: 4vh;
+}
+
+.actualites {
+  background-color: aquamarine;
+  height: 100vh;
+}
+.actualites .actualitesHeader {
+  font-family: "Irish Grover";
+  font-size: 6vh;
+  text-align: center;
+}
+.actualites .actualitesBody {
+  background-color: burlywood;
+  height: 90%;
+}
+.actualites .actualitesBody .acutualitesCasesLigne {
+  height: 50%;
+  display: flex;
+}
+.actualites .actualitesBody .acutualitesCasesLigne .actualitesCase img {
+  height: 50%;
 }/*# sourceMappingURL=style.css.map */
