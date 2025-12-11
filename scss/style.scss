@@ -143,9 +143,29 @@ header{
 
 // SECTION COLLECTIONHIVER
 .collectionHiver{
-    background-image: url(../img/collecHiver.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-    margin: 5vh 5vw;
+  background-image: url(../img/collecHiver.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 90vh;
+  margin: 5vh 5vw;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  .collectionHiverBody{
+    text-align: center;
+    margin-bottom: 10vh;
+    p{
+        font-size: 10vh;
+        color: #B0ECF2;
+        -webkit-text-stroke:  1px #000;
+        padding: 3vh;
+    }
+    .collectionHiverLien{
+      font-size: 5vh;
+      color: #000;
+      background-color: rgba(#ededed, 0.5);
+      padding: 1.5vh 3vw;
+      border-radius: 4vh;
+    }
+  }
 }

@@ -131,6 +131,26 @@ header .headerImg {
   background-image: url(../img/collecHiver.png);
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 90vh;
   margin: 5vh 5vw;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+.collectionHiver .collectionHiverBody {
+  text-align: center;
+  margin-bottom: 10vh;
+}
+.collectionHiver .collectionHiverBody p {
+  font-size: 10vh;
+  color: #B0ECF2;
+  -webkit-text-stroke: 1px #000;
+  padding: 3vh;
+}
+.collectionHiver .collectionHiverBody .collectionHiverLien {
+  font-size: 5vh;
+  color: #000;
+  background-color: rgba(237, 237, 237, 0.5);
+  padding: 1.5vh 3vw;
+  border-radius: 4vh;
 }/*# sourceMappingURL=style.css.map */
