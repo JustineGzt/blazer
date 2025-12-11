@@ -19,45 +19,29 @@ body {
 }
 
 nav {
+  background-color: black;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 0px 40px;
-  background: black;
-  justify-content: space-around;
-}
-nav .logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #fff;
-  letter-spacing: 2px;
-}
-nav .logo img {
-  width: 10vh;
+  height: 15vh;
+  padding: 4vh 8vh;
+  overflow: hidden;
 }
 nav ul {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 4vh;
 }
 nav ul li a {
   color: #fff;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 2.5vh;
   position: relative;
   padding-bottom: 5px;
 }
-nav ul li a::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  height: 2px;
-  width: 0;
-  bottom: 0;
-  transition: width 0.3s ease;
-  margin: auto;
-}
-nav ul li a:hover::after {
-  width: 100%;
+nav .logo img {
+  height: 26vh;
+  align-self: center;
 }
 
 header {
@@ -288,4 +272,110 @@ header .divHeader img {
 }
 .vetement .videoTextVetement p {
   font-family: "Montserrat Alternates";
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 2vh 4vh;
+  }
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2vh;
+  }
+  nav .logo img {
+    height: 15vh;
+    margin: 1vh 0;
+  }
+  header {
+    height: 60vh;
+  }
+  header .divHeader .rond {
+    width: 50vh;
+    height: 50vh;
+    bottom: -5vh;
+  }
+  header .divHeader h1 {
+    font-size: 10vh;
+    top: 15%;
+  }
+  header .divHeader img {
+    width: 49.5%;
+    top: 35%;
+  }
+  .banniere {
+    font-size: 1.2rem;
+    height: 50px;
+  }
+  .banniere p {
+    left: 0;
+  }
+  .sectiongenre {
+    flex-direction: column;
+    margin: 2vh;
+  }
+  .sectiongenre .sectionFemme,
+  .sectiongenre .sectionHomme {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2vh;
+  }
+  .sectiongenre .artFemme, .sectiongenre .artHomme {
+    width: 90%;
+    height: auto;
+  }
+  .sectiongenre .artFemme img, .sectiongenre .artHomme img {
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+  }
+  .collection {
+    padding: 3vh 2vh;
+  }
+  .collection h2 {
+    font-size: 6vh;
+    text-align: center;
+  }
+  .collection .btnP {
+    flex-direction: column;
+    gap: 1vh;
+  }
+  .collection .btnP button {
+    width: 80%;
+    margin-bottom: 1vh;
+  }
+  .collection .btnP p {
+    text-align: center;
+  }
+  .collection .imgCollection {
+    gap: 2vh;
+  }
+  .collection .imgCollection article {
+    width: 100%;
+    height: auto;
+  }
+  .vetement {
+    flex-direction: column;
+    align-items: center;
+    padding: 7vh;
+  }
+  .vetement video {
+    width: 35%;
+    height: auto;
+  }
+  .vetement .videoTextVetement {
+    width: 90%;
+  }
+  .vetement .videoTextVetement h2 {
+    font-size: 5vh;
+    width: 100%;
+    text-align: center;
+  }
+  .vetement .videoTextVetement p {
+    font-size: 1rem;
+    text-align: center;
+  }
 }/*# sourceMappingURL=style.css.map */
