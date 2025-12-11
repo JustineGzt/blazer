@@ -193,25 +193,43 @@ header .headerImg {
 }
 
 .footer {
-  background-color: aqua;
+  background-color: rgb(94, 94, 94);
+  color: #ededed;
+  height: 60vh;
+}
+.footer .footerTitre {
+  font-family: "Irish Grover";
+  font-size: 5vh;
 }
 .footer .footerPart1Container {
+  background-color: aqua;
   display: flex;
   justify-content: space-between;
+  height: 85%;
+}
+.footer .footerPart1Container .footerPart1Logos {
+  width: 30%;
+  background-color: brown;
 }
 .footer .footerPart1Container .footerPart1Logos img {
-  width: 50%;
-  height: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  width: 80%;
+  height: 80%;
 }
 .footer .footerPart1Container .footerPart1Logos .footerRS {
-  width: 60%;
+  width: 80%;
   display: flex;
   justify-content: space-between;
 }
 .footer .footerPart1Container .footerPart1Logos .footerRS i {
   font-size: 5vh;
-  color: #ededed;
+  padding: 2vh 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.footer .footerPart1Container .footerPart1Contact {
+  background-color: burlywood;
+  width: 30%;
+}
+.footer .footerPart1Container .footerPart1Contact p {
   padding: 2vh 0;
 }/*# sourceMappingURL=style.css.map */
