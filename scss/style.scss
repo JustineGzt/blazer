@@ -28,6 +28,7 @@ body {
 header{
   nav {
     background-color: black;
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,9 +50,13 @@ header{
       }
     }
     .logo{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       img{
         height: 26vh;
-        align-self: center;
+        
       }
     }
   }
