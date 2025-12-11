@@ -118,8 +118,6 @@ header{
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
-  .qsnHeader{
-  }
   .qsnBody{
     display: flex;
     align-items: center;
@@ -139,4 +137,15 @@ header{
       width: 50%;
     }
   }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// SECTION COLLECTIONHIVER
+.collectionHiver{
+    background-image: url(../img/collecHiver.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 5vh 5vw;
 }

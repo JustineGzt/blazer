@@ -125,4 +125,12 @@ header .headerImg {
   flex-direction: column;
   justify-content: space-between;
   width: 50%;
+}
+
+.collectionHiver {
+  background-image: url(../img/collecHiver.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 5vh 5vw;
 }/*# sourceMappingURL=style.css.map */
