@@ -1,4 +1,12 @@
-//  RESET
+// FONTS IRISH GROVER & MONTSERRAT ALTERNATES
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+
+
+
+
 *{
     margin: 0;
     padding: 0;
@@ -16,7 +24,7 @@ body {
 
 nav {
   display: flex;
-    justify-content: flex-start;
+    justify-content:space-between;
     align-items: center;
     padding: 20px 40px;
     background: rgb(20, 18, 18);
@@ -61,10 +69,172 @@ nav {
       }
     }
   }
+    
+        .burger-menu {
+        display: none; 
+    }
+  }
 
-  
+
+
+// Variables
+$gray-light: #ececec; // Gris clair pour le fond du texte
+$banner-bg: #2c3e50;  // Couleur de la bannière
+$gap: 10px;           // Ecart entre les articles
+
+
+
+header {
+  display: flex;
+  text-align:left;
+  align-items: center;
+
+      p{
+        margin-left: 2vh;
+        line-height: 2;
+      }
+      img{
+        width:30% ;
+        margin-top: 2vh;
+        margin-left: 2vh;
+      }
 }
+h4 {
+            background-color:#9DC1CC;
+            color: black;
+            text-align: center;
+            padding: 30px 15px;
+            margin-bottom: 2vh;
+            border-radius: 4px;
+            margin-top: 2vh;
+            font-weight: 300;
+            font-size: 2rem;
+            font-family: 'Irish Grover';
+            opacity: 0.9;
+        }
 
+.homme {
+    padding: 10px;
+    font-family: 'Arial', sans-serif;
 
+    // --- A. LA BANNIÈRE (H1 et H4) ---
+    .titre {
+        
 
+        h1 {
+            background-color: gray;
+        color:black;
+        text-align: center;
+        padding: 30px 15px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+            margin: 0;
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Irish Grover';
+        }
 
+        
+    }
+
+    // --- B. LA GRILLE (2 articles côte à côte) ---
+    .imgjeans {
+        display: grid;
+        // La commande magique pour 2 colonnes égales
+        grid-template-columns: 1fr 1fr; 
+        gap: $gap; // Espace entre les cases
+    }
+
+    // --- C. LA CARTE PRODUIT ---
+    .product-card {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden; // Empêche l'image de dépasser
+        display: flex;
+        
+        // IMPORTANT : Sur mobile (2 colonnes), on met l'image au-dessus du texte
+        // sinon ce sera trop écrasé.
+        flex-direction: column; 
+
+        // 1. L'Image (prend toute la largeur de sa colonne)
+        .photo {
+            width: 100%;
+            height: 100vh; // On force une hauteur pour que ce soit régulier
+            
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; // L'image remplit le cadre sans se déformer
+                display: block;
+            }
+        }
+
+        // 2. Le Texte (Fond gris clair)
+        .info {
+            background-color: white; // Ta demande de fond gris
+            padding: 15px;
+            flex-grow: 1; // Le fond gris prend tout l'espace restant vers le bas
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; // Ecarte le titre du prix/panier
+
+            p {
+                margin: 5px 0;
+                font-size: 0.9rem;
+                color: #333;
+                
+                // Style spécifique pour le prix (optionnel)
+                &:last-of-type {
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                }
+            }
+
+            i, .panier {
+                align-self: flex-end; // Pousse le panier à droite
+                color: #222;
+                cursor: pointer;
+            }
+        }
+    }
+}
+@media screen and (max-width: 767px) {
+    
+    // 1. Le conteneur de navigation
+    #navigation {
+        
+        // Cible le burger par son ID, renommé en #toggle
+        #toggle {
+            display: flex; // Afficher le burger
+            color: #fff;
+        }
+
+        // Cible les liens
+        ul.nav-links {
+            display: none; // Masquer les liens par défaut sur mobile
+            // ... (Styles de positionnement en absolu) ...
+        }
+
+        // 2. L'état ACTIF du menu
+        &.active {
+            // Fait tourner le burger en croix
+            #toggle {
+                .bar:nth-child(2) { opacity: 0; }
+                .bar:nth-child(1) { transform: translateY(11px) rotate(45deg); }
+                .bar:nth-child(3) { transform: translateY(-11px) rotate(-45deg); }
+            }
+
+            // Affiche les liens quand la navigation est active
+            ul.nav-links {
+                 display: flex; 
+                 // ... (Styles d'affichage des liens) ...
+            }
+        }
+    }
+    
+    // ... (Le reste des styles mobiles) ...
+}
+    
+   

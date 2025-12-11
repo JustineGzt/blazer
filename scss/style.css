@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Irish+Grover&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +15,7 @@ body {
 
 nav {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
   background: rgb(20, 18, 18);
@@ -52,4 +53,122 @@ nav ul li a::after {
 }
 nav ul li a:hover::after {
   width: 100%;
+}
+nav .burger-menu {
+  display: none;
+}
+
+header {
+  display: flex;
+  text-align: left;
+  align-items: center;
+}
+header p {
+  margin-left: 2vh;
+  line-height: 2;
+}
+header img {
+  width: 30%;
+  margin-top: 2vh;
+  margin-left: 2vh;
+}
+
+h4 {
+  background-color: #9DC1CC;
+  color: black;
+  text-align: center;
+  padding: 30px 15px;
+  margin-bottom: 2vh;
+  border-radius: 4px;
+  margin-top: 2vh;
+  font-weight: 300;
+  font-size: 2rem;
+  font-family: "Irish Grover";
+  opacity: 0.9;
+}
+
+.homme {
+  padding: 10px;
+  font-family: "Arial", sans-serif;
+}
+.homme .titre h1 {
+  background-color: gray;
+  color: black;
+  text-align: center;
+  padding: 30px 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  margin: 0;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "Irish Grover";
+}
+.homme .imgjeans {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.homme .product-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.homme .product-card .photo {
+  width: 100%;
+  height: 100vh;
+}
+.homme .product-card .photo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.homme .product-card .info {
+  background-color: white;
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.homme .product-card .info p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: #333;
+}
+.homme .product-card .info p:last-of-type {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.homme .product-card .info i, .homme .product-card .info .panier {
+  align-self: flex-end;
+  color: #222;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  #navigation #toggle {
+    display: flex;
+    color: #fff;
+  }
+  #navigation ul.nav-links {
+    display: none;
+  }
+  #navigation.active #toggle .bar:nth-child(2) {
+    opacity: 0;
+  }
+  #navigation.active #toggle .bar:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+  }
+  #navigation.active #toggle .bar:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+  }
+  #navigation.active ul.nav-links {
+    display: flex;
+  }
 }/*# sourceMappingURL=style.css.map */
