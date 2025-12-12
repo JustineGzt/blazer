@@ -43,6 +43,13 @@ header nav ul li a {
   font-size: 2.5vh;
   position: relative;
   padding-bottom: 5px;
+  transition: 0.5s;
+}
+header nav ul li .rechercher {
+  border-bottom: 1px solid #fff;
+}
+header nav ul li a:hover {
+  color: #B0ECF2;
 }
 header nav .logo {
   position: absolute;
@@ -100,6 +107,10 @@ header .headerImg {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.tendances .container .tendancesBody .tendancesPart .tendancesCategories img:hover {
+  transition: ease 1s;
+  transform: scale(1.05);
+}
 .tendances .container .tendancesBody .tendancesPart .tendancesCategories p {
   font-size: 3.5vh;
 }
@@ -140,8 +151,16 @@ header .headerImg {
   height: 90vh;
   margin: 5vh 5vw;
   display: flex;
-  align-items: end;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.collectionHiver #demo {
+  background-color: rgba(237, 237, 237, 0.2);
+  font-size: 4vh;
+  margin-top: 1vh;
+  width: 25vw;
+  text-align: center;
 }
 .collectionHiver .collectionHiverBody {
   text-align: center;
@@ -159,6 +178,12 @@ header .headerImg {
   background-color: rgba(237, 237, 237, 0.5);
   padding: 1.5vh 3vw;
   border-radius: 4vh;
+  transition: 0.5s;
+}
+.collectionHiver .collectionHiverBody .collectionHiverLien:hover {
+  color: #fff;
+  background-color: rgba(176, 236, 242, 0.5);
+  -webkit-text-stroke: 0.5px #000;
 }
 
 .actualites {
@@ -177,6 +202,11 @@ header .headerImg {
   height: 50%;
   display: flex;
   justify-content: space-between;
+}
+.actualites .actualitesBody .actualitesCasesLigne .actualitesCase:hover {
+  transition: ease 1s;
+  transform: scale(1.05);
+  cursor: pointer;
 }
 .actualites .actualitesBody .actualitesCasesLigne .case1 {
   background-image: url(../img/collecFutur.png);
@@ -246,6 +276,11 @@ header .headerImg {
   padding: 2vh 0;
   -o-object-fit: cover;
      object-fit: cover;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.footer .footerPart1Container .footerPart1Logos .footerRS i:hover {
+  color: #B0ECF2;
 }
 .footer .footerPart1Container .footerPart1Contact {
   width: 30%;

@@ -46,7 +46,15 @@ header{
           font-size: 2.5vh;
           position: relative;
           padding-bottom: 5px;
+          transition: 0.5s;
         }
+        .rechercher{
+          border-bottom: 1px solid #fff;
+        }
+        a:hover{
+          color: #B0ECF2;
+        }
+        
       }
     }
     .logo{
@@ -105,6 +113,10 @@ header{
             height: 90%;
             object-fit: cover;
           }
+          img:hover{
+            transition	: ease 1s;
+						transform	: scale(1.05);
+          }
           p{
             font-size: 3.5vh;
           }
@@ -154,16 +166,26 @@ header{
   height: 90vh;
   margin: 5vh 5vw;
   display: flex;
-  align-items: end;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  #demo{
+    background-color: rgba(#ededed, 0.2);
+    font-size: 4vh;
+    margin-top: 1vh;
+    width: 25vw;
+    text-align: center;
+  }
   .collectionHiverBody{
     text-align: center;
     margin-bottom: 10vh;
+    
     p{
-        font-size: 10vh;
-        color: #B0ECF2;
-        -webkit-text-stroke:  1px #000;
-        padding: 3vh;
+      font-size: 10vh;
+      color: #B0ECF2;
+      -webkit-text-stroke:  1px #000;
+      padding: 3vh;
+      
     }
     .collectionHiverLien{
       font-size: 5vh;
@@ -171,6 +193,12 @@ header{
       background-color: rgba(#ededed, 0.5);
       padding: 1.5vh 3vw;
       border-radius: 4vh;
+      transition: .5s;
+    }
+    .collectionHiverLien:hover{
+      color: #fff;
+      background-color: rgba(#B0ECF2, 0.5);
+      -webkit-text-stroke:  0.5px #000;
     }
   }
 }
@@ -193,6 +221,11 @@ header{
       height: 50%;
       display: flex;
       justify-content: space-between;
+      .actualitesCase:hover{
+            transition	: ease 1s;
+						transform	: scale(1.05);
+            cursor: pointer;
+          }
       .case1{
         background-image: url(../img/collecFutur.png);
       }
@@ -262,6 +295,11 @@ header{
           font-size: 5vh;
           padding: 2vh 0;
           object-fit: cover;
+          cursor: pointer;
+          transition: .5s;
+        }
+        i:hover{
+          color: #B0ECF2;
         }
       }
     }
@@ -293,3 +331,11 @@ header{
     justify-content: end;
   }
 }
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//                    Page Message
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// SECTION MESSAGE
+
+
