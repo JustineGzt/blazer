@@ -1,5 +1,5 @@
 // Date où le compte à rebours doit s'arrêter
-let dateCible = new Date("Jan 5, 2026 12:00:00").getTime();
+let dateCible = new Date("Jan 1, 2026 00:00:00").getTime();
 
 // Ces valeurs servent à convertir les millisecondes (ms) en unités de temps.
 const MS_PAR_SECONDE = 1000;
