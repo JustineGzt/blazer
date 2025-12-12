@@ -363,7 +363,30 @@ header{
 }
 
 
-// pour tablettes
+@media screen and (max-width: 1440px) and (min-width: 1024px) {
+      header{
+        .divHeader {
+          .rond {
+          width: 75vh;
+          height: 75vh;
+          bottom: -23vh;
+          }
+          img{
+            position: absolute;
+            top: 36.5%;
+            left: 51.5%;
+            transform: translate(-50%, -50%);
+            width: 46.1%;
+            height: auto;
+            object-fit: cover;
+            z-index: 3;
+          } 
+        } 
+      }
+}
+
+
+// pour petit pc
 @media screen and (max-width: 1024px) and (min-width: 768px) {
   
   nav {
@@ -399,7 +422,7 @@ header{
       }
 
       img {
-        width: 49.5%;
+        width: 37.5%;
         top: 35%;
       }
     }
@@ -567,6 +590,26 @@ header{
       margin-bottom: 2vh;
     }
   }
+}
+
+
+// tablette 
+
+@media screen and (max-width: 768px) and (min-width: 426px) {
+      header{
+        .divHeader{
+          .rond{
+            width: 50vh;
+            height: 50vh;
+            bottom: -15vh;
+
+          }
+          img{
+            width: 49.5%;
+            top: 35%;
+          }
+        }
+      }
 }
 
 // Telephone 425px

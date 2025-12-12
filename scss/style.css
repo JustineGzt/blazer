@@ -340,6 +340,24 @@ header .divHeader img {
   justify-content: end;
 }
 
+@media screen and (max-width: 1440px) and (min-width: 1024px) {
+  header .divHeader .rond {
+    width: 75vh;
+    height: 75vh;
+    bottom: -23vh;
+  }
+  header .divHeader img {
+    position: absolute;
+    top: 36.5%;
+    left: 51.5%;
+    transform: translate(-50%, -50%);
+    width: 46.1%;
+    height: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
+    z-index: 3;
+  }
+}
 @media screen and (max-width: 1024px) and (min-width: 768px) {
   nav {
     height: auto;
@@ -368,7 +386,7 @@ header .divHeader img {
     top: 15%;
   }
   header .divHeader img {
-    width: 49.5%;
+    width: 37.5%;
     top: 35%;
   }
   .banniere {
@@ -513,6 +531,17 @@ header .divHeader img {
     text-align: right;
     font-size: 1rem;
     margin-bottom: 2vh;
+  }
+}
+@media screen and (max-width: 768px) and (min-width: 426px) {
+  header .divHeader .rond {
+    width: 50vh;
+    height: 50vh;
+    bottom: -15vh;
+  }
+  header .divHeader img {
+    width: 49.5%;
+    top: 35%;
   }
 }
 @media screen and (max-width: 426px) {
