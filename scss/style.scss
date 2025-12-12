@@ -1,12 +1,6 @@
 // FONTS IRISH GROVER & MONTSERRAT ALTERNATES
 @import url('https://fonts.googleapis.com/css2?family=Irish+Grover&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
-
-
-
-
-
 *{
     margin: 0;
     padding: 0;
@@ -69,11 +63,21 @@ nav {
       }
     }
   }
-    
-        .burger-menu {
-        display: none; 
+}
+   #burger {
+    display: none; // Masqué par défaut sur desktop
+    cursor: pointer;
+    .bar {
+        display: block; // Très important pour que les spans soient visibles
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        background-color: #fff; // Couleur des barres
     }
-  }
+}
+  
 
 
 
@@ -200,41 +204,263 @@ h4 {
         }
     }
 }
+// SECTION FOOTER
+.footer{
+  background-color: #000;
+  color: #ededed;
+  height: 60vh;
+  .footerTitre{
+    font-family: 'Irish Grover';
+    font-size: 5vh;
+  }
+  .footerPart1Container{
+    display: flex;
+    justify-content: space-between;
+    height: 85%;
+    .footerPart1Logos{
+      width: 30%;
+      img{
+        width:80%;
+        height: 80%;
+      }
+      .footerRS{
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        i{
+          font-size: 5vh;
+          padding: 2vh 0;
+          object-fit: cover;
+          cursor: pointer;
+          transition: .5s;
+        }
+        i:hover{
+          color: #B0ECF2;
+        }
+      }
+    }
+    .footerPart1Contact{
+      width: 30%;
+      p{
+        padding: 2vh 0;
+      }
+    }
+    .footerPart1Newsletter{
+      width: 30%;
+      p{
+        padding: 2vh 0;
+      }
+      .newsletterEmail{
+        height: 5vh;
+        width: 80%;
+      }
+    }
+  }
+  .ligne{
+    background-color: rgba(#ededed, 0.3);
+    height: .2vh;
+    width:100%;
+    margin: 3vh 0;
+  }
+  .footerPart2Container{
+    display: flex;
+    justify-content: end;
+  }
+}
+.product-card {
+  transition: all 0.3s ease;
+}
+
+.cart-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 350px;
+  height: 100%;
+  background: white;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.cart-modal.active {
+  display: block;
+}
+
+.cart-content {
+  padding: 20px;
+}
+
+.close-cart {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.cart-items {
+  margin-top: 30px;
+}
+
+.cart-item {
+  display: flex;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.cart-item-info {
+  flex-grow: 1;
+}
+
+.cart-item-info h4 {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+}
+
+.cart-item-info p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.cart-total {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.remove-item {
+  color: red;
+  cursor: pointer;
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+
 @media screen and (max-width: 767px) {
-    
-    // 1. Le conteneur de navigation
-    #navigation {
-        
-        // Cible le burger par son ID, renommé en #toggle
-        #toggle {
-            display: flex; // Afficher le burger
-            color: #fff;
-        }
+    nav {
+        padding: 20px 20px;
+    }
+.bar {
+    background-color: #fff; 
+}
+    #burger {
+        display: block;
+        position: relative;
+        z-index: 1000;
+    }
 
-        // Cible les liens
-        ul.nav-links {
-            display: none; // Masquer les liens par défaut sur mobile
-            // ... (Styles de positionnement en absolu) ...
-        }
+    ul.nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: rgb(28, 25, 25);
+        text-align: center;
+        padding: 20px 0;
+        z-index: 999;
 
-        // 2. L'état ACTIF du menu
-        &.active {
-            // Fait tourner le burger en croix
-            #toggle {
-                .bar:nth-child(2) { opacity: 0; }
-                .bar:nth-child(1) { transform: translateY(11px) rotate(45deg); }
-                .bar:nth-child(3) { transform: translateY(-11px) rotate(-45deg); }
-            }
-
-            // Affiche les liens quand la navigation est active
-            ul.nav-links {
-                 display: flex; 
-                 // ... (Styles d'affichage des liens) ...
-            }
+        li a {
+            padding: 10px 0;
         }
     }
+
+    nav.active {
+        #burger {
+            .bar:nth-child(2) { opacity: 0; }
+            .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+            .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+        }
+
+        ul.nav-links {
+            display: flex;
+        }
+    }
+  ul {
+            display: none;
+            flex-direction: column;
+            background: #000;
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        
+
+        #burger {
+            display: block;
+        }
     
-    // ... (Le reste des styles mobiles) ...
+
+// SECTION FOOTER
+.footer{
+  background-color: #000;
+  color: #ededed;
+  height: 60vh;
+  .footerTitre{
+    font-family: 'Irish Grover';
+    font-size: 5vh;
+  }
+  .footerPart1Container{
+    display: flex;
+    justify-content: space-between;
+    height: 85%;
+    .footerPart1Logos{
+      width: 30%;
+      img{
+        width:80%;
+        height: 80%;
+      }
+      .footerRS{
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        i{
+          font-size: 5vh;
+          padding: 2vh 0;
+          object-fit: cover;
+          cursor: pointer;
+          transition: .5s;
+        }
+        i:hover{
+          color: #B0ECF2;
+        }
+      }
+    }
+    .footerPart1Contact{
+      width: 30%;
+      p{
+        padding: 2vh 0;
+      }
+    }
+    .footerPart1Newsletter{
+      width: 30%;
+      p{
+        padding: 2vh 0;
+      }
+      .newsletterEmail{
+        height: 5vh;
+        width: 80%;
+      }
+    }
+  }
+  .ligne{
+    background-color: rgba(#ededed, 0.3);
+    height: .2vh;
+    width:100%;
+    margin: 3vh 0;
+  }
+  .footerPart2Container{
+    display: flex;
+    justify-content: end;
+  }
 }
-    
-   
+}

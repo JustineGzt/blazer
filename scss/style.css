@@ -54,8 +54,18 @@ nav ul li a::after {
 nav ul li a:hover::after {
   width: 100%;
 }
-nav .burger-menu {
+
+#burger {
   display: none;
+  cursor: pointer;
+}
+#burger .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: #fff;
 }
 
 header {
@@ -151,24 +161,258 @@ h4 {
   cursor: pointer;
 }
 
+.footer {
+  background-color: #000;
+  color: #ededed;
+  height: 60vh;
+}
+.footer .footerTitre {
+  font-family: "Irish Grover";
+  font-size: 5vh;
+}
+.footer .footerPart1Container {
+  display: flex;
+  justify-content: space-between;
+  height: 85%;
+}
+.footer .footerPart1Container .footerPart1Logos {
+  width: 30%;
+}
+.footer .footerPart1Container .footerPart1Logos img {
+  width: 80%;
+  height: 80%;
+}
+.footer .footerPart1Container .footerPart1Logos .footerRS {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.footer .footerPart1Container .footerPart1Logos .footerRS i {
+  font-size: 5vh;
+  padding: 2vh 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.footer .footerPart1Container .footerPart1Logos .footerRS i:hover {
+  color: #B0ECF2;
+}
+.footer .footerPart1Container .footerPart1Contact {
+  width: 30%;
+}
+.footer .footerPart1Container .footerPart1Contact p {
+  padding: 2vh 0;
+}
+.footer .footerPart1Container .footerPart1Newsletter {
+  width: 30%;
+}
+.footer .footerPart1Container .footerPart1Newsletter p {
+  padding: 2vh 0;
+}
+.footer .footerPart1Container .footerPart1Newsletter .newsletterEmail {
+  height: 5vh;
+  width: 80%;
+}
+.footer .ligne {
+  background-color: rgba(237, 237, 237, 0.3);
+  height: 0.2vh;
+  width: 100%;
+  margin: 3vh 0;
+}
+.footer .footerPart2Container {
+  display: flex;
+  justify-content: end;
+}
+
+.product-card {
+  transition: all 0.3s ease;
+}
+
+.cart-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 350px;
+  height: 100%;
+  background: white;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.cart-modal.active {
+  display: block;
+}
+
+.cart-content {
+  padding: 20px;
+}
+
+.close-cart {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.cart-items {
+  margin-top: 30px;
+}
+
+.cart-item {
+  display: flex;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item img {
+  width: 60px;
+  height: 60px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 10px;
+}
+
+.cart-item-info {
+  flex-grow: 1;
+}
+
+.cart-item-info h4 {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+}
+
+.cart-item-info p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.cart-total {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.remove-item {
+  color: red;
+  cursor: pointer;
+  font-size: 12px;
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 767px) {
-  #navigation #toggle {
-    display: flex;
-    color: #fff;
+  nav {
+    padding: 20px 20px;
   }
-  #navigation ul.nav-links {
+  .bar {
+    background-color: #fff;
+  }
+  #burger {
+    display: block;
+    position: relative;
+    z-index: 1000;
+  }
+  ul.nav-links {
     display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: rgb(28, 25, 25);
+    text-align: center;
+    padding: 20px 0;
+    z-index: 999;
   }
-  #navigation.active #toggle .bar:nth-child(2) {
+  ul.nav-links li a {
+    padding: 10px 0;
+  }
+  nav.active #burger .bar:nth-child(2) {
     opacity: 0;
   }
-  #navigation.active #toggle .bar:nth-child(1) {
-    transform: translateY(11px) rotate(45deg);
+  nav.active #burger .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
   }
-  #navigation.active #toggle .bar:nth-child(3) {
-    transform: translateY(-11px) rotate(-45deg);
+  nav.active #burger .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
   }
-  #navigation.active ul.nav-links {
+  nav.active ul.nav-links {
     display: flex;
+  }
+  ul {
+    display: none;
+    flex-direction: column;
+    background: #000;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+  }
+  #burger {
+    display: block;
+  }
+  .footer {
+    background-color: #000;
+    color: #ededed;
+    height: 60vh;
+  }
+  .footer .footerTitre {
+    font-family: "Irish Grover";
+    font-size: 5vh;
+  }
+  .footer .footerPart1Container {
+    display: flex;
+    justify-content: space-between;
+    height: 85%;
+  }
+  .footer .footerPart1Container .footerPart1Logos {
+    width: 30%;
+  }
+  .footer .footerPart1Container .footerPart1Logos img {
+    width: 80%;
+    height: 80%;
+  }
+  .footer .footerPart1Container .footerPart1Logos .footerRS {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer .footerPart1Container .footerPart1Logos .footerRS i {
+    font-size: 5vh;
+    padding: 2vh 0;
+    -o-object-fit: cover;
+       object-fit: cover;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  .footer .footerPart1Container .footerPart1Logos .footerRS i:hover {
+    color: #B0ECF2;
+  }
+  .footer .footerPart1Container .footerPart1Contact {
+    width: 30%;
+  }
+  .footer .footerPart1Container .footerPart1Contact p {
+    padding: 2vh 0;
+  }
+  .footer .footerPart1Container .footerPart1Newsletter {
+    width: 30%;
+  }
+  .footer .footerPart1Container .footerPart1Newsletter p {
+    padding: 2vh 0;
+  }
+  .footer .footerPart1Container .footerPart1Newsletter .newsletterEmail {
+    height: 5vh;
+    width: 80%;
+  }
+  .footer .ligne {
+    background-color: rgba(237, 237, 237, 0.3);
+    height: 0.2vh;
+    width: 100%;
+    margin: 3vh 0;
+  }
+  .footer .footerPart2Container {
+    display: flex;
+    justify-content: end;
   }
 }/*# sourceMappingURL=style.css.map */
