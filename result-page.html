@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <script src="js/script.js" defer></script>
+        <link rel="stylesheet" href="scss/style.css">
+        <title>Blazer</title>
+    </head>
+    <body>
+        <main>
+            <!-- HEADER -->
+            <header>
+                <!-- NAV -->
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="result-page.html">Nouveautés</a></li>
+                        <li><a href="">Homme</a></li>
+                        <li><a href="">Femme</a></li>
+                    </ul>
+                    <div class="logo">
+                        <img src="img/Blazer_2.png" alt="Logo du site">
+                    </div>
+                    <ul>
+                        <li><a href="">Contact</a></li>
+                        <li><a href="" class="rechercher">Rechercher <i class="fa-solid fa-magnifying-glass"></i></a></li>  
+                        <li><a href=""><i class="fa-solid fa-cart-shopping"></i></a></li>
+                        <li><a href=""><i class="fa-solid fa-user"></i></a></li>
+                    </ul>
+                </nav>
+            </header>
+            <!-- SECTION RESULT -->
+            <section class="result marge">
+                <div class="resultContainer">
+                    <h1>Dernier message client :</h1>
+                    <ul>
+                        <li><strong>Sujet :</strong> <span id="displaySujet"></span></li>
+                        <li><strong>Nom :</strong> <span id="displayNom"></span></li>
+                        <li><strong>Prénom :</strong> <span id="displayPrenom"></span></li>
+                        <li><strong>Email :</strong> <span id="displayEmail"></span></li>
+                        <li><strong>Message :</strong> <span id="displayMessage"></span></li>
+                    </ul>
+                </div>
+                <div class="imgResult"></div>
+            </section>
+             <!-- footer -->
+            <footer>
+                <section class="footer marge">
+                    <div class="footerPart1Container">
+                        <div class="footerPart1Logos">
+                            <img src="img/Blazer_2.png" alt="">
+                            <div class="footerRS">
+                                <i class="fa-brands fa-facebook"></i>
+                                <i class="fa-solid fa-phone"></i>
+                                <i class="fa-brands fa-instagram"></i>
+                            </div>
+                        </div>
+                        <div class="footerPart1Contact">
+                            <p class="footerTitre">Contact</p>
+                            <p>hello@gmail.com</p>
+                            <p>24 avenue de Lille, 62400 Béthune</p>
+                            <p>+336 00 00 00 00</p>
+                        </div>
+                        <div class="footerPart1Newsletter">
+                            <p class="footerTitre">Newsletter</p>
+                            <p>Entrez votre email pour être informé de nos nouveautés</p>
+                            <input type="email" class="newsletterEmail" placeholder="Saisissez votre adresse mail"/>
+                        </div>
+                    </div>
+                    <div class="ligne"></div>
+                    <div class="footerPart2Container">
+                        <p>&copy; 2025 Dreamy Inc. - All rights reserved</p>
+                    </div>
+                </section>
+            </footer>
+        </main>
+    </body>
+</html>

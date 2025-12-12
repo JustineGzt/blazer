@@ -1,55 +1,76 @@
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//                    Page Accueil - Timer Promotion
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 // Date où le compte à rebours doit s'arrêter
 let dateCible = new Date("Jan 1, 2026 00:00:00").getTime();
 
-// Ces valeurs servent à convertir les millisecondes (ms) en unités de temps.
-const MS_PAR_SECONDE = 1000;
-const MS_PAR_MINUTE = MS_PAR_SECONDE * 60;
-const MS_PAR_HEURE = MS_PAR_MINUTE * 60;
-const MS_PAR_JOUR = MS_PAR_HEURE * 24;
+// Valeurs servants à convertir les millisecondes
+const msParSeconde = 1000;
+const msParMinute = msParSeconde * 60;
+const msParHeure = msParMinute * 60;
+const msParJour = msParHeure * 24;
 
-// On utilise 'setInterval' pour exécuter une fonction toutes les 1000 ms (1 seconde).
+// 'setInterval' permet d'exécuter une fonction toutes les 1000 ms (1 seconde).
 let compteARebours = setInterval(function() {
 
-    // A. Récupérer l'heure actuelle
+    // Récupérer l'heure actuelle
     let maintenant = new Date().getTime();
     
-    // B. Calculer la distance
-    // La distance est le temps restant en millisecondes.
+    // Calculer la " distance " entre la date actuelle et la date cible
     let distance = dateCible - maintenant;
     
-    
-    // C. Convertir la distance en Jours, Heures, Minutes, Secondes
-    
-    // 1. Calcul des Jours :
+    // Convertir la distance en jours, heures, minutes, secondes
+    // Calcul des jours :
     // On divise la distance totale par le nombre de ms dans un jour.
-    let jours = Math.floor(distance / MS_PAR_JOUR);
+    let jours = Math.floor(distance / msParJour);
 
-    // 2. Calcul des Heures :
+    // Calcul des heures :
     // On prend le RESTE de la division par un jour (ce qui reste pour les heures/minutes/secondes),
     // puis on le divise par le nombre de ms dans une heure.
-    let heures = Math.floor((distance % MS_PAR_JOUR) / MS_PAR_HEURE);
+    let heures = Math.floor((distance % msParJour) / msParHeure);
     
-    // 3. Calcul des Minutes :
-    // On prend le RESTE de la division par une heure, puis on le divise par le nombre de ms dans une minute.
-    let minutes = Math.floor((distance % MS_PAR_HEURE) / MS_PAR_MINUTE);
+    // Calcul des minutes :
+    // On prend le RESTE de la division par une heure, 
+    // puis on le divise par le nombre de ms dans une minute.
+    let minutes = Math.floor((distance % msParHeure) / msParMinute);
     
-    // 4. Calcul des Secondes :
-    // On prend le RESTE de la division par une minute, puis on le divise par 1000 ms.
-    let secondes = Math.floor((distance % MS_PAR_MINUTE) / MS_PAR_SECONDE);
+    // 4. Calcul des secondes :
+    // On prend le RESTE de la division par une minute, 
+    // puis on le divise par 1000 ms.
+    let secondes = Math.floor((distance % msParMinute) / msParSeconde);
     
-
-    // D. Afficher le Résultat
-    // On met le résultat dans l'élément HTML qui a l'ID "demo"
+    // Affichage du résultat
+    // on lie résultat dans l'élément HTML qui a l'ID "demo"
     document.getElementById("demo").innerHTML ="Fin de la promotion : " + jours + "j " + heures + "h " + minutes + "m " + secondes + "s ";
     
-    
-    // E. Vérifier si le temps est écoulé
+    // Vérifier si le temps est écoulé
     if (distance < 0) {
         // Arrête la répétition de la fonction (le 'setInterval')
         clearInterval(compteARebours); 
         // Affiche le message de fin
         document.getElementById("demo").innerHTML = "TERMINÉ";
     }
-    
 }
-, MS_PAR_SECONDE); // Répéter la fonction toutes les 1000 ms.
+, 1000); // Répéter la fonction toutes les 1000 ms.
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//                    Page Resultat - Récupération des données
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        
+// 1. Récupérer la chaîne de caractères stockée dans le localStorage
+const donneesJSON = localStorage.getItem('donneesContact');
+
+// 2. Convertir la chaîne JSON en un objet JavaScript utilisable
+const donnees = JSON.parse(donneesJSON);
+
+// 3. Afficher les données dans les éléments du DOM
+document.getElementById('displayNom').textContent = "donnees.nom;"
+document.getElementById('displayPrenom').textContent = "donnees.prenom";
+document.getElementById('displayEmail').textContent = "donnees.email";
+document.getElementById('displaySujet').textContent = "donnees.sujet";
+document.getElementById('displayMessage').textContent = "donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message ";
+
+// Optionnel : Nettoyer le localStorage après l'affichage pour la prochaine fois
+localStorage.removeItem('donneesContact');
