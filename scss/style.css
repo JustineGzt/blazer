@@ -89,7 +89,7 @@ header .divHeader h1 {
 }
 header .divHeader img {
   position: absolute;
-  top: 34%;
+  top: 34% !important;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 43.5%;
@@ -340,6 +340,479 @@ header .divHeader img {
   justify-content: end;
 }
 
+@media screen and (min-width: 4000px) {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 25vh;
+    padding: 5vh 10vh;
+    background: black;
+  }
+  nav ul {
+    display: flex;
+    gap: 6vh;
+  }
+  nav ul li a {
+    color: white;
+    font-size: 4vh;
+  }
+  nav .logo img {
+    height: 35vh;
+  }
+  nav .burger {
+    display: none;
+  }
+  /* ------------------------ HEADER ------------------------ */
+  header {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: #9DC1CC;
+  }
+  header .divHeader {
+    height: 100%;
+  }
+  header .divHeader .rond {
+    width: 120vh;
+    height: 120vh;
+    position: relative;
+    bottom: -35vh;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border-radius: 50%;
+  }
+  header .divHeader h1 {
+    font-family: "Irish Grover", system-ui;
+    font-size: 22vh;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    z-index: 2;
+  }
+  header .divHeader img {
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: auto;
+  }
+  /* ------------------------ BANNIERE ------------------------ */
+  .banniere {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    background: black;
+    color: white;
+    white-space: nowrap;
+  }
+  .banniere p {
+    margin: 0;
+    position: relative;
+    left: 0;
+  }
+  /* ------------------------ SECTION GENRE ------------------------ */
+  .sectiongenre {
+    display: flex;
+    gap: 3vh;
+    justify-content: center;
+    margin: 5vh;
+  }
+  .sectiongenre .sectionFemme, .sectiongenre .sectionHomme {
+    display: flex;
+    gap: 2vh;
+  }
+  .sectiongenre .artFemme, .sectiongenre .artHomme {
+    border-radius: 5vh;
+    background: #D9D9D9;
+    position: relative;
+    overflow: visible;
+  }
+  .sectiongenre .artFemme img, .sectiongenre .artHomme img {
+    position: relative;
+    width: auto;
+    height: auto;
+  }
+  /* ------------------------ COLLECTION ------------------------ */
+  .collection {
+    display: flex;
+    flex-direction: column;
+    padding: 5vh 8vh;
+  }
+  .collection h2 {
+    font-size: 8vh;
+    font-family: "Irish Grover", system-ui;
+    padding-bottom: 3vh;
+  }
+  .collection .btnP {
+    display: flex;
+    gap: 2vh;
+  }
+  .collection .btnP button {
+    width: 25rem;
+    height: 5rem;
+    border: 1vh solid black;
+  }
+  .collection .btnP button:active {
+    transform: scale(0.9);
+    background: black;
+    color: white;
+  }
+  .collection .btnP p {
+    font-size: 2vh;
+  }
+  .collection .imgCollection {
+    display: flex;
+    gap: 3vh;
+  }
+  .collection .imgCollection article {
+    width: 20rem;
+    height: 25rem;
+    overflow: hidden;
+  }
+  .collection .imgCollection article img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  /* ------------------------ VETEMENT ------------------------ */
+  .vetement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10vh 8vh;
+  }
+  .vetement video {
+    width: 85rem;
+    height: 33rem;
+  }
+  .vetement .videoTextVetement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+  }
+  .vetement .videoTextVetement h2 {
+    font-size: 12vh;
+    font-family: "Irish Grover", system-ui;
+  }
+  .vetement .videoTextVetement p {
+    font-size: 3vh;
+  }
+  /* ------------------------ FOOTER ------------------------ */
+  .footer {
+    background: black;
+    color: #ededed;
+    height: 60vh;
+    padding: 5vh 8vh;
+  }
+  .footer .footerTitre {
+    font-size: 6vh;
+    font-family: "Irish Grover", system-ui;
+  }
+  .footer .footerPart1Container {
+    display: flex;
+    justify-content: space-between;
+    gap: 3vh;
+  }
+  .footer .footerPart1Container .footerPart1Logos img {
+    width: 80%;
+  }
+  .footer .footerPart1Container .footerRS i {
+    font-size: 5vh;
+  }
+  .footer .footerPart1Container .newsletterEmail {
+    width: 80%;
+    height: 5vh;
+  }
+}
+@media screen and (min-width: 1441px) {
+  header {
+    height: 100vh;
+    width: 100%;
+    overflow: visible;
+    background-size: cover;
+    background-position: center;
+    background-color: #9DC1CC;
+  }
+  header .divHeader {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  header .divHeader .rond {
+    position: relative;
+    bottom: -35vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120vh;
+    height: 120vh;
+    background: #ffffff;
+    border-radius: 50%;
+  }
+  header .divHeader h1 {
+    font-family: "Irish Grover", system-ui;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000;
+    font-size: 22vh;
+    text-align: center;
+    z-index: 2;
+    width: -moz-max-content;
+    width: max-content;
+  }
+  header .divHeader img {
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
+    z-index: 3;
+  }
+  nav {
+    height: 18vh;
+    padding: 5vh 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    overflow: hidden;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 4vh;
+  }
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2.5vh;
+    padding-bottom: 5px;
+    position: relative;
+  }
+  nav .logo img {
+    height: 28vh;
+    align-self: center;
+  }
+  nav .burger {
+    display: none;
+  }
+  .banniere {
+    height: 70px;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    z-index: 2;
+  }
+  .banniere p {
+    display: inline-block;
+    position: relative;
+    left: 0;
+    margin: 0;
+  }
+  .sectiongenre {
+    display: flex;
+    gap: 2vh;
+    margin: 5vh;
+    justify-content: center;
+  }
+  .sectiongenre .sectionFemme, .sectiongenre .sectionHomme {
+    display: flex;
+    gap: 2vh;
+  }
+  .sectiongenre .artFemme, .sectiongenre .artHomme {
+    border-radius: 1rem;
+    overflow: visible;
+    background-color: #D9D9D9;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sectiongenre .artFemme img, .sectiongenre .artHomme img {
+    display: block;
+    position: relative;
+    width: auto;
+    height: auto;
+    max-width: none;
+    max-height: none;
+  }
+  .sectiongenre .artFemme:nth-child(1) img {
+    top: -71px;
+    left: 1rem;
+    height: 129%;
+    width: auto;
+  }
+  .sectiongenre .artFemme:nth-child(2) img {
+    width: auto;
+    height: 111%;
+    top: -27px;
+    left: 0;
+  }
+  .sectiongenre .artHomme:nth-child(1) img {
+    width: auto;
+    top: -24px;
+    left: -6rem;
+    height: 120%;
+  }
+  .sectiongenre .artHomme:nth-child(2) img {
+    width: auto;
+    top: 9px;
+    left: 83px;
+    height: 132%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .sectiongenre .sectionFemme .artFemme {
+    width: 18rem;
+    height: 31rem;
+    border-radius: 5vh;
+  }
+  .sectiongenre .sectionHomme .artHomme {
+    width: 27rem;
+    height: 15rem;
+    border-radius: 5vh;
+  }
+  .collection {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 5vh 8vh;
+  }
+  .collection h2 {
+    font-size: -webkit-xxx-large;
+    font-family: "Irish Grover", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    padding-bottom: 3vh;
+  }
+  .collection .btnP {
+    display: flex;
+    align-items: center;
+  }
+  .collection .btnP button {
+    border: 0.5vh solid black;
+    width: 20rem;
+    height: 3rem;
+    margin-right: 2vh;
+  }
+  .collection .btnP .button:active {
+    transform: scale(0.9) rotate(2deg);
+    background: #000;
+    color: #fff;
+  }
+  .collection .btnP p {
+    font-size: smaller;
+  }
+  .collection .imgCollection {
+    display: flex;
+    gap: 2vh;
+  }
+  .collection .imgCollection article {
+    width: 12rem;
+    height: 15rem;
+    background-color: #D9D9D9;
+    margin: 5vh 2vh;
+    overflow: hidden;
+  }
+  .collection .imgCollection article img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    display: block;
+  }
+  .vetement {
+    background-color: black;
+    display: flex;
+    padding: 0vh 8vh;
+    padding-top: 10vh;
+    padding-bottom: 5vh;
+    align-items: center;
+  }
+  .vetement video {
+    width: 85rem;
+    height: 33rem;
+  }
+  .vetement .videoTextVetement {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+  }
+  .vetement .videoTextVetement h2 {
+    font-size: xxx-large;
+    font-family: "Irish Grover", system-ui;
+    width: 51vh;
+  }
+  .vetement .videoTextVetement p {
+    font-family: "Montserrat Alternates";
+  }
+  .footer {
+    background-color: #000;
+    color: #ededed;
+    height: 60vh;
+    padding: 5vh 8vh;
+  }
+  .footer .footerTitre {
+    font-family: "Irish Grover";
+    font-size: 5vh;
+  }
+  .footer .footerPart1Container {
+    display: flex;
+    justify-content: space-between;
+    height: 85%;
+  }
+  .footer .footerPart1Container .footerPart1Logos {
+    width: 30%;
+  }
+  .footer .footerPart1Container .footerPart1Logos img {
+    width: 80%;
+    height: 80%;
+  }
+  .footer .footerPart1Container .footerPart1Logos .footerRS {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer .footerPart1Container .footerPart1Logos .footerRS i {
+    font-size: 5vh;
+    padding: 2vh 0;
+  }
+  .footer .footerPart1Container .footerPart1Contact, .footer .footerPart1Container .footerPart1Newsletter {
+    width: 30%;
+  }
+  .footer .footerPart1Container .footerPart1Contact p, .footer .footerPart1Container .footerPart1Newsletter p {
+    padding: 2vh 0;
+  }
+  .footer .footerPart1Container .footerPart1Contact .newsletterEmail, .footer .footerPart1Container .footerPart1Newsletter .newsletterEmail {
+    width: 80%;
+    height: 5vh;
+  }
+  .footer .ligne {
+    background-color: rgba(237, 237, 237, 0.3);
+    height: 0.2vh;
+    width: 100%;
+    margin: 3vh 0;
+  }
+  .footer .footerPart2Container {
+    display: flex;
+    justify-content: end;
+  }
+}
 @media screen and (max-width: 1440px) and (min-width: 1024px) {
   header .divHeader .rond {
     width: 75vh;
@@ -348,7 +821,7 @@ header .divHeader img {
   }
   header .divHeader img {
     position: absolute;
-    top: 36.5%;
+    top: 44.5%;
     left: 51.5%;
     transform: translate(-50%, -50%);
     width: 46.1%;

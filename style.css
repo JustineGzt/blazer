@@ -1,18 +1,94 @@
-.header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 60px;
-  background: black;
-  color: white;
+@charset "UTF-8";
+.navbar {
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+}
+.navbar nav {
+  height: 15vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4vh;
+  /* MENU BURGER (toujours présent mais caché hors écran) */
+}
+.navbar nav .left-area,
+.navbar nav .right-area {
+  flex: 1;
   display: flex;
   align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease;
-  z-index: 1000;
+}
+.navbar nav .left-area {
+  justify-content: flex-start;
+}
+.navbar nav .right-area {
+  justify-content: flex-end;
+}
+.navbar nav .logo {
+  flex: 0;
+}
+.navbar nav .logo img {
+  height: 26vh;
+}
+.navbar nav .menu-mobile {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 70%;
+  height: 100vh;
+  background: #000;
+  flex-direction: column;
+  padding: 12vh 4vh;
+  gap: 3vh;
+  transition: 0.4s;
+  z-index: 20;
+}
+.navbar nav .menu-mobile li a {
+  color: #fff;
+  font-size: 3vh;
+}
+.navbar nav .menu-mobile.show {
+  left: 0;
 }
 
-/* Quand elle est cachée */
-.header.hide {
-  transform: translateY(-100%);
+/* MOBILE */
+@media (max-width: 768px) {
+  nav {
+    /* montrer le menu en mobile */
+    /* bouton burger */
+  }
+  nav .menu-mobile {
+    display: flex;
+  }
+  nav .logo img {
+    height: 16vh;
+  }
+  nav #toggle {
+    width: 35px;
+    height: 4px;
+    background: #fff;
+    position: relative;
+    cursor: pointer;
+  }
+  nav #toggle::before,
+  nav #toggle::after {
+    content: "";
+    width: 35px;
+    height: 4px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+  }
+  nav #toggle::before {
+    top: -10px;
+  }
+  nav #toggle::after {
+    top: 10px;
+  }
 }
+/* VERSION PC */
+@media (min-width: 769px) {
+  .menu-mobile {
+    display: none !important;
+  }
+}/*# sourceMappingURL=style.css.map */

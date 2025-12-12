@@ -1,0 +1,109 @@
+.navbar {
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+
+  nav {
+    height: 15vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4vh;
+
+    .left-area,
+    .right-area {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    .left-area {
+      justify-content: flex-start;
+    }
+
+    .right-area {
+      justify-content: flex-end;
+    }
+
+    .logo {
+      flex: 0;
+      img {
+        height: 26vh;
+      }
+    }
+
+    /* MENU BURGER (toujours présent mais caché hors écran) */
+    .menu-mobile {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 70%;
+      height: 100vh;
+      background: #000;
+      flex-direction: column;
+      padding: 12vh 4vh;
+      gap: 3vh;
+      transition: 0.4s;
+      z-index: 20;
+
+      li a {
+        color: #fff;
+        font-size: 3vh;
+      }
+    }
+
+    .menu-mobile.show {
+      left: 0;
+    }
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  nav {
+
+    /* montrer le menu en mobile */
+    .menu-mobile {
+      display: flex;
+    }
+
+    .logo img {
+      height: 16vh;
+    }
+
+    /* bouton burger */
+    #toggle {
+      width: 35px;
+      height: 4px;
+      background: #fff;
+      position: relative;
+      cursor: pointer;
+    }
+
+    #toggle::before,
+    #toggle::after {
+      content: "";
+      width: 35px;
+      height: 4px;
+      background: #fff;
+      position: absolute;
+      left: 0;
+    }
+
+    #toggle::before {
+      top: -10px;
+    }
+
+    #toggle::after {
+      top: 10px;
+    }
+  }
+}
+
+/* VERSION PC */
+@media (min-width: 769px) {
+  .menu-mobile {
+    display: none !important; // ← OK pour PC
+  }
+}

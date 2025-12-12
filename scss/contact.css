@@ -71,7 +71,7 @@ header h1 {
   font-size: xxx-large;
 }
 header p {
-  color: #4e1b1b;
+  color: #0600c0;
   padding-bottom: 2vh;
 }
 
@@ -147,11 +147,13 @@ header p {
   padding: 5vh;
   border-top: 3px solid blue;
   border-bottom: 3px solid blue;
+  font-family: "Irish Grover", system-ui;
 }
 .reseaux h2 {
   justify-self: center;
   color: #ffffff;
   padding-bottom: 3vh;
+  font-weight: 600;
 }
 .reseaux .iconesReseaux {
   justify-self: center;

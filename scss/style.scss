@@ -92,7 +92,7 @@ header{
     }
     img {
     position: absolute;
-    top: 34%;
+    top: 34% !important;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 43.5%;
@@ -362,6 +362,572 @@ header{
   }
 }
 
+// Geant
+
+@media screen and (min-width: 4000px) {
+    nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 25vh;
+  padding: 5vh 10vh;
+  background: black;
+
+  ul {
+    display: flex;
+    gap: 6vh;
+
+    li a {
+      color: white;
+      font-size: 4vh;
+    }
+  }
+
+  .logo img {
+    height: 35vh;
+  }
+
+  .burger {
+    display: none;
+  }
+}
+
+/* ------------------------ HEADER ------------------------ */
+header {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: #9DC1CC;
+
+  .divHeader {
+    height: 100%;
+
+    .rond {
+      width: 120vh;
+      height: 120vh;
+      position: relative;
+      bottom: -35vh;
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      border-radius: 50%;
+    }
+
+    h1 {
+      font-family: "Irish Grover", system-ui;
+      font-size: 22vh;
+      position: absolute;
+      top: 25%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: black;
+      z-index: 2;
+    }
+
+    img {
+      position: absolute;
+      top: 49%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50%;
+      height: auto;
+    }
+  }
+}
+
+/* ------------------------ BANNIERE ------------------------ */
+.banniere {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  background: black;
+  color: white;
+  white-space: nowrap;
+
+  p {
+    margin: 0;
+    position: relative;
+    left: 0;
+  }
+}
+
+/* ------------------------ SECTION GENRE ------------------------ */
+.sectiongenre {
+  display: flex;
+  gap: 3vh;
+  justify-content: center;
+  margin: 5vh;
+
+  .sectionFemme, .sectionHomme {
+    display: flex;
+    gap: 2vh;
+  }
+
+  .artFemme, .artHomme {
+    border-radius: 5vh;
+    background: #D9D9D9;
+    position: relative;
+    overflow: visible;
+
+    img {
+      position: relative;
+      width: auto;
+      height: auto;
+    }
+  }
+}
+
+/* ------------------------ COLLECTION ------------------------ */
+.collection {
+  display: flex;
+  flex-direction: column;
+  padding: 5vh 8vh;
+
+  h2 {
+    font-size: 8vh;
+    font-family: "Irish Grover", system-ui;
+    padding-bottom: 3vh;
+  }
+
+  .btnP {
+    display: flex;
+    gap: 2vh;
+
+    button {
+      width: 25rem;
+      height: 5rem;
+      border: 1vh solid black;
+
+      &:active {
+        transform: scale(0.9);
+        background: black;
+        color: white;
+      }
+    }
+
+    p {
+      font-size: 2vh;
+    }
+  }
+
+  .imgCollection {
+    display: flex;
+    gap: 3vh;
+
+    article {
+      width: 20rem;
+      height: 25rem;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+/* ------------------------ VETEMENT ------------------------ */
+.vetement {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vh 8vh;
+
+  video {
+    width: 85rem;
+    height: 33rem;
+  }
+
+  .videoTextVetement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+
+    h2 {
+      font-size: 12vh;
+      font-family: "Irish Grover", system-ui;
+    }
+
+    p {
+      font-size: 3vh;
+    }
+  }
+}
+
+/* ------------------------ FOOTER ------------------------ */
+.footer {
+  background: black;
+  color: #ededed;
+  height: 60vh;
+  padding: 5vh 8vh;
+
+  .footerTitre {
+    font-size: 6vh;
+    font-family: "Irish Grover", system-ui;
+  }
+
+  .footerPart1Container {
+    display: flex;
+    justify-content: space-between;
+    gap: 3vh;
+
+    .footerPart1Logos img {
+      width: 80%;
+    }
+
+    .footerRS i {
+      font-size: 5vh;
+    }
+
+    .newsletterEmail {
+      width: 80%;
+      height: 5vh;
+    }
+  }
+}
+}
+
+// grand ecran /* -------------------------- */
+// --------------------------
+// GRAND ÉCRAN > 1440px
+// --------------------------
+@media screen and (min-width: 1441px) {
+
+  // HEADER
+  header {
+    height: 100vh;
+    width: 100%;
+    overflow: visible;
+    background-size: cover;
+    background-position: center;
+    background-color: #9DC1CC;
+
+    .divHeader {
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+
+      .rond {
+        position: relative;
+        bottom: -35vh;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120vh;
+        height: 120vh;
+        background: #ffffff;
+        border-radius: 50%;
+      }
+
+      h1 {
+        font-family: "Irish Grover", system-ui;
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #000;
+        font-size: 22vh;
+        text-align: center;
+        z-index: 2;
+        width: max-content;
+      }
+
+      img {
+        position: absolute;
+        top: 49%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+        height: auto;
+        object-fit: cover;
+        z-index: 3;
+      }
+    }
+  }
+
+  // NAVIGATION
+  nav {
+    height: 18vh;
+    padding: 5vh 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    overflow: hidden;
+
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 4vh;
+
+      li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 2.5vh;
+        padding-bottom: 5px;
+        position: relative;
+      }
+    }
+
+    .logo img {
+      height: 28vh;
+      align-self: center;
+    }
+
+    .burger {
+      display: none;
+    }
+  }
+
+  // BANNIERE
+  .banniere {
+    height: 70px;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    z-index: 2;
+
+    p {
+      display: inline-block;
+      position: relative;
+      left: 0;
+      margin: 0;
+    }
+  }
+
+  // SECTION GENRE
+  .sectiongenre {
+    display: flex;
+    gap: 2vh;
+    margin: 5vh;
+    justify-content: center;
+
+    .sectionFemme, .sectionHomme {
+      display: flex;
+      gap: 2vh;
+    }
+
+    .artFemme, .artHomme {
+      border-radius: 1rem;
+      overflow: visible;
+      background-color: #D9D9D9;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        display: block;
+        position: relative;
+        width: auto;
+        height: auto;
+        max-width: none;
+        max-height: none;
+      }
+    }
+
+    // Images F1 et F2
+    .artFemme:nth-child(1) img {
+      top: -71px;
+      left: 1rem;
+      height: 129%;
+      width: auto;
+    }
+    .artFemme:nth-child(2) img {
+      width: auto;
+      height: 111%;
+      top: -27px;
+      left: 0;
+    }
+
+    // Images H1 et H2
+    .artHomme:nth-child(1) img {
+      width: auto;
+      top: -24px;
+      left: -6rem;
+      height: 120%;
+    }
+    .artHomme:nth-child(2) img {
+      width: auto;
+      top: 9px;
+      left: 83px;
+      height: 132%;
+      object-fit: cover;
+    }
+
+    .sectionFemme .artFemme {
+      width: 18rem;
+      height: 31rem;
+      border-radius: 5vh;
+    }
+    .sectionHomme .artHomme {
+      width: 27rem;
+      height: 15rem;
+      border-radius: 5vh;
+    }
+  }
+
+  // COLLECTION
+  .collection {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 5vh 8vh;
+
+    h2 {
+      font-size: -webkit-xxx-large;
+      font-family: "Irish Grover", system-ui;
+      font-weight: 400;
+      font-style: normal;
+      padding-bottom: 3vh;
+    }
+
+    .btnP {
+      display: flex;
+      align-items: center;
+
+      button {
+        border: 0.5vh solid black;
+        width: 20rem;
+        height: 3rem;
+        margin-right: 2vh;
+      }
+
+      .button:active {
+        transform: scale(0.9) rotate(2deg);
+        background: #000;
+        color: #fff;
+      }
+
+      p {
+        font-size: smaller;
+      }
+    }
+
+    .imgCollection {
+      display: flex;
+      gap: 2vh;
+
+      article {
+        width: 12rem;
+        height: 15rem;
+        background-color: #D9D9D9;
+        margin: 5vh 2vh;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+      }
+    }
+  }
+
+  // VETEMENTS
+  .vetement {
+    background-color: black;
+    display: flex;
+    padding: 0vh 8vh;
+    padding-top: 10vh;
+    padding-bottom: 5vh;
+    align-items: center;
+
+    video {
+      width: 85rem;
+      height: 33rem;
+    }
+
+    .videoTextVetement {
+      display: flex;
+      flex-direction: column;
+      color: #fff;
+
+      h2 {
+        font-size: xxx-large;
+        font-family: "Irish Grover", system-ui;
+        width: 51vh;
+      }
+
+      p {
+        font-family: 'Montserrat Alternates';
+      }
+    }
+  }
+
+  // FOOTER
+  .footer {
+    background-color: #000;
+    color: #ededed;
+    height: 60vh;
+    padding: 5vh 8vh;
+
+    .footerTitre {
+      font-family: 'Irish Grover';
+      font-size: 5vh;
+    }
+
+    .footerPart1Container {
+      display: flex;
+      justify-content: space-between;
+      height: 85%;
+
+      .footerPart1Logos {
+        width: 30%;
+
+        img {
+          width: 80%;
+          height: 80%;
+        }
+
+        .footerRS {
+          width: 80%;
+          display: flex;
+          justify-content: space-between;
+
+          i {
+            font-size: 5vh;
+            padding: 2vh 0;
+          }
+        }
+      }
+
+      .footerPart1Contact, .footerPart1Newsletter {
+        width: 30%;
+
+        p {
+          padding: 2vh 0;
+        }
+
+        .newsletterEmail {
+          width: 80%;
+          height: 5vh;
+        }
+      }
+    }
+
+    .ligne {
+      background-color: rgba(237, 237, 237, 0.3);
+      height: 0.2vh;
+      width: 100%;
+      margin: 3vh 0;
+    }
+
+    .footerPart2Container {
+      display: flex;
+      justify-content: end;
+    }
+  }
+}
+
+
 
 @media screen and (max-width: 1440px) and (min-width: 1024px) {
       header{
@@ -373,7 +939,7 @@ header{
           }
           img{
             position: absolute;
-            top: 36.5%;
+            top: 44.5%;
             left: 51.5%;
             transform: translate(-50%, -50%);
             width: 46.1%;
