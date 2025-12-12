@@ -1,4 +1,23 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//                    Page Accueil - Menu Burger
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+const toggle = document.getElementById("toggle");
+const navigation = document.getElementById("navigation");
+
+document.onclick = function(element) {
+    if(element.target.id !== "toggle" && element.target.id !== "navigation"){
+        toggle.classList.remove("active");
+        navigation.classList.remove("active");
+    }
+}
+
+toggle.onclick = function(){
+    toggle.classList.toggle("active");
+    navigation.classList.toggle("active");
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //                    Page Accueil - Timer Promotion
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -20,7 +39,6 @@ let compteARebours = setInterval(function() {
     // Calculer la " distance " entre la date actuelle et la date cible
     let distance = dateCible - maintenant;
     
-    // Convertir la distance en jours, heures, minutes, secondes
     // Calcul des jours :
     // On divise la distance totale par le nombre de ms dans un jour.
     let jours = Math.floor(distance / msParJour);
@@ -66,11 +84,11 @@ const donneesJSON = localStorage.getItem('donneesContact');
 const donnees = JSON.parse(donneesJSON);
 
 // 3. Afficher les données dans les éléments du DOM
-document.getElementById('displayNom').textContent = "donnees.nom;"
-document.getElementById('displayPrenom').textContent = "donnees.prenom";
-document.getElementById('displayEmail').textContent = "donnees.email";
-document.getElementById('displaySujet').textContent = "donnees.sujet";
-document.getElementById('displayMessage').textContent = "donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message donnees.message ";
+document.getElementById('displaySujet').textContent = donnees.sujet;
+document.getElementById('displayNom').textContent = donnees.nom;
+document.getElementById('displayPrenom').textContent = donnees.prenom;
+document.getElementById('displayEmail').textContent = donnees.email;
+document.getElementById('displayMessage').textContent = donnees.message;
 
 // Optionnel : Nettoyer le localStorage après l'affichage pour la prochaine fois
 localStorage.removeItem('donneesContact');
