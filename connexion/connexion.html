@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Connexion / Inscription</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="main-nav">
+  <ul class="nav-left">
+    <li><a href="../nouveauter.html">Accueil</a></li>
+    <li><a href="../nouveauter.html">Nouveautés</a></li>
+    <li><a href="#">Homme</a></li>
+    <li><a href="#">Femme</a></li>
+  </ul>
+
+  <div class="logo">
+    <img src="../img/Blazer_2.png" alt="Logo du site">
+  </div>
+
+  <ul class="nav-right">
+    <li><a href="../contact.html">Contact</a></li>
+    <li><a href="#">Recherche <i class="fa-solid fa-magnifying-glass"></i></a></li>
+    <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+    <li class="profile-container">
+      <button type="button" class="icon-btn" id="profileBtn">
+        <i class="fa-regular fa-user"></i>
+      </button>
+
+      <div id="profileMenu">
+         <h4>👤 Espace Profil</h4>
+
+        <div class="profile-section">
+            <a href="./connexion.html" class="section-title">
+            🔐 Se connecter / S'inscrire
+            </a>
+        </div>
+
+        <div class="profile-section">
+            <a href="../profil/profil.html" class="section-title">
+            🧾 Mon compte
+            </a>
+        </div>
+
+        <div class="profile-section">
+            <a href="../commande/commande.html" class="section-title">
+            📦 Mes commandes
+            </a>
+        </div>
+      </div>
+
+    </li>
+  </ul>
+
+  <!-- Burger seulement pour mobile -->
+  <button class="burger" aria-label="Ouvrir le menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+  <div class="container">
+    <div class="form-box">
+      <div class="form-toggle">
+        <button id="login-btn" class="active">Connexion</button>
+        <button id="signup-btn">Inscription</button>
+      </div>
+
+      <!-- Formulaire Connexion -->
+      <form id="login-form" class="form active">
+        <h2>Connexion</h2>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Mot de passe" required>
+        <button type="submit">Se connecter</button>
+      </form>
+
+      <!-- Formulaire Inscription -->
+      <form id="signup-form" class="form">
+        <h2>Inscription</h2>
+        <input type="text" placeholder="Nom" required>
+        <input type="text" placeholder="Prénom" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Mot de passe" required>
+        <button type="submit">Créer un compte</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,665 @@
+/* Couleurs */
+$bleu: #9DC1CC;
+$noir: #000000;
+$blanc: #ffffff;
+$gris: #cccccc;
+$white: #ffffff;
+$black: #000000;
+$accent: #9DC1CC;
+$nav-height: 80px;
+$btn-radius: 5px;
+
+// Polices
+$font-title: 'Irish Grover', cursive;
+$font-text: 'Montserrat Alternates', sans-serif;
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-text;
+  background-color: $noir;
+  color: $blanc;
+}
+
+/* ==================== NAVIGATION ==================== */
+.main-nav {
+  height: 18vh;
+  padding: 4vh 6vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  overflow: hidden;
+  gap: 2vh;
+
+  .nav-left, .nav-right {
+    list-style: none;
+    display: flex;
+    gap: 2.5vh;
+    flex-wrap: nowrap;
+    align-items: center;
+    white-space: nowrap;
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-left {
+    flex: 0 1 auto;
+    justify-content: flex-start;
+  }
+
+  .nav-right {
+    flex: 0 1 auto;
+    justify-content: flex-end;
+  }
+
+  .nav-left li a, .nav-right li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2vh;
+    padding-bottom: 5px;
+    position: relative;
+    display: inline-block;
+    margin: 0;
+  }
+
+  .logo {
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .logo img {
+    height: 22vh;
+    align-self: center;
+    margin: 0;
+  }
+
+  .icon-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 2vh;
+    padding: 0;
+    margin: 0;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  .profile-container {
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+    #profileMenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      z-index: 1000;
+      background: #111;
+      color: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      width: 220px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    #profileMenu.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+// Navigation s'agrandit quand le menu profil est actif
+.main-nav.profile-active {
+  height: auto;
+  padding: 4vh 6vh 20vh 6vh;
+  overflow: visible;
+}
+
+// ===== BURGER MENU RESPONSIVE =====
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  // Tablette
+  .main-nav {
+    height: 12vh;
+    padding: 2vh 3vh;
+    gap: 1.5vh;
+
+    .nav-left li a, .nav-right li a {
+      font-size: 1.4vh;
+    }
+
+    .logo img {
+      height: 14vh;
+    }
+
+    .icon-btn {
+      font-size: 1.5vh;
+    }
+  }
+
+  .main-nav.profile-active {
+    height: auto;
+    padding: 2vh 3vh 15vh 3vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  // Mobile
+  .main-nav {
+    height: auto;
+    flex-wrap: wrap;
+    padding: 2vh 3vh;
+
+    .nav-left {
+      position: fixed;
+      left: -100%;
+      top: 15vh;
+      flex-direction: column;
+      background-color: black;
+      width: 100%;
+      text-align: center;
+      transition: 0.3s;
+      gap: 0;
+      padding: 2vh 0;
+      z-index: 999;
+
+      &.active {
+        left: 0;
+      }
+
+      li {
+        padding: 1.5vh 0;
+        border-bottom: 1px solid #333;
+
+        a {
+          font-size: 1.5vh !important;
+        }
+      }
+    }
+
+    .logo img {
+      height: 12vh;
+    }
+
+    .nav-right {
+      display: flex;
+      gap: 1.5vh;
+    }
+
+    .burger {
+      display: flex !important;
+      flex-direction: column;
+      gap: 4px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      order: -1;
+
+      span {
+        width: 25px;
+        height: 2px;
+        background: #fff;
+        transition: all 0.3s ease;
+      }
+
+      &.open span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+      }
+
+      &.open span:nth-child(2) {
+        opacity: 0;
+      }
+
+      &.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(8px, -8px);
+      }
+    }
+
+    .profile-container {
+      position: relative;
+
+      #profileMenu {
+        position: fixed;
+        left: 0;
+        right: 0;
+        width: 90%;
+        margin: 0 auto;
+        top: auto;
+      }
+    }
+  }
+
+  .main-nav.profile-active {
+    height: auto;
+    padding: 2vh 3vh;
+  }
+}
+
+/* ==================== OLD NAVIGATION ==================== */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+.nav__logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Liens */
+.nav__links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+
+  a {
+    color: $white;
+    text-decoration: none;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: $accent;
+      transition: 0.3s;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
+
+/* Actions */
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+/* Recherche */
+.search {
+  position: relative;
+
+  input {
+    padding: 0.4rem 2rem 0.4rem 0.6rem;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+  }
+
+  i {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #555;
+  }
+}
+
+/* Icones */
+.icon-btn {
+  background: none;
+  border: none;
+  color: $white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: $accent;
+  color: $black;
+  font-size: 0.7rem;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
+
+/* Burger */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  span {
+    width: 22px;
+    height: 2px;
+    background: $white;
+    transition: 0.3s;
+  }
+}
+
+/* Animation burger */
+.burger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Profile menu */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  .profile-menu {
+    display: none;
+    background: #111;
+    color: $white;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+    width: 220px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+
+    h4 {
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+      border-bottom: 1px solid #333;
+      padding-bottom: 0.5rem;
+    }
+
+    small {
+      display: block;
+      font-size: 0.7rem;
+      color: #aaa;
+      margin-top: 0.3rem;
+    }
+
+    .profile-section {
+      margin-bottom: 1rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .section-title {
+        font-size: 0.85rem;
+        color: $accent;
+        margin-bottom: 0.4rem;
+      }
+
+      a {
+        display: block;
+        color: $white;
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 0.3rem 0;
+        transition: 0.2s;
+
+        &:hover {
+          color: $accent;
+          padding-left: 4px;
+        }
+      }
+    }
+  }
+}
+
+// Navigation s'agrandit quand le menu profil est actif
+.main-nav.profile-active {
+  height: auto;
+  padding: 4vh 6vh 20vh 6vh;
+  overflow: visible;
+}
+
+// ===== BURGER MENU RESPONSIVE =====
+@media screen and (max-width: 768px) {
+  .main-nav {
+    height: auto;
+    flex-wrap: wrap;
+    padding: 2vh 3vh;
+
+    .nav-left {
+      position: fixed;
+      left: -100%;
+      top: 15vh;
+      flex-direction: column;
+      background-color: black;
+      width: 100%;
+      text-align: center;
+      transition: 0.3s;
+      gap: 0;
+      padding: 2vh 0;
+      z-index: 999;
+
+      &.active {
+        left: 0;
+      }
+
+      li {
+        padding: 1.5vh 0;
+        border-bottom: 1px solid #333;
+
+        a {
+          font-size: 1.5vh !important;
+        }
+      }
+    }
+
+    .logo img {
+      height: 12vh;
+    }
+
+    .nav-right {
+      display: flex;
+      gap: 1.5vh;
+    }
+
+    .burger {
+      display: flex !important;
+      flex-direction: column;
+      gap: 4px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      order: -1;
+
+      span {
+        width: 25px;
+        height: 2px;
+        background: #fff;
+        transition: all 0.3s ease;
+      }
+
+      &.open span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+      }
+
+      &.open span:nth-child(2) {
+        opacity: 0;
+      }
+
+      &.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(8px, -8px);
+      }
+    }
+
+    .profile-container {
+      position: relative;
+
+      #profileMenu {
+        position: fixed;
+        left: 0;
+        right: 0;
+        width: 90%;
+        margin: 0 auto;
+        top: auto;
+      }
+    }
+  }
+
+  .main-nav.profile-active {
+    height: auto;
+    padding: 2vh 3vh;
+  }
+}
+
+/* ==================== CONTENU PRINCIPAL ==================== */
+.container {
+  max-width: 900px;
+  margin: calc(#{$nav-height} + 2rem) auto 2rem auto;
+  padding: 2rem;
+
+  .commande-nav {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    button {
+      padding: 0.5rem 1rem;
+      background-color: $noir;
+      color: $blanc;
+      border: none;
+      border-radius: $btn-radius;
+      cursor: pointer;
+      font-weight: bold;
+      font-family: $font-text;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: darken($bleu, 10%);
+      }
+    }
+  }
+
+  .section {
+    background-color: $gris;
+    padding: 2rem;
+    border-radius: $btn-radius;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+    margin-bottom: 2rem;
+    transition: opacity 0.3s ease-in-out;
+
+    &.hidden {
+      display: none;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      font-family: $font-title;
+      color: $bleu;
+    }
+
+    ul {
+      list-style: none;
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .message-bloc {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      label {
+        font-weight: bold;
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 80px;
+        padding: 0.5rem;
+        border-radius: $btn-radius;
+        border: 1px solid $bleu;
+        background-color: $noir;
+        color: $blanc;
+        font-family: $font-text;
+      }
+
+      button {
+        width: 120px;
+        padding: 0.5rem;
+        background-color: $bleu;
+        color: $blanc;
+        border: none;
+        border-radius: $btn-radius;
+        cursor: pointer;
+        font-family: $font-text;
+
+        &:hover {
+          background-color: darken($bleu, 10%);
+        }
+      }
+    }
+  }
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media screen and (max-width: 992px) {
+  .nav__links {
+    display: none;
+    flex-direction: column;
+    background-color: $bleu;
+    position: absolute;
+    top: $nav-height;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+
+    li {
+      margin: 0.5rem 0;
+      text-align: center;
+    }
+
+    &.active {
+      display: flex;
+    }
+  }
+
+  .burger {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .commande-nav {
+    flex-direction: column;
+    button {
+      width: 100%;
+    }
+  }
+
+  .container {
+    padding: 1rem;
+  }
+}

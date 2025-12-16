@@ -1,0 +1,393 @@
+// Couleurs
+$bleu: #9DC1CC;
+$noir: #000000;
+$blanc: #ffffff;
+$gris: #cccccc;
+$vert: #4CAF50;
+$orange: #FF9800;
+
+// Polices
+$font-title: 'Irish Grover', cursive;
+$font-text: 'Montserrat Alternates', sans-serif;
+
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-text;
+}
+
+body {
+  background: $noir;
+  color: $noir;
+}
+
+// ===== NAVIGATION STYLES =====
+.main-nav {
+  height: 18vh;
+  padding: 4vh 6vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  overflow: hidden;
+  gap: 2vh;
+
+  .nav-left, .nav-right {
+    list-style: none;
+    display: flex;
+    gap: 2.5vh;
+    flex-wrap: nowrap;
+    align-items: center;
+    white-space: nowrap;
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-left {
+    flex: 0 1 auto;
+    justify-content: flex-start;
+  }
+
+  .nav-right {
+    flex: 0 1 auto;
+    justify-content: flex-end;
+  }
+
+  .nav-left li a, .nav-right li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2vh;
+    padding-bottom: 5px;
+    position: relative;
+    display: inline-block;
+    margin: 0;
+  }
+
+  .logo {
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .logo img {
+    height: 22vh;
+    align-self: center;
+    margin: 0;
+  }
+
+  .icon-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 2vh;
+    padding: 0;
+    margin: 0;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  .profile-container {
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+    #profileMenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      z-index: 1000;
+      background: #111;
+      color: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      width: 220px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    #profileMenu.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+// Navigation s'agrandit quand le menu profil est actif
+.main-nav.profile-active {
+  height: auto;
+  padding: 4vh 6vh 20vh 6vh;
+  overflow: visible;
+}
+
+// ===== BURGER MENU RESPONSIVE =====
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  // Tablette
+  .main-nav {
+    height: 12vh;
+    padding: 2vh 3vh;
+    gap: 1.5vh;
+
+    .nav-left li a, .nav-right li a {
+      font-size: 1.4vh;
+    }
+
+    .logo img {
+      height: 14vh;
+    }
+
+    .icon-btn {
+      font-size: 1.5vh;
+    }
+  }
+
+  .main-nav.profile-active {
+    height: auto;
+    padding: 2vh 3vh 15vh 3vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  // Mobile
+  .main-nav {
+    height: auto;
+    flex-wrap: wrap;
+    padding: 2vh 3vh;
+
+    .nav-left {
+      position: fixed;
+      left: -100%;
+      top: 15vh;
+      flex-direction: column;
+      background-color: black;
+      width: 100%;
+      text-align: center;
+      transition: 0.3s;
+      gap: 0;
+      padding: 2vh 0;
+      z-index: 999;
+
+      &.active {
+        left: 0;
+      }
+
+      li {
+        padding: 1.5vh 0;
+        border-bottom: 1px solid #333;
+
+        a {
+          font-size: 1.5vh !important;
+        }
+      }
+    }
+
+    .logo img {
+      height: 12vh;
+    }
+
+    .nav-right {
+      display: flex;
+      gap: 1.5vh;
+    }
+
+    .burger {
+      display: flex !important;
+      flex-direction: column;
+      gap: 4px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      order: -1;
+
+      span {
+        width: 25px;
+        height: 2px;
+        background: #fff;
+        transition: all 0.3s ease;
+      }
+
+      &.open span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+      }
+
+      &.open span:nth-child(2) {
+        opacity: 0;
+      }
+
+      &.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(8px, -8px);
+      }
+    }
+
+    .profile-container {
+      position: relative;
+
+      #profileMenu {
+        position: fixed;
+        left: 0;
+        right: 0;
+        width: 90%;
+        margin: 0 auto;
+        top: auto;
+      }
+    }
+  }
+
+  .main-nav.profile-active {
+    height: auto;
+    padding: 2vh 3vh;
+  }
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 2rem auto;
+  background: $blanc;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.profil-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  h1 {
+    color: $bleu;
+    font-family: $font-title;
+  }
+
+  .edit-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: $noir;
+    color: $blanc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background: darken($noir, 10%);
+    }
+  }
+}
+
+.profil-info {
+  margin-bottom: 2rem;
+
+  h2 {
+    margin-bottom: 1rem;
+    color: $bleu;
+    font-family: $font-title;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    .info-item {
+      background: $gris;
+      padding: 1rem;
+      border-radius: 8px;
+      span {
+        font-weight: bold;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+.profil-orders {
+  h2 {
+    margin-bottom: 1rem;
+    color: $bleu;
+    font-family: $font-title;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th, td {
+      padding: 0.8rem;
+      text-align: left;
+      border-bottom: 1px solid lighten($gris, 20%);
+    }
+
+    th {
+      background: $gris;
+      color: $noir;
+    }
+
+    .status {
+      font-weight: bold;
+      &.delivered { color: $vert; }
+      &.in-progress { color: $orange; }
+    }
+  }
+}
+
+// Responsive
+@media screen and (min-width: 768px) {
+  .profil-info .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .profil-info .info-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/* ------------------------ PETITS TELEPHONES 425px - 320px ------------------------ */
+/* ------------------------ TABLEAU RESPONSIVE PETITS TELEPHONES ------------------------ */
+@media screen and (max-width: 426px) and (min-width: 320px) {
+  
+  .main-nav {
+    .nav-right {
+    display: flex;
+    gap: 0.5vh;
+   }
+    }
+
+  .profil-orders {
+    table {
+      display: block; // permet le scroll horizontal si besoin
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch; // smooth scroll sur iOS
+      font-size: 2.3vw; // réduit légèrement la taille du texte
+      font-size: 0.6em;
+
+
+      th, td {
+        padding: 0.4rem 0.3rem; // padding plus petit
+        white-space: nowrap; // évite que le texte se casse n’importe comment
+      }
+    }
+
+    // Optionnel : si tu veux un conteneur pour le scroll
+    .table-container {
+      overflow-x: auto;
+      width: 100%;
+    }
+  }
+
+  // Ajuste le container verticalement si le tableau devient grand
+  .container {
+    padding-bottom: 2rem; // plus de place verticale
+  }
+}

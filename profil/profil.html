@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Profil Client</title>
+  <link rel="stylesheet" href="profil.css">
+</head>
+<body>
+<nav class="main-nav">
+  <ul class="nav-left">
+    <li><a href="../nouveauter.html">Accueil</a></li>
+    <li><a href="../nouveauter.html">Nouveautés</a></li>
+    <li><a href="#">Homme</a></li>
+    <li><a href="#">Femme</a></li>
+  </ul>
+
+  <div class="logo">
+    <img src="../img/Blazer_2.png" alt="Logo du site">
+  </div>
+
+  <ul class="nav-right">
+    <li><a href="../contact.html">Contact</a></li>
+    <li><a href="#">Recherche <i class="fa-solid fa-magnifying-glass"></i></a></li>
+    <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+    <li class="profile-container">
+      <button type="button" class="icon-btn" id="profileBtn">
+        <i class="fa-regular fa-user"></i>
+      </button>
+
+      <div id="profileMenu">
+         <h4>👤 Espace Profil</h4>
+
+        <div class="profile-section">
+            <a href="../connexion/connexion.html" class="section-title">
+            🔐 Se connecter / S'inscrire
+            </a>
+        </div>
+
+        <div class="profile-section">
+            <a href="./profil.html" class="section-title">
+            🧾 Mon compte
+            </a>
+        </div>
+
+        <div class="profile-section">
+            <a href="../commande/commande.html" class="section-title">
+            📦 Mes commandes
+            </a>
+        </div>
+      </div>
+
+    </li>
+  </ul>
+
+  <!-- Burger seulement pour mobile -->
+  <button class="burger" aria-label="Ouvrir le menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+  <div class="container">
+    <div class="profil-header">
+      <h1>Mon Profil</h1>
+      <button class="edit-btn">Modifier mes informations</button>
+    </div>
+
+    <div class="profil-info">
+      <h2>Informations personnelles</h2>
+      <div class="info-grid">
+        <div class="info-item"><span>Nom :</span> Dupont</div>
+        <div class="info-item"><span>Prénom :</span> Justine</div>
+        <div class="info-item"><span>Email :</span> justine@example.com</div>
+        <div class="info-item"><span>Téléphone :</span> 06 12 34 56 78</div>
+        <div class="info-item"><span>Adresse :</span> 12 Rue de la Paix, 75001 Paris</div>
+      </div>
+    </div>
+
+    <div class="profil-orders">
+      <h2>Historique des commandes</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Numéro</th>
+            <th>Date</th>
+            <th>Produit</th>
+            <th>Montant</th>
+            <th>Statut</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>00123</td>
+            <td>10/12/2025</td>
+            <td>Parfum Mystique</td>
+            <td>49,99 €</td>
+            <td class="status delivered">Livré</td>
+          </tr>
+          <tr>
+            <td>00124</td>
+            <td>12/12/2025</td>
+            <td>Bougie Solaire</td>
+            <td>29,99 €</td>
+            <td class="status in-progress">En cours</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

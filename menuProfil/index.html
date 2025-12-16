@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boutique</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header class="header">
+  <nav class="nav">
+
+    <!-- Logo -->
+    <div class="nav__logo">LOGO</div>
+
+    <!-- Liens -->
+    <ul class="nav__links">
+      <li><a href="#">Accueil</a></li>
+      <li><a href="#">Nouveautés</a></li>
+      <li><a href="#">Homme</a></li>
+      <li><a href="#">Femme</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+    <!-- Actions -->
+    <div class="nav__actions">
+
+      <!-- Recherche -->
+      <div class="search">
+        <input type="text" placeholder="Rechercher...">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+
+      <!-- Panier -->
+      <button class="icon-btn">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="badge">0</span>
+      </button>
+
+      <!-- Profil -->
+      <div class="profile-container">
+        <button class="icon-btn" id="profileBtn">
+          <i class="fa-regular fa-user"></i>
+        </button>
+
+        <!-- MENU PROFIL -->
+        <div class="profile-menu" id="profileMenu">
+          <h4>👤 Espace Profil</h4>
+          <div class="profile-section">
+            <p class="section-title">🔐 Se connecter / S’inscrire</p>
+            <a href="../connexion/connexion.html">Connexion</a>
+            <a href="#">Créer un compte</a>
+            <small>(fonctionnalité fictive)</small>
+          </div>
+          <div class="profile-section">
+            <p class="section-title">🧾 Mon compte</p>
+            <a href="../profil/profil.html">Mes informations</a>
+            <a href="#">Modifier mon profil</a>
+          </div>
+          <div class="profile-section">
+            <p class="section-title">📦 Mes commandes</p>
+            <a href="../commande/commande.html">Historique des commandes</a>
+            <a href="#">Statut des commandes (en cours / livré)</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Burger -->
+      <button class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+
+  </nav>
+</header>
+
+<script src="script.js"></script>
+</body>
+</html>

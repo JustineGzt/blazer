@@ -15,32 +15,60 @@
 </head>
 
 <body>
-    <nav class="main-nav">
-    <ul class="nav-left">
-        <li><a href="#">Accueil</a></li>
-        <li><a href="#">Nouveautés</a></li>
-        <li><a href="#">Homme</a></li>
-        <li><a href="#">Femme</a></li>
-    </ul>
+<nav class="main-nav">
+  <ul class="nav-left">
+    <li><a href="#">Accueil</a></li>
+    <li><a href="#">Nouveautés</a></li>
+    <li><a href="#">Homme</a></li>
+    <li><a href="#">Femme</a></li>
+  </ul>
 
-    <div class="logo">
-        <img src="img/Blazer_2.png" alt="Logo du site">
-    </div>
+  <div class="logo">
+    <img src="img/Blazer_2.png" alt="Logo du site">
+  </div>
 
-    <ul class="nav-right">
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="#">recherche <i class="fa-solid fa-magnifying-glass"></i></a></li>
-        <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
-        <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-    </ul>
+  <ul class="nav-right">
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="#">Recherche <i class="fa-solid fa-magnifying-glass"></i></a></li>
+    <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+    <li class="profile-container">
+      <button type="button" class="icon-btn" id="profileBtn">
+        <i class="fa-regular fa-user"></i>
+      </button>
 
-    <!-- Burger seulement pour mobile -->
-    <button class="burger" aria-label="Ouvrir le menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
+      <div id="profileMenu">
+         <h4>👤 Espace Profil</h4>
+
+        <div class="profile-section">
+            <a href="./connexion/connexion.html" class="section-title">
+            🔐 Se connecter / S’inscrire
+            </a>
+        </div>
+
+        <div class="profile-section">
+            <a href="./profil/profil.html" class="section-title">
+            🧾 Mon compte
+            </a>
+        </div>
+
+        <div class="profile-section">
+            <a href="./commande/commande.html" class="section-title">
+            📦 Mes commandes
+            </a>
+        </div>
+      </div>
+
+    </li>
+  </ul>
+
+  <!-- Burger seulement pour mobile -->
+  <button class="burger" aria-label="Ouvrir le menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
+
 
 
     <header>

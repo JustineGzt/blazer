@@ -1,0 +1,635 @@
+/* ==================== COULEURS ==================== */
+$bleu: #9DC1CC;
+$noir: #000000;
+$blanc: #ffffff;
+$gris: #cccccc;
+
+/* ==================== POLICES ==================== */
+$font-title: 'Irish Grover', cursive;
+$font-text: 'Montserrat Alternates', sans-serif;
+
+/* ==================== VARIABLES ==================== */
+$nav-height: 80px;
+$btn-radius: 5px;
+
+/* ==================== RESET ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-text;
+}
+
+body {
+  background: $noir;
+  color: $blanc;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==================== NAVIGATION ==================== */
+.main-nav {
+  height: 18vh;
+  padding: 4vh 6vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  overflow: hidden;
+  gap: 2vh;
+
+  .nav-left, .nav-right {
+    list-style: none;
+    display: flex;
+    gap: 2.5vh;
+    flex-wrap: nowrap;
+    align-items: center;
+    white-space: nowrap;
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-left {
+    flex: 0 1 auto;
+    justify-content: flex-start;
+  }
+
+  .nav-right {
+    flex: 0 1 auto;
+    justify-content: flex-end;
+  }
+
+  .nav-left li a, .nav-right li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2vh;
+    padding-bottom: 5px;
+    position: relative;
+    display: inline-block;
+    margin: 0;
+  }
+
+  .logo {
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .logo img {
+    height: 22vh;
+    align-self: center;
+    margin: 0;
+  }
+
+  .icon-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 2vh;
+    padding: 0;
+    margin: 0;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  .profile-container {
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+    #profileMenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      z-index: 1000;
+      background: #111;
+      color: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      width: 220px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    #profileMenu.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+// Navigation s'agrandit quand le menu profil est actif
+.main-nav.profile-active {
+  height: auto;
+  padding: 4vh 6vh 20vh 6vh;
+  overflow: visible;
+}
+
+// ===== BURGER MENU RESPONSIVE =====
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  // Tablette
+  .main-nav {
+    height: 12vh;
+    padding: 2vh 3vh;
+    gap: 1.5vh;
+
+    .nav-left li a, .nav-right li a {
+      font-size: 1.4vh;
+    }
+
+    .logo img {
+      height: 14vh;
+    }
+
+    .icon-btn {
+      font-size: 1.5vh;
+    }
+  }
+
+  .main-nav.profile-active {
+    height: auto;
+    padding: 2vh 3vh 15vh 3vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-nav {
+    height: auto;
+    flex-wrap: wrap;
+    padding: 2vh 3vh;
+
+    .nav-left {
+      position: fixed;
+      left: -100%;
+      top: 15vh;
+      flex-direction: column;
+      background-color: black;
+      width: 100%;
+      text-align: center;
+      transition: 0.3s;
+      gap: 0;
+      padding: 2vh 0;
+      z-index: 999;
+
+      &.active {
+        left: 0;
+      }
+
+      li {
+        padding: 1.5vh 0;
+        border-bottom: 1px solid #333;
+
+        a {
+          font-size: 1.5vh !important;
+        }
+      }
+    }
+
+    .logo img {
+      height: 12vh;
+    }
+
+    .nav-right {
+      display: flex;
+      gap: 1.5vh;
+    }
+
+    .burger {
+      display: flex !important;
+      flex-direction: column;
+      gap: 4px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      order: -1;
+
+      span {
+        width: 25px;
+        height: 2px;
+        background: #fff;
+        transition: all 0.3s ease;
+      }
+
+      &.open span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+      }
+
+      &.open span:nth-child(2) {
+        opacity: 0;
+      }
+
+      &.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(8px, -8px);
+      }
+    }
+
+    .profile-container {
+      position: relative;
+
+      #profileMenu {
+        position: fixed;
+        left: 0;
+        right: 0;
+        width: 90%;
+        margin: 0 auto;
+        top: auto;
+      }
+    }
+  }
+
+  .main-nav.profile-active {
+    height: auto;
+    padding: 2vh 3vh;
+  }
+}
+
+/* ==================== OLD NAVIGATION ==================== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $nav-height;
+  background: $noir;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  z-index: 1000;
+
+  .nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    flex-wrap: wrap;
+
+    &__logo {
+      font-size: 1.8rem;
+      font-family: $font-title;
+      font-weight: bold;
+      color: $blanc;
+    }
+
+    &__links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      flex: 1;
+      justify-content: center;
+
+      li a {
+        color: $blanc;
+        text-decoration: none;
+        font-weight: bold;
+        font-family: $font-text;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -4px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: $noir;
+          transition: 0.3s;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+
+    &__actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-left: auto;
+
+      .search {
+        position: relative;
+
+        input {
+          padding: 0.4rem 2rem 0.4rem 0.6rem;
+          border-radius: 20px;
+          border: none;
+          outline: none;
+        }
+
+        i {
+          position: absolute;
+          right: 8px;
+          top: 50%;
+          transform: translateY(-50%);
+          color: $noir;
+        }
+      }
+
+      .icon-btn {
+        background: none;
+        border: none;
+        color: $blanc;
+        font-size: 1.2rem;
+        cursor: pointer;
+        position: relative;
+
+        .badge {
+          position: absolute;
+          top: -6px;
+          right: -8px;
+          background: $noir;
+          color: $blanc;
+          font-size: 0.7rem;
+          padding: 2px 5px;
+          border-radius: 50%;
+        }
+      }
+
+      .profile-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .profile-menu {
+          display: none;
+          position: absolute;
+          top: 100%;
+          right: 0;
+          background: $gris;
+          color: $noir;
+          min-width: 220px;
+          padding: 1rem;
+          border-radius: $btn-radius;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+
+          h4 {
+            font-family: $font-title;
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid darken($gris,20%);
+            padding-bottom: 0.5rem;
+          }
+
+          .profile-section {
+            margin-bottom: 1rem;
+
+            &:last-child { margin-bottom: 0; }
+
+            .section-title {
+              font-size: 0.85rem;
+              font-weight: bold;
+              color: $bleu;
+              margin-bottom: 0.4rem;
+            }
+
+            a {
+              display: block;
+              font-size: 0.85rem;
+              color: $noir;
+              text-decoration: none;
+              padding: 0.2rem 0;
+              transition: 0.2s;
+
+              &:hover { color: $bleu; padding-left: 4px; }
+            }
+
+            small { font-size: 0.7rem; color: darken($gris,20%); }
+          }
+        }
+      }
+
+      .burger {
+        display: none;
+        flex-direction: column;
+        gap: 4px;
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        span {
+          width: 22px;
+          height: 2px;
+          background: $blanc;
+          transition: 0.3s;
+        }
+
+        &.active span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+        &.active span:nth-child(2) { opacity: 0; }
+        &.active span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+      }
+    }
+  }
+}
+
+/* ==================== FORMULAIRE ==================== */
+.container {
+  width: 90%;
+  max-width: 400px;
+  margin: calc($nav-height + 2rem) auto;
+  padding: 2rem;
+
+  .form-box {
+    background: $gris;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    color: $noir;
+
+    .form-toggle {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+
+      button {
+        flex: 1;
+        padding: 0.5rem 0;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        background: lighten($gris, 10%);
+        color: $noir;
+        font-family: $font-text;
+        transition: 0.3s;
+
+        &.active {
+          background: $bleu;
+          color: $blanc;
+          font-family: $font-title;
+          border-radius: 5px;
+        }
+      }
+    }
+
+    .form {
+      display: none;
+      flex-direction: column;
+
+      &.active { display: flex; }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 1rem;
+        color: $bleu;
+        font-family: $font-title;
+      }
+
+      input {
+        padding: 0.8rem;
+        margin: 0.5rem 0;
+        border-radius: 5px;
+        border: 1px solid $bleu;
+        background: $blanc;
+        color: $noir;
+        font-family: $font-text;
+
+        &::placeholder { color: darken($gris,20%); }
+      }
+
+      button {
+        padding: 0.8rem;
+        margin-top: 1rem;
+        border: none;
+        border-radius: 5px;
+        background: $bleu;
+        color: $blanc;
+        cursor: pointer;
+        font-family: $font-text;
+        transition: 0.3s;
+
+        &:hover { background: darken($bleu,10%); }
+      }
+    }
+  }
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media screen and (max-width: 992px) {
+  .nav__links { 
+    display: none;
+    position: absolute;
+    top: $nav-height;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: $bleu;
+    gap: 1rem;
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  .nav__links.active { display: flex; }
+
+  .burger { display: flex; }
+}
+
+@media screen and (max-width: 600px) {
+  .container { max-width: 90%; padding: 1rem; }
+
+  .form-box .form-toggle { flex-direction: column; }
+
+  .form-box .form-toggle button { margin-bottom: 0.5rem; }
+}
+
+
+/* ------------------------ PETITS TELEPHONES 425px - 320px ------------------------ */
+@media screen and (max-width: 426px) and (min-width: 320px) {
+
+  .main-nav {
+    flex-direction: row; // logo + burger sur la même ligne
+    align-items: center; // alignement vertical
+    justify-content: space-between;
+    height: auto;
+    padding: 2vh 2vw;
+    gap: 1.5vh;
+
+    .logo img {
+      height: 10vh;
+    }
+
+    // Menu gauche (liens)
+    .nav-left {
+      position: fixed;
+      top: 12vh; // sous nav
+      left: -100%;
+      width: 100%;
+      height: calc(100vh - 12vh);
+      background-color: $noir;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 1rem;
+      padding-top: 2rem;
+      transition: left 0.3s ease;
+      z-index: 999;
+
+      &.active {
+        left: 0;
+      }
+
+      li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #333;
+
+        a {
+          font-size: 3.5vw;
+          display: block;
+          padding: 1rem 0;
+        }
+      }
+    }
+
+    // Menu droit (icônes)
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    // Burger
+    .burger {
+      display: flex !important;
+      flex-direction: column;
+      gap: 3px;
+      cursor: pointer;
+      z-index: 1001;
+
+      span {
+        width: 20px;
+        height: 2px;
+        background: $blanc;
+        transition: all 0.3s ease;
+      }
+
+      &.open span:nth-child(1) {
+        transform: rotate(45deg) translate(5px,5px);
+      }
+      &.open span:nth-child(2) { opacity: 0; }
+      &.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px,-5px);
+      }
+    }
+
+    // Profile menu
+    .profile-container #profileMenu {
+      width: 90%;
+      left: 5%;
+      top: auto;
+      position: fixed;
+    }
+  }
+}
