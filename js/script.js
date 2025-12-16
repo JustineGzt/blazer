@@ -18,6 +18,11 @@ document.querySelectorAll('.product-card').forEach(card => {
     card.style.transform = 'scale(1)';
   });
 });
+
+
+
+
+
 let cart = [];
 const cartIcon = document.querySelector('nav .fa-cart-shopping');
 const cartModal = document.getElementById('cart-modal');

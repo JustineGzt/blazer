@@ -36,7 +36,7 @@ nav {
   ul {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 120px;
 
     li {
       a {
@@ -78,6 +78,33 @@ nav {
     }
 }
   
+
+// ===== BURGER MENU RESPONSIVE =====
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  // Tablette
+  .main-nav {
+    height: 12vh;
+    padding: 2vh 3vh;
+    gap: 1.5vh;
+
+    .nav-left li a, .nav-right li a {
+      font-size: 1.4vh;
+    }
+
+    .logo img {
+      height: 14vh;
+    }
+
+    .icon-btn {
+      font-size: 1.5vh;
+    }
+  }
+
+  .main-nav.profile-active {
+    height: auto;
+    padding: 2vh 3vh 15vh 3vh;
+  }
+}
 
 
 
@@ -345,7 +372,9 @@ h4 {
 
 @media screen and (max-width: 767px) {
     nav {
-        padding: 20px 20px;
+        // padding: 20px 20px;
+        padding: 15px 20px;
+    flex-wrap: wrap;
     }
 .bar {
     background-color: #fff; 
@@ -356,23 +385,38 @@ h4 {
         z-index: 1000;
     }
 
+    // ul.nav-links {
+    //     display: none;
+    //     position: absolute;
+    //     top: 65px;
+    //     left: 0;
+    //     width: 100%;
+    //     flex-direction: column;
+    //     background-color: rgb(28, 25, 25);
+    //     text-align: center;
+    //     padding: 20px 0;
+    //     z-index: 999;
+
     ul.nav-links {
-        display: none;
-        position: absolute;
-        top: 65px;
-        left: 0;
-        width: 100%;
-        flex-direction: column;
-        background-color: rgb(28, 25, 25);
-        text-align: center;
-        padding: 20px 0;
-        z-index: 999;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: rgb(20, 18, 18);
+    text-align: center;
+    padding: 10px 0;
+    z-index: 999;
+    gap: 0; /* Supprime l'espacement entre les liens */
 
-        li a {
-            padding: 10px 0;
-        }
+        ul.nav-links li a {
+        padding: 8px 0; /* Réduit l'espacement vertical */
+        font-size: 14px; /* Optionnel : réduit la taille de la police */
+  
+      
     }
-
+  }
     nav.active {
         #burger {
             .bar:nth-child(2) { opacity: 0; }
@@ -391,13 +435,15 @@ h4 {
             width: 100%;
             text-align: center;
             padding: 20px 0;
+          
         }
 
-        
+        header p{
+          margin-right: 5vh;
 
-        #burger {
-            display: block;
         }
+
+       
     
 
 // SECTION FOOTER
