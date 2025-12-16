@@ -64,8 +64,7 @@ header .navbar nav ul li .rechercher {
 header .navbar nav ul li a:hover {
   color: #B0ECF2;
 }
-
-.headerImg {
+header .headerImg {
   background-image: url(../img/header.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -83,19 +82,18 @@ header .navbar nav ul li a:hover {
 .tendances .container h2 {
   padding-bottom: 20vh;
 }
-.tendances .container .tendancesBody {
-  display: flex;
+.tendances .container .tendancesHeader {
+  padding-top: 3vh;
 }
-.tendances .container .tendancesBody .ligne {
-  background-color: #000000;
-  width: 0.2vh;
-  height: 65vh;
+.tendances .container .tendancesBody {
+  padding-bottom: 3vh;
+  display: flex;
+  justify-content: space-between;
 }
 .tendances .container .tendancesBody .tendancesPart {
   display: flex;
   flex-direction: column;
-  width: 50%;
-  padding: 3vh;
+  width: 45%;
 }
 .tendances .container .tendancesBody .tendancesPart p {
   font-size: 5vh;
@@ -105,6 +103,10 @@ header .navbar nav ul li a:hover {
 .tendances .container .tendancesBody .tendancesPart .tendancesCategories {
   display: flex;
   height: 50vh;
+  justify-content: space-evenly;
+}
+.tendances .container .tendancesBody .tendancesPart .tendancesCategories div {
+  text-align: center;
 }
 .tendances .container .tendancesBody .tendancesPart .tendancesCategories img {
   width: 90%;
@@ -115,9 +117,15 @@ header .navbar nav ul li a:hover {
 .tendances .container .tendancesBody .tendancesPart .tendancesCategories img:hover {
   transition: ease 1s;
   transform: scale(1.05);
+  cursor: pointer;
 }
 .tendances .container .tendancesBody .tendancesPart .tendancesCategories p {
   font-size: 3.5vh;
+}
+.tendances .container .tendancesBody .ligne {
+  background-color: #000000;
+  width: 0.2vh;
+  height: 58vh;
 }
 
 .qsn {
@@ -137,8 +145,8 @@ header .navbar nav ul li a:hover {
   width: 50%;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: 0% 20%;
-     object-position: 0% 20%;
+  -o-object-position: 50% 0%;
+     object-position: 50% 0%;
 }
 .qsn .qsnBody .qsnTextContainer {
   height: 90%;
@@ -160,11 +168,11 @@ header .navbar nav ul li a:hover {
   justify-content: space-between;
   align-items: center;
 }
-.collectionHiver #demo {
+.collectionHiver .promoTimerContainer {
   background-color: rgba(237, 237, 237, 0.2);
   font-size: 4vh;
   margin-top: 1vh;
-  width: 25vw;
+  width: 24vw;
   text-align: center;
 }
 .collectionHiver .collectionHiverBody {
@@ -208,11 +216,6 @@ header .navbar nav ul li a:hover {
   display: flex;
   justify-content: space-between;
 }
-.actualites .actualitesBody .actualitesCasesLigne .actualitesCase:hover {
-  transition: ease 1s;
-  transform: scale(1.05);
-  cursor: pointer;
-}
 .actualites .actualitesBody .actualitesCasesLigne .case1 {
   background-image: url(../img/collecFutur.png);
 }
@@ -238,16 +241,23 @@ header .navbar nav ul li a:hover {
   margin: 1vh;
   height: auto;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
 .actualites .actualitesBody .actualitesCasesLigne .actualitesCase p {
+  margin: 0.5vh;
   font-size: 2.2vh;
   color: #ffffff;
   -webkit-text-stroke: 0.5px #000;
   font-weight: 600;
 }
 .actualites .actualitesBody .actualitesCasesLigne .actualitesCase .actualitesTitre {
-  align-self: flex-end;
+  text-align: right;
+}
+.actualites .actualitesBody .actualitesCasesLigne .actualitesCase:hover {
+  transition: ease 1s;
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 .footer {
@@ -311,7 +321,7 @@ header .navbar nav ul li a:hover {
 }
 .footer .footerPart2Container {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .result {
@@ -339,6 +349,48 @@ header .navbar nav ul li a:hover {
   background-repeat: no-repeat;
 }
 
+@media screen and (max-width: 1440px) {
+  header .navbar nav ul li a {
+    font-size: 2vh;
+  }
+  .collectionHiver .promoTimerContainer {
+    font-size: 3.5vh;
+  }
+}
+@media screen and (max-width: 1024px) {
+  header .navbar .logo img {
+    margin: 0 6vh;
+  }
+  header .navbar nav {
+    padding: 4vh;
+  }
+  header .navbar nav ul {
+    gap: 2vh;
+  }
+  header .navbar nav ul li a {
+    font-size: 1.6vh;
+  }
+  .headerImg {
+    background-position: center;
+  }
+  .qsn .qsnBody img {
+    -o-object-position: 50% 50%;
+       object-position: 50% 50%;
+  }
+  .qsn .qsnBody .qsnTextContainer {
+    padding: 0vh;
+  }
+  .qsn .qsnBody .qsnTextContainer p {
+    padding: 1vh;
+    font-size: 1.7vh;
+  }
+  .collectionHiver .promoTimerContainer {
+    width: 35vw;
+  }
+  .actualites .actualitesBody .actualitesCasesLigne .actualitesCase p {
+    font-size: 2.5vh;
+  }
+}
 @media screen and (max-width: 768px) {
   header .navbar .logo img {
     margin: 0 12vh;
@@ -423,5 +475,68 @@ header .navbar nav ul li a:hover {
   }
   header #navigation.active ul li .rechercher {
     border-bottom: 1px solid #000;
+  }
+  .tendances {
+    height: 150vh;
+  }
+  .tendances .container h2 {
+    padding-bottom: 5vh;
+  }
+  .tendances .container .tendancesBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .tendances .container .tendancesBody .tendancesPart {
+    width: 90%;
+  }
+  .tendances .container .tendancesBody .ligne {
+    width: 80vw;
+    height: 0.2vh;
+    margin: 2vh;
+  }
+  .qsn .qsnBody {
+    flex-direction: column;
+    align-items: center;
+    height: 85%;
+  }
+  .qsn .qsnBody img {
+    height: 45%;
+    width: 100%;
+    -o-object-position: 15% 15%;
+       object-position: 15% 15%;
+  }
+  .qsn .qsnBody .qsnTextContainer {
+    width: 100%;
+    padding: 3vh;
+  }
+  .qsn .qsnBody .qsnTextContainer p {
+    padding: 0.5vh;
+    font-size: 1.8vh;
+  }
+  .collectionHiver {
+    background-position: center;
+  }
+  .collectionHiver .promoTimerContainer {
+    margin-top: 1vh;
+    width: 50vw;
+  }
+  .collectionHiver .collectionHiverBody {
+    margin-bottom: 5vh;
+  }
+  .actualites {
+    height: 300vh;
+  }
+  .actualites .actualitesBody {
+    height: 95%;
+  }
+  .actualites .actualitesBody .actualitesCasesLigne {
+    flex-direction: column;
+    align-items: center;
+    padding: 2vh;
+  }
+  .actualites .actualitesBody .actualitesCasesLigne .actualitesCase {
+    width: 80%;
+    height: 30%;
   }
 }/*# sourceMappingURL=style.css.map */

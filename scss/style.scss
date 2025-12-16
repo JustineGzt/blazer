@@ -25,6 +25,10 @@ body {
   font-family: 'Montserrat Alternates';
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// SECTION HEADER
+
 header{
   .navbar {
     display: flex;
@@ -68,13 +72,9 @@ header{
           a:hover{
             color: #B0ECF2;
           }
-          
         }
       }
-      
-        
-      }
-  }
+    }
   }
   .headerImg{
     background-image: url(../img/header.png);
@@ -82,7 +82,7 @@ header{
     background-repeat: no-repeat;
     height: 85vh;
   }
-
+ }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -96,26 +96,29 @@ header{
     h2{
       padding-bottom: 20vh;
     }
+    .tendancesHeader{
+      padding-top: 3vh;
+    }
     .tendancesBody{
+      padding-bottom: 3vh;
       display: flex;
-      .ligne{
-        background-color: #000000;
-        width: .2vh;
-        height: 65vh;
-      }
+      justify-content: space-between;
       .tendancesPart{
         display: flex;
         flex-direction: column;
-        width: 50%;
-        padding: 3vh;
+        width: 45%;
         p{
           font-size: 5vh;
           padding-bottom: 3vh;
           text-align: center;
         }
-        .tendancesCategories{
+        .tendancesCategories {
           display: flex;
           height: 50vh;
+          justify-content: space-evenly;
+          div {
+            text-align: center
+          }
           img{
             width: 90%;
             height: 90%;
@@ -124,11 +127,17 @@ header{
           img:hover{
             transition	: ease 1s;
 						transform	: scale(1.05);
+            cursor: pointer;
           }
           p{
             font-size: 3.5vh;
           }
         }
+      }
+      .ligne{
+        background-color: #000000;
+        width: .2vh;
+        height: 58vh;
       }
     }
   }
@@ -151,7 +160,7 @@ header{
       height: 90%;
       width: 50%;
       object-fit: cover;
-      object-position: 0% 20%;
+      object-position: 50% 0%;
     }
     .qsnTextContainer{
       height: 90%;
@@ -162,7 +171,7 @@ header{
       width: 50%;
     }
   }
-}
+} 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -177,17 +186,16 @@ header{
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  #demo{
+  .promoTimerContainer{
     background-color: rgba(#ededed, 0.2);
     font-size: 4vh;
     margin-top: 1vh;
-    width: 25vw;
+    width: 24vw;
     text-align: center;
   }
   .collectionHiverBody{
     text-align: center;
     margin-bottom: 10vh;
-    
     p{
       font-size: 10vh;
       color: #B0ECF2;
@@ -229,11 +237,6 @@ header{
       height: 50%;
       display: flex;
       justify-content: space-between;
-      .actualitesCase:hover{
-            transition	: ease 1s;
-						transform	: scale(1.05);
-            cursor: pointer;
-          }
       .case1{
         background-image: url(../img/collecFutur.png);
       }
@@ -259,16 +262,23 @@ header{
         margin: 1vh;
         height: auto;
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
         p{
+          margin: 0.5vh;
           font-size: 2.2vh;
           color: #ffffff;
           -webkit-text-stroke:  .5px #000;
           font-weight:600;
         }
         .actualitesTitre{
-          align-self: flex-end;
+          text-align: right;
         }
+      }
+      .actualitesCase:hover{
+        transition	: ease 1s;
+        transform	: scale(1.05);
+        cursor: pointer;
       }
     }
   }
@@ -336,7 +346,7 @@ header{
   }
   .footerPart2Container{
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
   }
 }
 
@@ -362,10 +372,9 @@ header{
   .imgResult{
     width: 30vw;
     height: auto;
-      margin: 2vh 0;
+    margin: 2vh 0;
     border: 1px solid #000;
     transition: background-image 1s ease-in-out;
-
     background-image: url(../img/image1.png); 
     background-size: cover;
     background-position: center;
@@ -373,25 +382,129 @@ header{
   }
 }
 
-//////////////////BREAKPOINT 768px////////////////////////////////////////////
-@media screen and (max-width: 768px){
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~Breakpoint~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-header{
-  .navbar{
-    .logo{
-      img{
-        margin: 0 12vh;
-        height: 26vh;
+//////////////////BREAKPOINT 1440px////////////////////////////////////////////
+@media screen and (max-width: 1440px){
+
+  // SECTION HEADER
+  header{
+    .navbar {
+      nav {
+        ul {
+          li {
+            a {
+              font-size: 2vh;
+            }
+          }
+        }
       }
     }
   }
-  nav {
-      display: none;
-      display: flex;
-      flex-direction: column;
+
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  // SECTION COLLECTIONHIVER
+  .collectionHiver{
+    .promoTimerContainer{
+      font-size: 3.5vh;
+    }
+  }
+}
+
+//////////////////BREAKPOINT 1024px////////////////////////////////////////////
+@media screen and (max-width: 1024px){
+
+  // SECTION HEADER
+  header{
+    .navbar {
+      .logo{
+        img{
+          margin: 0 6vh;
+        }
+      }
+      nav {
+        padding: 4vh;
+        ul {
+          gap: 2vh;
+          li {
+            a {
+              font-size: 1.6vh;
+            }
+          }
+        }
+      }
+    }
+  }
+  .headerImg{
+    background-position: center;
+  }
+
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  // SECTION QSN
+  .qsn{
+    .qsnBody{
+      img{
+        object-position: 50% 50%;
+      }
+      .qsnTextContainer{
+        padding: 0vh;
+        p{
+          padding: 1vh;
+          font-size: 1.7vh;
+        }
+      }
+    }
+  }
+
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  // SECTION COLLECTIONHIVER
+  .collectionHiver{
+    .promoTimerContainer{
+      width: 35vw;
+    }
+  }
+
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  // SECTION ACTUALITES
+  .actualites{
+    .actualitesBody{
+      .actualitesCasesLigne{
+        .actualitesCase{
+          p{
+            font-size: 2.5vh;
+          }
+        }
+      }
+    }
+  }
+}
+
+//////////////////BREAKPOINT 768px////////////////////////////////////////////
+@media screen and (max-width: 768px){
+
+  // SECTION HEADER
+  header{
+    .navbar{
+      .logo{
+        img{
+          margin: 0 12vh;
+          height: 26vh;
+        }
+      }
+    }
+    nav {
+    display: none;
+    display: flex;
+    flex-direction: column;
     ul{
       padding: 2vh 0;
-    }
+      }
     }
     #toggle{
       position: sticky;
@@ -445,15 +558,14 @@ header{
       ul{
         flex-direction: column;
         text-align: center;
-      }
-      
+      } 
     }
     #navigation.active{
       right: 0%;
       .logo{
         display: none;
       }
-      ul{
+       ul{
         li{
           display: block;
           margin-bottom: 2vh;
@@ -469,4 +581,88 @@ header{
       }
     }
   }
-}  
+
+
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  // SECTION TENDANCES
+  .tendances{
+    height: 150vh;
+    .container{
+      h2{
+        padding-bottom: 5vh;
+      }
+      .tendancesBody{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .tendancesPart{
+          width: 90%;
+        }
+        .ligne{
+          width: 80vw;
+          height: .2vh;
+          margin: 2vh;
+        }
+      }
+    }
+  }
+
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  // SECTION QSN
+  .qsn{
+    .qsnBody{
+      flex-direction: column;
+      align-items: center;
+      height: 85%;
+      img{
+        height: 45%;
+        width: 100%;
+        object-position: 15% 15%;
+      }
+      .qsnTextContainer{
+        width: 100%;
+        padding: 3vh;
+        p{
+          padding: 0.5vh;
+          font-size: 1.8vh;
+        }
+      }
+    }
+  }
+
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  // SECTION COLLECTIONHIVER
+  .collectionHiver{
+    background-position: center;
+    .promoTimerContainer{
+      margin-top: 1vh;
+      width: 50vw;
+    }
+    .collectionHiverBody{
+      margin-bottom: 5vh;
+    }
+  }
+
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  // SECTION ACTUALITES
+
+  .actualites{
+    height: 300vh;
+    .actualitesBody{
+    height: 95%;
+      .actualitesCasesLigne{
+        flex-direction: column;
+        align-items: center;
+        padding: 2vh;
+        .actualitesCase{
+          width: 80%;
+          height: 30%;
+        }
+      }
+    }
+  }
+}

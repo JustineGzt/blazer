@@ -2,8 +2,10 @@
 //                    Page Accueil - Menu Burger
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+// Récupération des éléments dans le code HTML
 const toggle = document.getElementById("toggle");
 const navigation = document.getElementById("navigation");
+
 
 document.onclick = function(element) {
     if(element.target.id !== "toggle" && element.target.id !== "navigation"){
@@ -22,7 +24,7 @@ toggle.onclick = function(){
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // Date où le compte à rebours doit s'arrêter
-let dateCible = new Date("Jan 1, 2026 00:00:00").getTime();
+let dateCible = new Date("Dec 24, 2025 12:30:00").getTime();
 
 // Valeurs servants à convertir les millisecondes
 const msParSeconde = 1000;
@@ -59,15 +61,19 @@ let compteARebours = setInterval(function() {
     let secondes = Math.floor((distance % msParMinute) / msParSeconde);
     
     // Affichage du résultat
-    // on lie résultat dans l'élément HTML qui a l'ID "demo"
-    document.getElementById("demo").innerHTML ="Fin de la promotion : " + jours + "j " + heures + "h " + minutes + "m " + secondes + "s ";
-    
+    // on lie résultat dans l'élément HTML qui a l'ID "promoTimer"
+    document.getElementById("promoTimer").innerHTML = jours + "j " + heures + "h " + minutes + "m " + secondes + "s ";
     // Vérifier si le temps est écoulé
-    if (distance < 0) {
+    if(distance < 0) {
         // Arrête la répétition de la fonction (le 'setInterval')
         clearInterval(compteARebours); 
         // Affiche le message de fin
-        document.getElementById("demo").innerHTML = "TERMINÉ";
+        document.getElementById("promoTimer").innerHTML = "TERMINÉ";
+    }
+    
+    const timerElement = document.getElementById("promoTimer"); // Simplification de la sélection
+    if(jours <= 3) {
+        timerElement.style.color = 'red';
     }
 }
 , 1000); // Répéter la fonction toutes les 1000 ms.
@@ -92,3 +98,4 @@ document.getElementById('displayMessage').textContent = donnees.message;
 
 // Optionnel : Nettoyer le localStorage après l'affichage pour la prochaine fois
 localStorage.removeItem('donneesContact');
+
