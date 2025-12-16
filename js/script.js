@@ -1,22 +1,93 @@
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//                    Page Accueil - Menu Burger
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ============================================================================
+// ============================= MENU PROFIL ===================================
+// ============================================================================
 
-// Récupération des éléments dans le code HTML
-const toggle = document.getElementById("toggle");
-const navigation = document.getElementById("navigation");
+// Récupère le bouton profil (icône utilisateur)
+const profileBtn = document.getElementById("profileBtn");
+// Récupère le menu déroulant du profil
+const profileMenu = document.getElementById("profileMenu");
+// Récupère la barre de navigation principale
+const mainNav = document.querySelector(".main-nav");
 
+// Sécurité : on vérifie que tous les éléments existent dans le HTML
+// (évite les erreurs JS si le script est chargé sur une autre page)
+if (profileBtn && profileMenu && mainNav) {
 
-document.onclick = function(element) {
-    if(element.target.id !== "toggle" && element.target.id !== "navigation"){
-        toggle.classList.remove("active");
-        navigation.classList.remove("active");
+  // ---------------- OUVERTURE / FERMETURE MENU PROFIL ----------------
+  profileBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    // Empêche l'événement de remonter au document
+    // Sans ça : le menu s'ouvrirait puis se fermerait immédiatement
+
+    profileMenu.classList.toggle("active");
+    // Ajoute ou retire la classe "active" au menu profil
+    // → active = menu visible
+
+    mainNav.classList.toggle("profile-active");
+    // Ajoute une classe à la navbar
+    // → permet d’agrandir la nav quand le menu est ouvert (CSS)
+  });
+
+  // ---------------- FERMETURE AU CLIC EXTERIEUR ----------------
+  document.addEventListener("click", (e) => {
+
+    // Si le clic n’est PAS dans le menu profil
+    // ET que ce n’est PAS le bouton profil
+    if (!profileMenu.contains(e.target) && e.target !== profileBtn) {
+
+      profileMenu.classList.remove("active");
+      // Cache le menu profil
+
+      mainNav.classList.remove("profile-active");
+      // Remet la navbar à sa taille normale
     }
+  });
 }
 
-toggle.onclick = function(){
-    toggle.classList.toggle("active");
-    navigation.classList.toggle("active");
+// ============================================================================
+// ============================= MENU BURGER ===================================
+// ============================================================================
+
+// Récupère le bouton burger (3 traits)
+const burger = document.querySelector(".burger");
+// Récupère le menu de gauche (liens Accueil, Nouveautés, etc.)
+const navLeft = document.querySelector(".nav-left");
+
+// Vérification de sécurité
+if (burger && navLeft) {
+
+  // ---------------- OUVERTURE / FERMETURE BURGER ----------------
+  burger.addEventListener("click", () => {
+
+    burger.classList.toggle("open");
+    // Animation du bouton burger (croix ↔ lignes)
+
+    navLeft.classList.toggle("active");
+    // Affiche ou cache le menu mobile
+
+    // ---------------- GESTION CONFLIT AVEC MENU PROFIL ----------------
+    // Si le menu profil est ouvert en même temps
+    if (profileMenu.classList.contains("active")) {
+      profileMenu.classList.remove("active");
+      // Ferme le menu profil
+
+      mainNav.classList.remove("profile-active");
+      // Réduit la navbar
+    }
+  });
+
+  // ---------------- FERMETURE BURGER AU CLIC SUR UN LIEN ----------------
+  navLeft.querySelectorAll('a').forEach(link => {
+    // Pour chaque lien du menu mobile
+
+    link.addEventListener('click', () => {
+      burger.classList.remove("open");
+      // Réinitialise l’icône burger
+
+      navLeft.classList.remove("active");
+      // Ferme le menu mobile après navigation
+    });
+  });
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

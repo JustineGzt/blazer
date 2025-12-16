@@ -23,6 +23,7 @@ h2{
 body {
   background-color: #ededed;
   font-family: 'Montserrat Alternates';
+  font-size: 2vh;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -30,59 +31,117 @@ body {
 // SECTION HEADER
 
 header{
-  .navbar {
-    display: flex;
-    justify-content: flex-start;
+  .main-nav {
+  height: 18vh;                        // Hauteur de la navbar
+  padding: 4vh 6vh;                    // Espacement interne
+  display: flex;                       // Layout en flexbox
+  justify-content: space-between;      // Espace entre gauche / centre / droite
+  align-items: center;                 // Alignement vertical
+  background-color: black;             // Fond noir
+  overflow: hidden;                    // Cache ce qui dépasse
+  gap: 2vh;                            // Espacement entre les blocs
+
+  // -------- LISTES GAUCHE & DROITE --------
+  .nav-left, .nav-right {
+    list-style: none;          // Supprime les puces
+    display: flex;             // Liens alignés horizontalement
+    gap: 2.5vh;                // Espacement entre les liens
+    flex-wrap: nowrap;         // Pas de retour à la ligne
     align-items: center;
-    background-color: #000;
-    color: #fff;
-    text-transform: uppercase;
-    overflow: hidden;
-    height: 15vh;
-    .logo{
-      img{
-        margin: 0 12vh;
-        height: 26vh;
-      }
+    white-space: nowrap;       // Empêche les retours à la ligne
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-left {
+    justify-content: flex-start; // Aligné à gauche
+  }
+
+  .nav-right {
+    justify-content: flex-end;   // Aligné à droite
+  }
+
+  // -------- LIENS --------
+  .nav-left li a, .nav-right li a {
+    color: #fff;              // Texte blanc
+    text-decoration: none;    // Pas de soulignement
+    font-size: 2vh;           // Taille responsive
+    padding-bottom: 5px;      // Espace pour effet hover éventuel
+    position: relative;
+    display: inline-block;
+  }
+  .rechercher{
+    border-bottom: 1px solid #fff;
+  }
+  .nav-left li a:hover, .nav-right li a:hover{
+    color: #B0ECF2;
+  }
+
+  // -------- LOGO --------
+  .logo {
+    flex: 0 0 auto; // Taille fixe
+  }
+
+  .logo img {
+    height: 22vh;   // Taille du logo
+  }
+
+  // -------- BOUTON ICÔNE (PROFIL) --------
+  .icon-btn {
+    background: none;  // Pas de fond
+    border: none;      // Pas de bordure
+    color: #fff;       // Icône blanche
+    cursor: pointer;   // Curseur cliquable
+    font-size: 2vh;
+  }
+
+  // -------- BURGER (CACHÉ PAR DÉFAUT) --------
+  .burger {
+    display: none;
+  }
+
+  // -------- MENU PROFIL --------
+  .profile-container {
+    position: relative; // Référence pour le menu déroulant
+
+    #profileMenu {
+      display: none;          // Caché par défaut
+      position: absolute;     // Positionné par rapport au parent
+      top: 100%;              // Juste sous l’icône
+      right: 0;
+      z-index: 1000;          // Au-dessus du reste
+      background: #111;       // Fond sombre
+      color: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      width: 220px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      transition: opacity 0.3s ease, transform 0.3s ease;
     }
-    nav {
-      background-color: black;
-      position: relative;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 15vh;
-      padding: 4vh 8vh;
-      ul {
-        list-style: none;
-        display: flex;
-        gap: 4vh;
-        li {
-          a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 2.5vh;
-            position: relative;
-            padding-bottom: 5px;
-            transition: 0.5s;
-          }
-          .rechercher{
-            border-bottom: 1px solid #fff;
-          }
-          a:hover{
-            color: #B0ECF2;
-          }
-        }
-      }
+
+    // Menu visible quand JS ajoute la classe .active
+    #profileMenu.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
     }
   }
+}
+
+// Navbar s’agrandit quand le menu profil est ouvert
+.main-nav.profile-active {
+  height: auto;
+  padding: 4vh 6vh 20vh 6vh;
+  overflow: visible;
+}
   .headerImg{
     background-image: url(../img/header.png);
     background-size: cover;
     background-repeat: no-repeat;
     height: 85vh;
   }
- }
+}
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -164,7 +223,7 @@ header{
     }
     .qsnTextContainer{
       height: 90%;
-      padding: 5vh;
+      padding: 0 2vh;
       display: flex;
       flex-direction: column;
       justify-content: space-between;

@@ -13,27 +13,77 @@
             <!-- HEADER -->
             <header>
                 <!-- NAV -->
-                <div class="navbar"> 
-                    <div id="toggle"></div>
-                    <nav id="navigation">
-                        <ul>
-                            <li><a href="index.html">Accueil</a></li>
-                            <li><a href="">Nouveautés</a></li>
-                            <li><a href="">Homme</a></li>
-                            <li><a href="">Femme</a></li>
-                        </ul>
-                        <div class="logo">
-                            <img src="img/Blazer_2.png" alt="Logo du site">
-                        </div>
-                        <ul>
-                            <li><a href="">Contact</a></li>
-                            <li><a href="" class="rechercher">Rechercher <i class="fa-solid fa-magnifying-glass"></i></a></li>  
-                            <li><a href=""><i class="fa-solid fa-cart-shopping"></i></a></li>
-                            <li><a href=""><i class="fa-solid fa-user"></i></a></li>
-                            <li><a href="result-page.html"><i class="fa-regular fa-comment"></i></a></li>
-                        </ul>
-                    </nav>
+                <nav class="main-nav">
+                <!-- Menu de gauche -->
+                <ul class="nav-left">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="nouveauter.html">Nouveautés</a></li>
+                    <li><a href="homme.html">Homme</a></li>
+                    <li><a href="femme.html">Femme</a></li>
+                </ul>
+
+                <!-- Logo centré -->
+                <div class="logo">
+                    <img src="../img/Blazer_2.png" alt="Logo du site">
                 </div>
+
+                <!-- Menu de droite -->
+                <ul class="nav-right">
+                    <li><a href="contact.html">Contact</a></li>
+
+                    <!-- Icône recherche -->
+                    <li>
+                    <a href="#" class="rechercher">Rechercher <i class="fa-solid fa-magnifying-glass"></i></a>
+                    </li>
+
+                    <!-- Icône panier -->
+                    <li>
+                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                    </li>
+
+                    <!-- ================= MENU PROFIL ================= -->
+                    <li class="profile-container">
+
+                    <!-- Bouton icône utilisateur -->
+                    <button type="button" class="icon-btn" id="profileBtn">
+                        <i class="fa-regular fa-user"></i>
+                    </button>
+
+                    <!-- Menu déroulant du profil (affiché/masqué en JS) -->
+                    <div id="profileMenu">
+                        <h4>👤 Espace Profil</h4>
+
+                        <!-- Section connexion / inscription -->
+                        <div class="profile-section">
+                        <a href="../connexion/connexion.html" class="section-title">
+                            🔐 Se connecter / S'inscrire
+                        </a>
+                        </div>
+
+                        <!-- Section compte utilisateur -->
+                        <div class="profile-section">
+                        <a href="./profil.html" class="section-title">
+                            🧾 Mon compte
+                        </a>
+                        </div>
+
+                        <!-- Section commandes -->
+                        <div class="profile-section">
+                        <a href="../commande/commande.html" class="section-title">
+                            📦 Mes commandes
+                        </a>
+                        </div>
+                    </div>
+                    </li>
+                </ul>
+                <!-- ================= MENU BURGER (MOBILE) ================= -->
+                <!-- Visible uniquement en responsive -->
+                <button class="burger" aria-label="Ouvrir le menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                </nav>
                 <div class="headerImg"></div>
             </header>
             <!-- SECTION TENDANCES -->

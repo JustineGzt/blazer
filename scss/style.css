@@ -20,49 +20,92 @@ h2 {
 body {
   background-color: #ededed;
   font-family: "Montserrat Alternates";
+  font-size: 2vh;
 }
 
-header .navbar {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: #000;
-  color: #fff;
-  text-transform: uppercase;
-  overflow: hidden;
-  height: 15vh;
-}
-header .navbar .logo img {
-  margin: 0 12vh;
-  height: 26vh;
-}
-header .navbar nav {
-  background-color: black;
-  position: relative;
+header .main-nav {
+  height: 18vh;
+  padding: 4vh 6vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 15vh;
-  padding: 4vh 8vh;
+  background-color: black;
+  overflow: hidden;
+  gap: 2vh;
 }
-header .navbar nav ul {
+header .main-nav .nav-left, header .main-nav .nav-right {
   list-style: none;
   display: flex;
-  gap: 4vh;
+  gap: 2.5vh;
+  flex-wrap: nowrap;
+  align-items: center;
+  white-space: nowrap;
+  overflow: visible;
+  margin: 0;
+  padding: 0;
 }
-header .navbar nav ul li a {
+header .main-nav .nav-left {
+  justify-content: flex-start;
+}
+header .main-nav .nav-right {
+  justify-content: flex-end;
+}
+header .main-nav .nav-left li a, header .main-nav .nav-right li a {
   color: #fff;
   text-decoration: none;
-  font-size: 2.5vh;
-  position: relative;
+  font-size: 2vh;
   padding-bottom: 5px;
-  transition: 0.5s;
+  position: relative;
+  display: inline-block;
 }
-header .navbar nav ul li .rechercher {
+header .main-nav .rechercher {
   border-bottom: 1px solid #fff;
 }
-header .navbar nav ul li a:hover {
+header .main-nav .nav-left li a:hover, header .main-nav .nav-right li a:hover {
   color: #B0ECF2;
+}
+header .main-nav .logo {
+  flex: 0 0 auto;
+}
+header .main-nav .logo img {
+  height: 22vh;
+}
+header .main-nav .icon-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 2vh;
+}
+header .main-nav .burger {
+  display: none;
+}
+header .main-nav .profile-container {
+  position: relative;
+}
+header .main-nav .profile-container #profileMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1000;
+  background: #111;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 220px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+header .main-nav .profile-container #profileMenu.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+header .main-nav.profile-active {
+  height: auto;
+  padding: 4vh 6vh 20vh 6vh;
+  overflow: visible;
 }
 header .headerImg {
   background-image: url(../img/header.png);
@@ -150,7 +193,7 @@ header .headerImg {
 }
 .qsn .qsnBody .qsnTextContainer {
   height: 90%;
-  padding: 5vh;
+  padding: 0 2vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
