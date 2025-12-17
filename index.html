@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <script src="js/script.js" defer></script>
+        <link rel="stylesheet" href="scss/style.css">
+        <title>Blazer</title>
+    </head>
+    <body>
+        <main>
+            <!-- HEADER -->
+            <header>
+                <!-- NAV -->
+                <nav class="main-nav">
+                <!-- Menu de gauche -->
+                <ul class="nav-left">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="nouveautes.html">Nouveautés</a></li>
+                    <li><a href="homme.html">Homme</a></li>
+                    <li><a href="femme.html">Femme</a></li>
+                </ul>
+
+                <!-- Logo centré -->
+                <div class="logo">
+                    <img src="../img/Blazer_2.png" alt="Logo du site">
+                </div>
+
+                <!-- Menu de droite -->
+                <ul class="nav-right">
+                    <li><a href="contact.html">Contact</a></li>
+
+                    <!-- Icône recherche -->
+                    <li>
+                    <a href="#" class="rechercher">Rechercher <i class="fa-solid fa-magnifying-glass"></i></a>
+                    </li>
+
+                    <!-- Icône panier -->
+                    <li>
+                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                    </li>
+
+                    <!-- ================= MENU PROFIL ================= -->
+                    <li class="profile-container">
+
+                    <!-- Bouton icône utilisateur -->
+                    <button type="button" class="icon-btn" id="profileBtn">
+                        <i class="fa-regular fa-user"></i>
+                    </button>
+
+                    <!-- Menu déroulant du profil (affiché/masqué en JS) -->
+                    <div id="profileMenu">
+                        <h4>👤 Espace Profil</h4>
+
+                        <!-- Section connexion / inscription -->
+                        <div class="profile-section">
+                        <a href="../connexion/connexion.html" class="section-title">
+                            🔐 Se connecter / S'inscrire
+                        </a>
+                        </div>
+
+                        <!-- Section compte utilisateur -->
+                        <div class="profile-section">
+                        <a href="./profil.html" class="section-title">
+                            🧾 Mon compte
+                        </a>
+                        </div>
+
+                        <!-- Section commandes -->
+                        <div class="profile-section">
+                        <a href="../commande/commande.html" class="section-title">
+                            📦 Mes commandes
+                        </a>
+                        </div>
+                    </div>
+                    </li>
+                </ul>
+                <!-- ================= MENU BURGER (MOBILE) ================= -->
+                <!-- Visible uniquement en responsive -->
+                <button class="burger" aria-label="Ouvrir le menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                </nav>
+                <div class="headerImg"></div>
+            </header>
+            <!-- SECTION TENDANCES -->
+            <section class="tendances marge">
+                <div class="container">
+                    <div class="tendancesHeader">
+                        <h2>Catégories Tendances</h2>
+                    </div>
+                    <div class="tendancesBody">
+                        <div class="tendancesPart">
+                            <p>Homme</p>
+                            <div class="tendancesCategories">
+                                <div>
+                                    <img src="img/tendancesTshirt.png" alt="">
+                                    <p>T-shirts</p>
+                                </div>
+                                <div>
+                                    <img src="img/tendancesCostumes.png" alt="">
+                                    <p>Costumes</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ligne"></div>
+                        <div class="tendancesPart">
+                            <p>Femme</p>
+                            <div class="tendancesCategories">
+                                <div>
+                                    <img src="img/tendancesJeans.png" alt="">
+                                    <p>Jeans</p>
+                                </div>
+                                <div>
+                                    <img src="img/tendancesRobes.png" alt="">
+                                    <p>Robes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            <!-- SECTION QSN -->
+             <section class="qsn marge">
+                <div class="qsnHeader">
+                    <h2>Qui sommes nous ?</h2>
+                </div>
+                <div class="qsnBody">
+                    <img src="img/groupeQSN.png" alt="">
+                    <div class="qsnTextContainer">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet dui et lectus feugiat blandit. Maecenas quis leo a nulla vulputate ornare et sit amet diam. Maecenas consequat enim sed vulputate aliquet. Pellentesque vel ante vitae quam placerat vestibulum ac et enim. Quisque cursus posuere consectetur. Suspendisse vel dolor tristique, pellentesque sapien vel, gravida enim. Maecenas et leo eu felis blandit suscipit nec ut nibh.</p>
+                        <p>Vestibulum tempus dui vitae ligula molestie tempus. Ut eleifend sodales ligula ut placerat. Quisque a egestas elit. Quisque risus lectus, molestie at luctus egestas, euismod ac lorem. Ut ac metus eget velit sodales rhoncus in et nulla. Nullam et massa ac mi rhoncus tempor at non lectus. Mauris sit amet fermentum elit. Vestibulum cursus nec mauris et consectetur. Aenean non sem molestie, aliquet ante et, faucibus mi. Etiam sit amet cursus ex. Donec tempor ullamcorper condimentum. Sed vitae ex lacus. Nullam malesuada dictum dolor vel pellentesque.</p>
+                        <p>amet fermentum elit. Vestibulum cursus nec mauris et consectetur. Aenean non sem molestie, aliquet ante et, faucibus mi. Etiam sit amet cursus ex. Donec tempor ullamcorper condimentum. Sed vitae ex lacus. Nullam malesuada dictum dolor vel pellentesque.</p>
+                    </div>
+                </div>
+             </section>
+             <!-- SECTION COLLECTIONHIVER -->
+              <section class="collectionHiver">
+                <div class="promoTimerContainer">
+                    <p>Fin de la promotion :</p>
+                    <p id="promoTimer"></p>
+                </div>
+                <div class="collectionHiverBody">
+                    <p>C'est l'Hiver !</p>
+                    <a href="" class="collectionHiverLien">En savoir plus...</a>
+                </div>
+              </section>
+              <!-- SECTION ACTUALITES -->
+             <section class="actualites marge">
+                <div class="actualitesHeader">
+                    <h3>Actualités</h3>
+                </div>
+                <div class="actualitesBody">
+                    <div class="actualitesCasesLigne">
+                        <div class="actualitesCase case1">
+                            <p class="actualitesDate">08 Décembre 2025</p>
+                            <p class="actualitesTitre">Nouvelle collection : Futur</p>
+                        </div>
+                        <div class="actualitesCase case2">
+                            <p class="actualitesDate">04 Octobre 2025</p>
+                            <p class="actualitesTitre">Nouvelle collection : Western</p>
+                        </div>
+                        <div class="actualitesCase case3">
+                            <p class="actualitesDate">07 Septembre 2025</p>
+                            <p class="actualitesTitre">Changement des envois</p>
+                        </div>
+                    </div>
+                    <div class="actualitesCasesLigne">
+                        <div class="actualitesCase case4">
+                            <p class="actualitesDate">12 Août 2025</p>
+                            <p class="actualitesTitre">Nouvelle collection : Clown</p>
+                        </div>
+                        <div class="actualitesCase case5">
+                            <p class="actualitesDate">13 Juillet 2025</p>
+                            <p class="actualitesTitre">Nouvelle collection : Mediéval</p>
+                        </div>
+                        <div class="actualitesCase case6">
+                            <p class="actualitesDate">06 Juin 2025</p>
+                            <p class="actualitesTitre">Nouvelle collection : Préhistoire</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+             <!-- footer -->
+            <footer>
+                <section class="footer marge">
+                    <div class="footerPart1Container">
+                        <div class="footerPart1Logos">
+                            <img src="img/Blazer_2.png" alt="">
+                            <div class="footerRS">
+                                <i class="fa-brands fa-facebook"></i>
+                                <i class="fa-solid fa-phone"></i>
+                                <i class="fa-brands fa-instagram"></i>
+                            </div>
+                        </div>
+                        <div class="footerPart1Contact">
+                            <p class="footerTitre">Contact</p>
+                            <p>hello@gmail.com</p>
+                            <p>24 avenue de Lille, 62400 Béthune</p>
+                            <p>+336 00 00 00 00</p>
+                        </div>
+                        <div class="footerPart1Newsletter">
+                            <p class="footerTitre">Newsletter</p>
+                            <p>Entrez votre email pour être informé de nos nouveautés</p>
+                            <input type="email" class="newsletterEmail" placeholder="Saisissez votre adresse mail"/>
+                        </div>
+                    </div>
+                    <div class="ligne"></div>
+                    <div class="footerPart2Container">
+                        <p>&copy; 2025 Dreamy Inc. - All rights reserved</p>
+                    </div>
+                </section>
+            </footer>
+        </main>
+    </body>
+</html>

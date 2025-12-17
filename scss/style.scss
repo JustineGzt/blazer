@@ -1,0 +1,679 @@
+// FONTS IRISH GROVER & MONTSERRAT ALTERNATES
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+//  RESET
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.marge{
+    padding: 5vh 5vw;
+}
+
+h2{
+  font-family: 'Irish Grover';
+  font-size: 6vh;
+  text-align: center;
+}
+
+body {
+  background-color: #ededed;
+  font-family: 'Montserrat Alternates';
+  font-size: 2vh;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// SECTION HEADER
+
+header{
+  .main-nav {
+    width: 100%;
+    height: 15vh;                        // Hauteur de la navbar
+    padding: 4vh 6vh;                    // Espacement interne
+    display: flex;                       // Layout en flexbox
+    justify-content: space-between;      // Espace entre gauche / centre / droite
+    align-items: center;                 // Alignement vertical
+    background-color: black;             // Fond noir
+    overflow: hidden;                    // Cache ce qui dépasse
+    gap: 2vh;                            // Espacement entre les blocs
+
+    // -------- LISTES GAUCHE & DROITE --------
+    .nav-left, .nav-right {
+      list-style: none;          // Supprime les puces
+      display: flex;             // Liens alignés horizontalement
+      gap: 2.5vh;                // Espacement entre les liens
+      flex-wrap: nowrap;         // Pas de retour à la ligne
+      align-items: center;
+      white-space: nowrap;       // Empêche les retours à la ligne
+      overflow: visible;
+      margin: 0;
+      padding: 0;
+    }
+
+    // -------- LIENS --------
+    .nav-left li a, .nav-right li a {
+      color: #fff;              // Texte blanc
+      text-decoration: none;    // Pas de soulignement
+      font-size: 2vh;           // Taille responsive
+      padding-bottom: 5px;      // Espace pour effet hover éventuel
+      position: relative;
+      display: inline-block;
+      transition: 0.5s ease;
+    }
+    .rechercher{
+      border-bottom: 1px solid #fff;
+    }
+    .nav-left li a:hover, .nav-right li a:hover{
+      color: #B0ECF2;
+    }
+
+    // -------- LOGO --------
+    .logo {
+      flex: 0 0 auto; // Taille fixe
+    }
+
+    .logo img {
+      height: 22vh;   // Taille du logo
+    }
+
+    // -------- BOUTON ICÔNE (PROFIL) --------
+    .icon-btn {
+      background: none;  // Pas de fond
+      border: none;      // Pas de bordure
+      color: #fff;       // Icône blanche
+      cursor: pointer;   // Curseur cliquable
+      font-size: 2vh;
+    }
+
+    // -------- BURGER (CACHÉ PAR DÉFAUT) --------
+    .burger {
+      display: none;
+    }
+
+    // -------- MENU PROFIL --------
+    .profile-container {
+      position: relative; // Référence pour le menu déroulant
+
+      #profileMenu {
+        display: none;          // Caché par défaut
+        position: absolute;     // Positionné par rapport au parent
+        top: 100%;              // Juste sous l’icône
+        right: 0;
+        z-index: 1000;          // Au-dessus du reste
+        background: #111;       // Fond sombre
+        color: #fff;
+        border-radius: 10px;
+        width: 220px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      // Menu visible quand JS ajoute la classe .active
+      #profileMenu.active {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  // Navbar s’agrandit quand le menu profil est ouvert
+  .main-nav.profile-active {
+    height: auto;
+    padding: 4vh 6vh 20vh 6vh;
+    overflow: visible;
+  }
+    .headerImg{
+      background-image: url(../img/header.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 85vh;
+    }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// SECTION TENDANCES
+.tendances{
+  background-color: #ededed;
+  height: 100vh;
+  .container{
+    display: flex;
+    flex-direction: column;
+    h2{
+      padding-bottom: 20vh;
+    }
+    .tendancesHeader{
+      padding-top: 3vh;
+    }
+    .tendancesBody{
+      padding-bottom: 3vh;
+      display: flex;
+      justify-content: space-between;
+      .tendancesPart{
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+        p{
+          font-size: 5vh;
+          padding-bottom: 3vh;
+          text-align: center;
+        }
+        .tendancesCategories {
+          display: flex;
+          height: 50vh;
+          justify-content: space-evenly;
+          div {
+            text-align: center
+          }
+          img{
+            width: 90%;
+            height: 90%;
+            object-fit: cover;
+          }
+          img:hover{
+            transition	: ease 1s;
+						transform	: scale(1.05);
+            cursor: pointer;
+          }
+          p{
+            font-size: 3.5vh;
+          }
+        }
+      }
+      .ligne{
+        background-color: #000000;
+        width: .2vh;
+        height: 58vh;
+      }
+    }
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// SECTION QSN
+.qsn{
+  background-color: #ededed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  .qsnBody{
+    display: flex;
+    align-items: center;
+    height: 75%;
+    img{
+      height: 90%;
+      width: 50%;
+      object-fit: cover;
+      object-position: 50% 0%;
+    }
+    .qsnTextContainer{
+      height: 90%;
+      padding: 0 2vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 50%;
+    }
+  }
+} 
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// SECTION COLLECTIONHIVER
+.collectionHiver{
+  background-image: url(../img/collecHiver.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 90vh;
+  margin: 5vh 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  .promoTimerContainer{
+    background-color: rgba(#ededed, 0.2);
+    font-size: 4vh;
+    margin-top: 1vh;
+    width: 24vw;
+    text-align: center;
+  }
+  .collectionHiverBody{
+    text-align: center;
+    margin-bottom: 10vh;
+    p{
+      font-size: 10vh;
+      color: #B0ECF2;
+      -webkit-text-stroke:  1px #000;
+      padding: 3vh;
+      
+    }
+    .collectionHiverLien{
+      font-size: 5vh;
+      color: #000;
+      background-color: rgba(#ededed, 0.5);
+      padding: 1.5vh 3vw;
+      border-radius: 4vh;
+      transition: .5s;
+    }
+    .collectionHiverLien:hover{
+      color: #fff;
+      background-color: rgba(#B0ECF2, 0.5);
+      -webkit-text-stroke:  0.5px #000;
+    }
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// SECTION ACTUALITES
+
+.actualites{
+  height: 100vh;
+  .actualitesHeader{
+  font-family: 'Irish Grover';
+  font-size: 6vh;
+  text-align: center;
+  margin-bottom: 5vh;
+  }
+  .actualitesBody{
+    height: 85%;
+    .actualitesCasesLigne{
+      height: 50%;
+      display: flex;
+      justify-content: space-between;
+      .case1{
+        background-image: url(../img/collecFutur.png);
+      }
+      .case2{
+        background-image: url(../img/collecCowboy.png);
+      }
+      .case3{
+        background-image: url(../img/colis.png);
+      }
+      .case4{
+        background-image: url(../img/collecClown.png);
+      }
+      .case5{
+        background-image: url(../img/collecMedieval.png);
+      }
+      .case6{
+        background-image: url(../img/collecPrehistoire.png);
+      }
+      .actualitesCase{
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 33%;
+        margin: 1vh;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        p{
+          margin: 0.5vh;
+          font-size: 2.2vh;
+          color: #ffffff;
+          -webkit-text-stroke:  .5px #000;
+          font-weight:600;
+        }
+        .actualitesTitre{
+          text-align: right;
+        }
+      }
+      .actualitesCase:hover{
+        transition	: ease 1s;
+        transform	: scale(1.05);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// SECTION FOOTER
+.footer{
+  background-color: #000;
+  color: #ededed;
+  height: 60vh;
+  .footerTitre{
+    font-family: 'Irish Grover';
+    font-size: 5vh;
+  }
+  .footerPart1Container{
+    display: flex;
+    justify-content: space-between;
+    height: 85%;
+    .footerPart1Logos{
+      width: 30%;
+      img{
+        width:80%;
+        height: 80%;
+      }
+      .footerRS{
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        i{
+          font-size: 5vh;
+          padding: 2vh 0;
+          object-fit: cover;
+          cursor: pointer;
+          transition: .5s;
+        }
+        i:hover{
+          color: #B0ECF2;
+        }
+      }
+    }
+    .footerPart1Contact{
+      width: 30%;
+      p{
+        padding: 2vh 0;
+      }
+    }
+    .footerPart1Newsletter{
+      width: 30%;
+      p{
+        padding: 2vh 0;
+      }
+      .newsletterEmail{
+        height: 5vh;
+        width: 80%;
+      }
+    }
+  }
+  .ligne{
+    background-color: rgba(#ededed, 0.3);
+    height: .2vh;
+    width:100%;
+    margin: 3vh 0;
+  }
+  .footerPart2Container{
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//                    Page Resultat
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// SECTION RESULT
+.result{
+  background-color: #ededed;
+  height: 85vh;
+  display: flex;
+  justify-content: space-between;
+  .resultContainer{
+    li{
+      background-color: #fff;
+      padding: 2vh;
+      margin: 2vh 0;
+      width: 50vw;
+      border:  1px solid #000000;
+    }
+  }
+  .imgResult{
+    width: 30vw;
+    height: auto;
+    margin: 2vh 0;
+    border: 1px solid #000;
+    transition: background-image 1s ease-in-out;
+    background-image: url(../img/image1.png); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~Breakpoint~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+//////////////////BREAKPOINT 1440px////////////////////////////////////////////
+@media screen and (max-width: 1440px){
+
+  // SECTION HEADER
+  header{
+    .main-nav {
+      nav {
+        ul {
+          li {
+            a {
+              font-size: 2vh;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  // SECTION COLLECTIONHIVER
+  .collectionHiver{
+    .promoTimerContainer{
+      font-size: 3.5vh;
+    }
+  }
+}
+
+//////////////////BREAKPOINT 1024px////////////////////////////////////////////
+@media screen and (max-width: 1024px){
+
+  // SECTION HEADER
+  header{
+    justify-content: space-around;
+    .main-nav {
+      padding: 0vh 1vh;                    // Espacement interne
+      gap: 0vh;                            // Espacement entre les blocs
+
+      // -------- LISTES GAUCHE & DROITE --------
+      .nav-left, .nav-right {
+        gap: 1.5vh;                // Espacement entre les liens
+      }
+
+      // -------- LOGO --------
+      .logo {
+        flex: 0 0 auto; // Taille fixe
+      }
+      .logo img {
+        height: 18vh;   // Taille du logo
+      }
+      
+    }
+    .headerImg{
+      background-position: center;
+    }
+  }
+
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  // SECTION QSN
+  .qsn{
+    .qsnBody{
+      img{
+        object-position: 50% 50%;
+      }
+      .qsnTextContainer{
+        padding: 0vh;
+        p{
+          padding: 1vh;
+          font-size: 1.7vh;
+        }
+      }
+    }
+  }
+
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  // SECTION COLLECTIONHIVER
+  .collectionHiver{
+    .promoTimerContainer{
+      width: 35vw;
+    }
+  }
+
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  // SECTION ACTUALITES
+  .actualites{
+    .actualitesBody{
+      .actualitesCasesLigne{
+        .actualitesCase{
+          p{
+            font-size: 2.5vh;
+          }
+        }
+      }
+    }
+  }
+}
+
+//////////////////BREAKPOINT 768px////////////////////////////////////////////
+@media screen and (max-width: 768px){
+
+  // SECTION HEADER
+  header{
+    .main-nav {
+      height: auto;
+      flex-wrap: wrap;
+      padding: 2vh 3vh;
+      // Menu gauche transformé en menu slide
+      .nav-left {
+        position: fixed;
+        left: -100%;            // Caché hors écran
+        top: 15vh;
+        flex-direction: column;
+        background-color: black;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        z-index: 999;
+
+        &.active {
+          left: 0;              // Visible quand actif
+        }
+        li {
+          padding: 1.5vh 0;
+          border-bottom: 1px solid #333;
+        }
+      }
+      // -------- BOUTON BURGER --------
+      .burger {
+        display: flex !important;
+        flex-direction: column;
+        gap: 4px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        span {
+          width: 25px;
+          height: 2px;
+          background: #fff;
+          transition: all 0.3s ease;
+        }
+        &.open span:nth-child(1) {
+          transform: rotate(45deg) translate(8px, 8px);
+        }
+        &.open span:nth-child(2) {
+          opacity: 0;
+        }
+        &.open span:nth-child(3) {
+          transform: rotate(-45deg) translate(8px, -8px);
+        }
+      }
+    }
+  }
+
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  // SECTION TENDANCES
+  .tendances{
+    height: 150vh;
+    .container{
+      h2{
+        padding-bottom: 5vh;
+      }
+      .tendancesBody{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .tendancesPart{
+          width: 90%;
+        }
+        .ligne{
+          width: 80vw;
+          height: .2vh;
+          margin: 2vh;
+        }
+      }
+    }
+  }
+
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  // SECTION QSN
+  .qsn{
+    .qsnBody{
+      flex-direction: column;
+      align-items: center;
+      height: 85%;
+      img{
+        height: 45%;
+        width: 100%;
+        object-position: 15% 15%;
+      }
+      .qsnTextContainer{
+        width: 100%;
+        padding: 3vh;
+        p{
+          padding: 0.5vh;
+          font-size: 1.8vh;
+        }
+      }
+    }
+  }
+
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  // SECTION COLLECTIONHIVER
+  .collectionHiver{
+    background-position: center;
+    .promoTimerContainer{
+      margin-top: 1vh;
+      width: 50vw;
+    }
+    .collectionHiverBody{
+      margin-bottom: 5vh;
+    }
+  }
+
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  // SECTION ACTUALITES
+
+  .actualites{
+    height: 300vh;
+    .actualitesBody{
+    height: 95%;
+      .actualitesCasesLigne{
+        flex-direction: column;
+        align-items: center;
+        padding: 2vh;
+        .actualitesCase{
+          width: 80%;
+          height: 30%;
+        }
+      }
+    }
+  }
+}
