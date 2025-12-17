@@ -32,115 +32,108 @@ body {
 
 header{
   .main-nav {
-  height: 18vh;                        // Hauteur de la navbar
-  padding: 4vh 6vh;                    // Espacement interne
-  display: flex;                       // Layout en flexbox
-  justify-content: space-between;      // Espace entre gauche / centre / droite
-  align-items: center;                 // Alignement vertical
-  background-color: black;             // Fond noir
-  overflow: hidden;                    // Cache ce qui dépasse
-  gap: 2vh;                            // Espacement entre les blocs
+    width: 100%;
+    height: 15vh;                        // Hauteur de la navbar
+    padding: 4vh 6vh;                    // Espacement interne
+    display: flex;                       // Layout en flexbox
+    justify-content: space-between;      // Espace entre gauche / centre / droite
+    align-items: center;                 // Alignement vertical
+    background-color: black;             // Fond noir
+    overflow: hidden;                    // Cache ce qui dépasse
+    gap: 2vh;                            // Espacement entre les blocs
 
-  // -------- LISTES GAUCHE & DROITE --------
-  .nav-left, .nav-right {
-    list-style: none;          // Supprime les puces
-    display: flex;             // Liens alignés horizontalement
-    gap: 2.5vh;                // Espacement entre les liens
-    flex-wrap: nowrap;         // Pas de retour à la ligne
-    align-items: center;
-    white-space: nowrap;       // Empêche les retours à la ligne
+    // -------- LISTES GAUCHE & DROITE --------
+    .nav-left, .nav-right {
+      list-style: none;          // Supprime les puces
+      display: flex;             // Liens alignés horizontalement
+      gap: 2.5vh;                // Espacement entre les liens
+      flex-wrap: nowrap;         // Pas de retour à la ligne
+      align-items: center;
+      white-space: nowrap;       // Empêche les retours à la ligne
+      overflow: visible;
+      margin: 0;
+      padding: 0;
+    }
+
+    // -------- LIENS --------
+    .nav-left li a, .nav-right li a {
+      color: #fff;              // Texte blanc
+      text-decoration: none;    // Pas de soulignement
+      font-size: 2vh;           // Taille responsive
+      padding-bottom: 5px;      // Espace pour effet hover éventuel
+      position: relative;
+      display: inline-block;
+      transition: 0.5s ease;
+    }
+    .rechercher{
+      border-bottom: 1px solid #fff;
+    }
+    .nav-left li a:hover, .nav-right li a:hover{
+      color: #B0ECF2;
+    }
+
+    // -------- LOGO --------
+    .logo {
+      flex: 0 0 auto; // Taille fixe
+    }
+
+    .logo img {
+      height: 22vh;   // Taille du logo
+    }
+
+    // -------- BOUTON ICÔNE (PROFIL) --------
+    .icon-btn {
+      background: none;  // Pas de fond
+      border: none;      // Pas de bordure
+      color: #fff;       // Icône blanche
+      cursor: pointer;   // Curseur cliquable
+      font-size: 2vh;
+    }
+
+    // -------- BURGER (CACHÉ PAR DÉFAUT) --------
+    .burger {
+      display: none;
+    }
+
+    // -------- MENU PROFIL --------
+    .profile-container {
+      position: relative; // Référence pour le menu déroulant
+
+      #profileMenu {
+        display: none;          // Caché par défaut
+        position: absolute;     // Positionné par rapport au parent
+        top: 100%;              // Juste sous l’icône
+        right: 0;
+        z-index: 1000;          // Au-dessus du reste
+        background: #111;       // Fond sombre
+        color: #fff;
+        border-radius: 10px;
+        width: 220px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      // Menu visible quand JS ajoute la classe .active
+      #profileMenu.active {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  // Navbar s’agrandit quand le menu profil est ouvert
+  .main-nav.profile-active {
+    height: auto;
+    padding: 4vh 6vh 20vh 6vh;
     overflow: visible;
-    margin: 0;
-    padding: 0;
   }
-
-  .nav-left {
-    justify-content: flex-start; // Aligné à gauche
-  }
-
-  .nav-right {
-    justify-content: flex-end;   // Aligné à droite
-  }
-
-  // -------- LIENS --------
-  .nav-left li a, .nav-right li a {
-    color: #fff;              // Texte blanc
-    text-decoration: none;    // Pas de soulignement
-    font-size: 2vh;           // Taille responsive
-    padding-bottom: 5px;      // Espace pour effet hover éventuel
-    position: relative;
-    display: inline-block;
-  }
-  .rechercher{
-    border-bottom: 1px solid #fff;
-  }
-  .nav-left li a:hover, .nav-right li a:hover{
-    color: #B0ECF2;
-  }
-
-  // -------- LOGO --------
-  .logo {
-    flex: 0 0 auto; // Taille fixe
-  }
-
-  .logo img {
-    height: 22vh;   // Taille du logo
-  }
-
-  // -------- BOUTON ICÔNE (PROFIL) --------
-  .icon-btn {
-    background: none;  // Pas de fond
-    border: none;      // Pas de bordure
-    color: #fff;       // Icône blanche
-    cursor: pointer;   // Curseur cliquable
-    font-size: 2vh;
-  }
-
-  // -------- BURGER (CACHÉ PAR DÉFAUT) --------
-  .burger {
-    display: none;
-  }
-
-  // -------- MENU PROFIL --------
-  .profile-container {
-    position: relative; // Référence pour le menu déroulant
-
-    #profileMenu {
-      display: none;          // Caché par défaut
-      position: absolute;     // Positionné par rapport au parent
-      top: 100%;              // Juste sous l’icône
-      right: 0;
-      z-index: 1000;          // Au-dessus du reste
-      background: #111;       // Fond sombre
-      color: #fff;
-      padding: 1rem;
-      border-radius: 10px;
-      width: 220px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-      transition: opacity 0.3s ease, transform 0.3s ease;
+    .headerImg{
+      background-image: url(../img/header.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 85vh;
     }
-
-    // Menu visible quand JS ajoute la classe .active
-    #profileMenu.active {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-}
-
-// Navbar s’agrandit quand le menu profil est ouvert
-.main-nav.profile-active {
-  height: auto;
-  padding: 4vh 6vh 20vh 6vh;
-  overflow: visible;
-}
-  .headerImg{
-    background-image: url(../img/header.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 85vh;
-  }
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -450,7 +443,7 @@ header{
 
   // SECTION HEADER
   header{
-    .navbar {
+    .main-nav {
       nav {
         ul {
           li {
@@ -478,27 +471,28 @@ header{
 
   // SECTION HEADER
   header{
-    .navbar {
-      .logo{
-        img{
-          margin: 0 6vh;
-        }
+    justify-content: space-around;
+    .main-nav {
+      padding: 0vh 1vh;                    // Espacement interne
+      gap: 0vh;                            // Espacement entre les blocs
+
+      // -------- LISTES GAUCHE & DROITE --------
+      .nav-left, .nav-right {
+        gap: 1.5vh;                // Espacement entre les liens
       }
-      nav {
-        padding: 4vh;
-        ul {
-          gap: 2vh;
-          li {
-            a {
-              font-size: 1.6vh;
-            }
-          }
-        }
+
+      // -------- LOGO --------
+      .logo {
+        flex: 0 0 auto; // Taille fixe
       }
+      .logo img {
+        height: 18vh;   // Taille du logo
+      }
+      
     }
-  }
-  .headerImg{
-    background-position: center;
+    .headerImg{
+      background-position: center;
+    }
   }
 
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -549,98 +543,56 @@ header{
 
   // SECTION HEADER
   header{
-    .navbar{
-      .logo{
-        img{
-          margin: 0 12vh;
-          height: 26vh;
+    .main-nav {
+      height: auto;
+      flex-wrap: wrap;
+      padding: 2vh 3vh;
+      // Menu gauche transformé en menu slide
+      .nav-left {
+        position: fixed;
+        left: -100%;            // Caché hors écran
+        top: 15vh;
+        flex-direction: column;
+        background-color: black;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        z-index: 999;
+
+        &.active {
+          left: 0;              // Visible quand actif
+        }
+        li {
+          padding: 1.5vh 0;
+          border-bottom: 1px solid #333;
         }
       }
-    }
-    nav {
-    display: none;
-    display: flex;
-    flex-direction: column;
-    ul{
-      padding: 2vh 0;
-      }
-    }
-    #toggle{
-      position: sticky;
-      left: 90%;
-      display: block;
-      width: 5vh;
-      height: 0.6vh;
-      cursor: pointer;
-      background-color: #fff;
-      z-index: 999;
-      &:before, &:after{
-        content: "";
-        position: absolute;
-        display: block;
-        width: 5vh;
-        height: 0.6vh;
-        background-color: #fff;
-      }
-      &:before{
-        top: -1.5vh;
-      }
-      &:after{
-        top: 1.5vh;
-      }
-    } 
-    #toggle.active{
-      background-color: transparent;
-      &::before{
-        transform: rotate(45deg);
-        top: 0;
-        background-color: #e33131;
-      }
-      &::after{
-        transform: rotate(-45deg);
-        top: 0;
-        background-color: #e33131;
-      }
-    }
-    #navigation{
-      position: fixed;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      top: 0%;
-      right: -100%;
-      width: 100%;
-      height: 100vh;
-      transition: .5s all;
-      background-color: #ffffffd4;
-      z-index: 998;
-      ul{
+      // -------- BOUTON BURGER --------
+      .burger {
+        display: flex !important;
         flex-direction: column;
-        text-align: center;
-      } 
-    }
-    #navigation.active{
-      right: 0%;
-      .logo{
-        display: none;
-      }
-       ul{
-        li{
-          display: block;
-          margin-bottom: 2vh;
-          width: 100%;
-          a{
-            color: #000;
-            font-size: 1.5rem;
-          }
-          .rechercher{
-            border-bottom: 1px solid #000;
-          }
+        gap: 4px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        span {
+          width: 25px;
+          height: 2px;
+          background: #fff;
+          transition: all 0.3s ease;
+        }
+        &.open span:nth-child(1) {
+          transform: rotate(45deg) translate(8px, 8px);
+        }
+        &.open span:nth-child(2) {
+          opacity: 0;
+        }
+        &.open span:nth-child(3) {
+          transform: rotate(-45deg) translate(8px, -8px);
         }
       }
     }
   }
-
 
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
