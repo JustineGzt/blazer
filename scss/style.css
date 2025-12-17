@@ -14,59 +14,97 @@ body {
   background: #e6e0e0;
 }
 
-nav {
+.main-nav {
+  height: 18vh;
+  padding: 4vh 6vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
-  background: rgb(20, 18, 18);
+  background-color: black;
+  overflow: hidden;
+  gap: 2vh;
 }
-nav .logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #fff;
-  letter-spacing: 2px;
-}
-nav .logo img {
-  width: 10vh;
-}
-nav ul {
+.main-nav .nav-left, .main-nav .nav-right {
   list-style: none;
   display: flex;
-  gap: 120px;
+  gap: 2.5vh;
+  flex-wrap: nowrap;
+  align-items: center;
+  white-space: nowrap;
+  overflow: visible;
+  margin: 0;
+  padding: 0;
 }
-nav ul li a {
+.main-nav .nav-left {
+  justify-content: flex-start;
+}
+.main-nav .nav-right {
+  justify-content: flex-end;
+}
+.main-nav .nav-left li a, .main-nav .nav-right li a {
   color: #fff;
   text-decoration: none;
-  font-size: 16px;
-  position: relative;
+  font-size: 2vh;
   padding-bottom: 5px;
+  position: relative;
+  display: inline-block;
 }
-nav ul li a::after {
-  content: "";
+.main-nav .rechercher {
+  border-bottom: 1px solid #fff;
+}
+.main-nav .nav-left li a:hover, .main-nav .nav-right li a:hover {
+  color: #B0ECF2;
+}
+.main-nav .logo {
+  flex: 0 0 auto;
+}
+.main-nav .logo img {
+  height: 22vh;
+}
+.main-nav .icon-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 2vh;
+}
+.main-nav .burger {
+  display: none;
+}
+.main-nav .profile-container {
+  position: relative;
+}
+.main-nav .profile-container #profileMenu {
+  display: none;
   position: absolute;
-  inset: 0;
-  height: 2px;
-  width: 0;
-  bottom: 0;
-  transition: width 0.3s ease;
-  margin: auto;
+  top: 100%;
+  right: 0;
+  z-index: 1000;
+  background: #111;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 220px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
-nav ul li a:hover::after {
-  width: 100%;
+.main-nav .profile-container #profileMenu.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 
-#burger {
-  display: none;
-  cursor: pointer;
+.main-nav.profile-active {
+  height: auto;
+  padding: 4vh 6vh 20vh 6vh;
+  overflow: visible;
 }
-#burger .bar {
-  display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px auto;
-  transition: all 0.3s ease-in-out;
-  background-color: #fff;
+
+.headerImg {
+  background-image: url(../img/header.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 85vh;
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
@@ -89,19 +127,20 @@ nav ul li a:hover::after {
     padding: 2vh 3vh 15vh 3vh;
   }
 }
-header {
+.entete {
   display: flex;
-  text-align: left;
+  width: 100%;
   align-items: center;
 }
-header p {
-  margin-left: 2vh;
-  line-height: 2;
-}
-header img {
-  width: 30%;
+.entete img {
+  width: 15%;
   margin-top: 2vh;
   margin-left: 2vh;
+}
+.entete p {
+  width: 85%;
+  margin-left: 2vh;
+  line-height: 2;
 }
 
 h4 {

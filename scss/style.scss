@@ -16,67 +16,116 @@ body {
   background: #e6e0e0;
 }
 
-nav {
-  display: flex;
-    justify-content:space-between;
+.main-nav {
+  height: 18vh;                        // Hauteur de la navbar
+  padding: 4vh 6vh;                    // Espacement interne
+  display: flex;                       // Layout en flexbox
+  justify-content: space-between;      // Espace entre gauche / centre / droite
+  align-items: center;                 // Alignement vertical
+  background-color: black;             // Fond noir
+  overflow: hidden;                    // Cache ce qui dépasse
+  gap: 2vh;                            // Espacement entre les blocs
+
+  // -------- LISTES GAUCHE & DROITE --------
+  .nav-left, .nav-right {
+    list-style: none;          // Supprime les puces
+    display: flex;             // Liens alignés horizontalement
+    gap: 2.5vh;                // Espacement entre les liens
+    flex-wrap: nowrap;         // Pas de retour à la ligne
     align-items: center;
-    padding: 20px 40px;
-    background: rgb(20, 18, 18);
+    white-space: nowrap;       // Empêche les retours à la ligne
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+  }
 
+  .nav-left {
+    justify-content: flex-start; // Aligné à gauche
+  }
+
+  .nav-right {
+    justify-content: flex-end;   // Aligné à droite
+  }
+
+  // -------- LIENS --------
+  .nav-left li a, .nav-right li a {
+    color: #fff;              // Texte blanc
+    text-decoration: none;    // Pas de soulignement
+    font-size: 2vh;           // Taille responsive
+    padding-bottom: 5px;      // Espace pour effet hover éventuel
+    position: relative;
+    display: inline-block;
+  }
+  .rechercher{
+    border-bottom: 1px solid #fff;
+  }
+  .nav-left li a:hover, .nav-right li a:hover{
+    color: #B0ECF2;
+  }
+
+  // -------- LOGO --------
   .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #fff;
-    letter-spacing: 2px;
-    img{
-        width: 10vh;
-    }
+    flex: 0 0 auto; // Taille fixe
   }
 
-  ul {
-    list-style: none;
-    display: flex;
-    gap: 120px;
+  .logo img {
+    height: 22vh;   // Taille du logo
+  }
 
-    li {
-      a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 16px;
-        position: relative;
-        padding-bottom: 5px;
+  // -------- BOUTON ICÔNE (PROFIL) --------
+  .icon-btn {
+    background: none;  // Pas de fond
+    border: none;      // Pas de bordure
+    color: #fff;       // Icône blanche
+    cursor: pointer;   // Curseur cliquable
+    font-size: 2vh;
+  }
 
-        &::after {
-          content: "";
-          position: absolute;
-          inset: 0;
-          height: 2px;
-          width: 0;
-          bottom: 0;
-          transition: width 0.3s ease;
-          margin: auto;
-        }
+  // -------- BURGER (CACHÉ PAR DÉFAUT) --------
+  .burger {
+    display: none;
+  }
 
-        &:hover::after {
-          width: 100%;
-        }
-      }
+  // -------- MENU PROFIL --------
+  .profile-container {
+    position: relative; // Référence pour le menu déroulant
+
+    #profileMenu {
+      display: none;          // Caché par défaut
+      position: absolute;     // Positionné par rapport au parent
+      top: 100%;              // Juste sous l’icône
+      right: 0;
+      z-index: 1000;          // Au-dessus du reste
+      background: #111;       // Fond sombre
+      color: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      width: 220px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    // Menu visible quand JS ajoute la classe .active
+    #profileMenu.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 }
-   #burger {
-    display: none; // Masqué par défaut sur desktop
-    cursor: pointer;
-    .bar {
-        display: block; // Très important pour que les spans soient visibles
-        width: 25px;
-        height: 3px;
-        margin: 5px auto;
-        -webkit-transition: all 0.3s ease-in-out;
-        transition: all 0.3s ease-in-out;
-        background-color: #fff; // Couleur des barres
-    }
+
+// Navbar s’agrandit quand le menu profil est ouvert
+.main-nav.profile-active {
+  height: auto;
+  padding: 4vh 6vh 20vh 6vh;
+  overflow: visible;
 }
+  .headerImg{
+    background-image: url(../img/header.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 85vh;
+  }
   
 
 // ===== BURGER MENU RESPONSIVE =====
@@ -115,20 +164,20 @@ $gap: 10px;           // Ecart entre les articles
 
 
 
-header {
-  display: flex;
-  text-align:left;
+.entete {
+  display:flex;
+  width: 100%;
   align-items: center;
-
-      p{
-        margin-left: 2vh;
-        line-height: 2;
-      }
-      img{
-        width:30% ;
-        margin-top: 2vh;
-        margin-left: 2vh;
-      }
+  img{
+    width:15% ;
+    margin-top: 2vh;
+    margin-left: 2vh;
+  }
+  p{
+    width: 85%;
+    margin-left: 2vh;
+    line-height: 2;
+  }
 }
 h4 {
             background-color:#9DC1CC;
